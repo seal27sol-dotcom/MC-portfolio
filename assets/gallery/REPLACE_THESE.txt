@@ -1,0 +1,39 @@
+GALLERY PHOTOS — replace these dummy files with your real photos
+================================================================
+
+CCTV & Surveillance (put in assets/gallery/):
+  cctv-install-1.jpg          ← Camera installation indoor coverage
+  cctv-install-2.jpg          ← Outdoor camera mounting and cable routing
+  cctv-dvr-setup.jpg          ← DVR/NVR rack configuration
+  cctv-monitor-view.jpg       ← Live monitor view, multi-camera feed
+  cctv-cable-management.jpg   ← Clean cable management in trunking
+  cctv-completed-site.jpg     ← Completed installation before handover
+
+Networking (put in assets/gallery/):
+  network-server-room.jpg     ← Server room / rack organisation
+  network-switch-patch.jpg    ← Switch and patch panel wiring
+  network-lan-setup.jpg       ← LAN installation, floor wiring
+  network-wifi-deployment.jpg ← WiFi access point mounted/configured
+
+Software Screenshots (put in assets/gallery/):
+  software-banking-dashboard.png      ← Banking System main dashboard
+  software-banking-transactions.png   ← Banking System transaction screen
+  software-student-dashboard.png      ← Student Management admin dashboard
+  software-student-grades.png         ← Student Management grades/reports
+  software-doc-converter.png          ← Document Converter interface
+  software-media-player.png           ← Media Player playback interface
+
+PROJECTS PAGE screenshots (put in assets/projects/):
+  banking-system.png       ← Banking System — any screen
+  student-management.png   ← Student Management — any screen
+  doc-converter.png        ← Document Converter interface
+  media-player.png         ← Media Player interface
+  portfolio-site.png       ← Screenshot of this website
+  cctv-installation.jpg    ← CCTV field photo (can reuse from gallery)
+
+HOW TO ADD:
+  1. Take a screenshot (Windows: Win+Shift+S, then Save As PNG)
+  2. Name the file EXACTLY as shown above (case sensitive)
+  3. Place in the correct folder
+  4. Upload to your hosting — the gallery and projects page will
+     automatically show the image and hide the placeholder box

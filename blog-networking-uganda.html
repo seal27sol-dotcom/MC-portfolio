@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Networking Fundamentals Every IT Pro in Uganda Must Know — Christopher Musamali</title>
+  <meta name="description" content="The core networking concepts — IP addressing, subnetting, switching, routing, and troubleshooting — that every working IT technician in Uganda needs in their toolkit." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="assets/visitor-tracker.js" defer></script>
+</head>
+<body>
+<nav>
+  <div class="nav-brand">CM<span>.</span></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+    <li><a href="about.html"><i class="fa-solid fa-user"></i> About</a></li>
+    <li><a href="projects.html"><i class="fa-solid fa-code"></i> Projects</a></li>
+    <li><a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a></li>
+    <li><a href="experience.html"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
+    <li><a href="skills.html"><i class="fa-solid fa-layer-group"></i> Skills</a></li>
+    <li><a href="certificates.html"><i class="fa-solid fa-certificate"></i> Certificates</a></li>
+    <li><a href="blog.html"><i class="fa-solid fa-pen-nib"></i> Blog</a></li>
+    <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+</nav>
+
+<main class="page">
+  <div class="container">
+    <div class="blog-article fade-up">
+
+      <div class="blog-article-back">
+        <a href="blog.html"><i class="fa-solid fa-arrow-left"></i> Back to Blog</a>
+      </div>
+
+      <header class="blog-article-header">
+        <div class="blog-article-icon"><i class="fa-solid fa-network-wired"></i></div>
+        <div class="blog-meta" style="margin-bottom:14px;">
+          <span class="blog-tag">Networking</span>
+          <span class="blog-date">March 2026</span>
+          <span class="blog-date"><i class="fa-solid fa-clock"></i> 9 min read</span>
+        </div>
+        <h1>Networking Fundamentals Every IT Pro in Uganda Must Know</h1>
+        <div class="blog-article-byline">
+          <img src="assets/my_img.jpg" alt="Christopher Musamali" class="byline-avatar"
+               onerror="this.style.display='none'; this.nextElementSibling.classList.add('byline-avatar-fallback');" />
+          <div class="byline-avatar byline-avatar-fallback" style="display:none;">CM</div>
+          <div>
+            <div class="byline-name">Musamali Christopher</div>
+            <div class="byline-role">IT Technician &amp; Software Developer, Kampala</div>
+          </div>
+        </div>
+      </header>
+
+      <div class="blog-article-body">
+
+<p class="blog-lead">Networking knowledge separates the IT technicians who can only handle software complaints from those who can walk into any office environment, understand what is happening end-to-end, and solve problems at the infrastructure level. Whether you are setting up a new office LAN, troubleshooting a connectivity fault, or extending Wi-Fi coverage across a building, these are the concepts you cannot afford to not know.</p>
+
+<h2>IP Addressing: The Language of Networks</h2>
+<p>Every device on a network has an IP address — a numerical label that identifies it. IPv4 addresses are written as four numbers separated by dots, for example 192.168.1.100. The first portion identifies the network; the last portion identifies the specific device on that network. Understanding which part is which requires understanding subnetting.</p>
+<p>Private IP ranges — the addresses used on local networks inside offices and homes — fall into three blocks: 10.0.0.0 to 10.255.255.255, 172.16.0.0 to 172.31.255.255, and 192.168.0.0 to 192.168.255.255. When you see a device with an address in one of these ranges, it is on a private network and accesses the internet through a router that translates its private address to a public one (this process is called NAT — Network Address Translation).</p>
+
+<h2>Subnetting: Dividing Networks</h2>
+<p>A subnet mask tells devices which portion of an IP address identifies the network and which portion identifies the host. The mask 255.255.255.0 (written in shorthand as /24) means the first three octets are the network portion — so all devices from 192.168.1.1 to 192.168.1.254 are on the same network, with 192.168.1.255 reserved as the broadcast address. A /24 network gives you 254 usable host addresses.</p>
+<p>You do not need to be a subnetting expert to do solid IT support work, but you do need to understand the basics: what a subnet mask is, how to read CIDR notation (/24, /25, /16), and how to determine whether two devices are on the same subnet (if they are not, they cannot communicate directly — they need a router between them).</p>
+
+<h2>DHCP and DNS: The Services That Make Networks Usable</h2>
+<p>DHCP (Dynamic Host Configuration Protocol) is the service that automatically assigns IP addresses to devices when they connect to a network. Your router at home or in the office runs a DHCP server. When a laptop connects to Wi-Fi, the router hands it an IP address, a subnet mask, a default gateway, and a DNS server address — everything the device needs to communicate on the network and reach the internet. When a device cannot get an IP address from DHCP, it self-assigns an address in the 169.254.x.x range — a clear indicator that the DHCP process has failed.</p>
+<p>DNS (Domain Name System) translates human-readable domain names into IP addresses. When you type google.com into a browser, a DNS query converts that name into the actual IP address of Google's servers. Common DNS servers include Google's public DNS (8.8.8.8 and 8.8.4.4) and Cloudflare's (1.1.1.1). DNS failure is one of the most frequent causes of "internet not working" complaints — the connection itself may be fine, but if DNS is broken, no domain names will resolve.</p>
+
+<h2>Switches and Routers: Different Jobs, Often Confused</h2>
+<p>A switch connects devices within the same network — it operates at Layer 2 (the data link layer) and forwards traffic based on MAC addresses. Plug 24 computers into a 24-port switch and they can all communicate with each other. A router connects different networks — it operates at Layer 3 (the network layer) and forwards traffic based on IP addresses. Your office router connects the local network (192.168.x.x) to the internet (public IP addresses). Understanding this distinction resolves a surprising amount of diagnostic confusion in the field.</p>
+
+<h2>Wi-Fi: The Practical Side</h2>
+<p>Most IT support in Uganda involves Wi-Fi troubleshooting. Key points: the 2.4GHz band travels further and penetrates walls better but is more congested and slower. The 5GHz band is faster and less congested but has shorter range. For dense office environments, always do a site survey before placing access points — dead zones and interference sources (microwaves, other networks, concrete walls) are not obvious without testing. Use a Wi-Fi analyser app (available free on Android) to see which channels competing networks are using and choose a non-overlapping channel (1, 6, or 11 on 2.4GHz).</p>
+
+<h2>Cable Standards and Physical Layer Basics</h2>
+<p>For any structured cabling work: use Cat6 cable as the minimum standard for new installations. Cat5e is still acceptable for speeds up to 1Gbps, but Cat6 supports 10Gbps at shorter distances and costs little more. Patch cables (the flexible cables that connect devices to wall ports) should be pre-terminated Cat6 or Cat5e. Termination standard matters — use T568B for consistency on both ends of every cable in a building. A cable tester is a worthwhile investment and will save hours of fault-finding on new installations.</p>
+
+<h2>The Troubleshooting Framework</h2>
+<p>When a user reports "no internet", work from the bottom of the network stack upward: first confirm the physical connection (is the cable plugged in? Is there a link light on the port?). Then confirm the IP configuration (run ipconfig on Windows — does the device have a valid IP address, or a 169.254 APIPA address?). Then confirm gateway reachability (ping the default gateway — if this fails, the problem is between the device and the router). Then confirm internet reachability (ping 8.8.8.8 — if this works but websites do not load, the problem is DNS). Then confirm DNS (ping google.com by name — if this fails, check DNS settings). This sequence eliminates whole layers of possibility with each step and gets you to the real fault quickly.</p>
+
+<h2>Keep Learning</h2>
+<p>Networking is a deep discipline and this article is a starting map, not a complete reference. The CompTIA Network+ and Cisco CCNA certifications both provide structured and comprehensive networking education — either is worth pursuing if you are serious about IT infrastructure work. In the meantime, the best learning happens on real networks: set up a home lab, configure a switch, build a small VLAN, troubleshoot a real fault. Theory without practice does not stick.</p>
+
+      </div>
+
+      <div class="blog-article-cta">
+        <h3>Need network setup or IT support?</h3>
+        <p>I handle LAN/WAN setup, CCTV, IT training, and software development across Kampala.</p>
+        <a href="contact.html" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Get in Touch</a>
+        <a href="blog.html" class="btn btn-ghost"><i class="fa-solid fa-pen-nib"></i> More Articles</a>
+      </div>
+
+      <div class="blog-article-nav">
+        <a href="blog-video-editing.html" class="blog-nav-link blog-nav-prev"><i class="fa-solid fa-arrow-left"></i><span>Getting Started with Video Editing Using Filmora</span></a>
+        <a href="blog-it-career-uganda.html" class="blog-nav-link blog-nav-next"><span>How to Build an IT Career in Uganda in 2026</span><i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p>Musamali Christopher &mdash; IT Technician &middot; Software Developer &middot; Technical Instructor</p>
+    <p style="margin-top:4px;">Kampala, Uganda &middot; <a href="mailto:christophermusamali27@gmail.com">christophermusamali27@gmail.com</a></p>
+    <div class="footer-links">
+      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="projects.html"><i class="fa-solid fa-code"></i> Projects</a>
+      <a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a>
+      <a href="blog.html"><i class="fa-solid fa-pen-nib"></i> Blog</a>
+      <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <a href="https://github.com/seal27sol-dotcom" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+    </div>
+    <p style="margin-top:16px; font-size:0.78rem; color: var(--text-faint);">&copy; 2026 Christopher Musamali Portfolio. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+  const cur = window.location.pathname.replace(/\/$/, "").split("/").pop() || "index.html";
+  document.querySelectorAll(".nav-links a").forEach(a => { const href = a.getAttribute("href").replace(/\/$/, "").split("/").pop() || "index.html"; if (href === cur) a.classList.add("active"); });
+  const toggle = document.getElementById("navToggle"), links = document.getElementById("navLinks");
+  function closeNav() { links.classList.remove("open"); toggle.classList.remove("open"); toggle.setAttribute("aria-expanded","false"); }
+  toggle.addEventListener("click", e => { e.stopPropagation(); const open = links.classList.toggle("open"); toggle.classList.toggle("open", open); toggle.setAttribute("aria-expanded", open); });
+  links.querySelectorAll("a").forEach(a => a.addEventListener("click", closeNav));
+  document.addEventListener("click", e => { if (links.classList.contains("open") && !links.contains(e.target) && !toggle.contains(e.target)) closeNav(); });
+</script>
+</body>
+</html>

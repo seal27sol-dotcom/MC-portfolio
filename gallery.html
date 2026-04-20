@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Christopher Musamali</title>
+  <meta name="description" content="Photo gallery of IT field work, CCTV installations, networking setups, and software screenshots by Musamali Christopher." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="assets/visitor-tracker.js" defer></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">CM<span>.</span></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+    <li><a href="about.html"><i class="fa-solid fa-user"></i> About</a></li>
+    <li><a href="projects.html"><i class="fa-solid fa-code"></i> Projects</a></li>
+    <li><a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a></li>
+    <li><a href="experience.html"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
+    <li><a href="skills.html"><i class="fa-solid fa-layer-group"></i> Skills</a></li>
+    <li><a href="certificates.html"><i class="fa-solid fa-certificate"></i> Certificates</a></li>
+    <li><a href="blog.html"><i class="fa-solid fa-pen-nib"></i> Blog</a></li>
+    <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<main class="page">
+  <div class="container">
+
+    <header class="page-header fade-up">
+      <p class="eyebrow">Visual Work</p>
+      <h1>Gallery</h1>
+      <p>Field installations, network setups, and software screenshots from real projects across Kampala and beyond.</p>
+    </header>
+
+    <!-- Filter tabs -->
+    <div class="gallery-filters fade-up" id="galleryFilters">
+      <button class="gfilter-btn active" data-filter="all">All</button>
+      <button class="gfilter-btn" data-filter="cctv">CCTV &amp; Surveillance</button>
+      <button class="gfilter-btn" data-filter="network">Networking</button>
+      <button class="gfilter-btn" data-filter="software">Software</button>
+      <button class="gfilter-btn" data-filter="graphic">Graphic Design</button>
+    </div>
+
+    <!-- ── CCTV SECTION ───────────────────────────────────── -->
+    <div class="gallery-section-label fade-up"><i class="fa-solid fa-video"></i> CCTV &amp; Surveillance Installations</div>
+    <div class="gallery-grid" id="galleryGrid">
+
+      <div class="gallery-item fade-up" data-cat="cctv">
+        <div class="gallery-img-wrap">
+          <img src="assets/gallery/cctv-install-1.jpg" alt="CCTV installation site 1"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder"><i class="fa-solid fa-video"></i><span>cctv-install-1.jpg</span></div>
+        </div>
+        <div class="gallery-caption">Camera installation — indoor coverage setup</div>
+      </div>
+
+      <div class="gallery-item fade-up delay-1" data-cat="cctv">
+        <div class="gallery-img-wrap">
+          <img src="assets/gallery/cctv-install-2.jpg" alt="CCTV installation site 2"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder"><i class="fa-solid fa-video"></i><span>cctv-install-2.jpg</span></div>
+        </div>
+        <div class="gallery-caption">Outdoor camera mounting and cable routing</div>
+      </div>
+
+      <div class="gallery-item fade-up delay-2" data-cat="cctv">
+        <div class="gallery-img-wrap">
+          <img src="assets/gallery/cctv-dvr-setup.jpg" alt="DVR/NVR configuration"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder"><i class="fa-solid fa-server"></i><span>cctv-dvr-setup.jpg</span></div>
+        </div>
+        <div class="gallery-caption">DVR/NVR rack configuration and storage setup</div>
+      </div>
+
+      <div class="gallery-item fade-up" data-cat="cctv">
+        <div class="gallery-img-wrap">
+          <img src="assets/gallery/cctv-monitor-view.jpg" alt="CCTV monitor live view"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder"><i class="fa-solid fa-display"></i><span>cctv-monitor-view.jpg</span></div>
+        </div>
+        <div class="gallery-caption">Live monitor view — multi-camera feed</div>
+      </div>
+
+      <div class="gallery-item fade-up delay-1" data-cat="cctv">
+        <div class="gallery-img-wrap">
+          <img src="assets/gallery/cctv-cable-management.jpg" alt="Cable management"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder"><i class="fa-solid fa-ethernet"></i><span>cctv-cable-management.jpg</span></div>
+        </div>
+        <div class="gallery-caption">Clean cable management and containment</div>
+      </div>
+
+      <div class="gallery-item fade-up delay-2" data-cat="cctv">
+        <div class="gallery-img-wrap">
+          <img src="assets/gallery/cctv-completed-site.jpg" alt="Completed CCTV site"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder"><i class="fa-solid fa-circle-check"></i><span>cctv-completed-site.jpg</span></div>
+        </div>
+        <div class="gallery-caption">Completed installation — client handover</div>
+      </div>
+
+    </div>
+
+    <!-- ── NETWORKING SECTION ─────────────────────────────── -->
+    <div class="gallery-section-label fade-up" style="margin-top:52px;"><i class="fa-solid fa-network-wired"></i> Networking &amp; Infrastructure</div>
+    <div class="gallery-grid">
+
+      <div class="gallery-item fade-up" data-cat="network">
+        <div class="gallery-img-wrap">
+          <img src="assets/gallery/network-server-room.jpg" alt="Server room setup"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder"><i class="fa-solid fa-server"></i><span>network-server-room.jpg</span></div>
+        </div>
+        <div class="gallery-caption">Server room layout and rack organisation</div>
+      </div>
+
+      <div class="gallery-item fade-up delay-1" data-cat="network">
+        <div class="gallery-img-wrap">
+          <img src="assets/gallery/network-switch-patch.jpg" alt="Switch and patch panel"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder"><i class="fa-solid fa-network-wired"></i><span>network-switch-patch.jpg</span></div>
+        </div>
+        <div class="gallery-caption">Switch configuration and patch panel wiring</div>
+      </div>
+
+      <div class="gallery-item fade-up delay-2" data-cat="network">
+        <div class="gallery-img-wrap">
+          <img src="assets/gallery/network-lan-setup.jpg" alt="LAN installation"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder"><i class="fa-solid fa-ethernet"></i><span>network-lan-setup.jpg</span></div>
+        </div>
+        <div class="gallery-caption">LAN installation — office floor wiring</div>
+      </div>
+
+      <div class="gallery-item fade-up" data-cat="network">
+        <div class="gallery-img-wrap">
+          <img src="assets/gallery/network-wifi-deployment.jpg" alt="WiFi access point deployment"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder"><i class="fa-solid fa-wifi"></i><span>network-wifi-deployment.jpg</span></div>
+        </div>
+        <div class="gallery-caption">WiFi access point deployment and configuration</div>
+      </div>
+
+    </div>
+
+    <!-- ── SOFTWARE SECTION ───────────────────────────────── -->
+    <div class="gallery-section-label fade-up" style="margin-top:52px;"><i class="fa-solid fa-desktop"></i> Software Screenshots</div>
+    <div class="gallery-grid">
+
+      <div class="gallery-item fade-up" data-cat="software">
+        <div class="gallery-img-wrap">
+          <img src="assets/gallery/software-banking-dashboard.png" alt="Banking system dashboard"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder"><i class="fa-solid fa-building-columns"></i><span>software-banking-dashboard.png</span></div>
+        </div>
+        <div class="gallery-caption">Banking System — main dashboard</div>
+      </div>
+
+      <div class="gallery-item fade-up delay-1" data-cat="software">
+        <div class="gallery-img-wrap">
+          <img src="assets/gallery/software-banking-transactions.png" alt="Banking transactions screen"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder"><i class="fa-solid fa-arrow-right-arrow-left"></i><span>software-banking-transactions.png</span></div>
+        </div>
+        <div class="gallery-caption">Banking System — transaction processing screen</div>
+      </div>
+
+      <div class="gallery-item fade-up delay-2" data-cat="software">
+        <div class="gallery-img-wrap">
+          <img src="assets/gallery/software-student-dashboard.png" alt="Student management dashboard"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder"><i class="fa-solid fa-graduation-cap"></i><span>software-student-dashboard.png</span></div>
+        </div>
+        <div class="gallery-caption">Student Management — admin dashboard</div>
+      </div>
+
+      <div class="gallery-item fade-up" data-cat="software">
+        <div class="gallery-img-wrap">
+          <img src="assets/gallery/software-student-grades.png" alt="Grades management screen"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder"><i class="fa-solid fa-chart-bar"></i><span>software-student-grades.png</span></div>
+        </div>
+        <div class="gallery-caption">Student Management — grades and reports</div>
+      </div>
+
+      <div class="gallery-item fade-up delay-1" data-cat="software">
+        <div class="gallery-img-wrap">
+          <img src="assets/gallery/software-doc-converter.png" alt="Document converter UI"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder"><i class="fa-solid fa-file-export"></i><span>software-doc-converter.png</span></div>
+        </div>
+        <div class="gallery-caption">Document Converter — main interface</div>
+      </div>
+
+      <div class="gallery-item fade-up delay-2" data-cat="software">
+        <div class="gallery-img-wrap">
+          <img src="assets/gallery/software-media-player.png" alt="Media player UI"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder"><i class="fa-solid fa-play"></i><span>software-media-player.png</span></div>
+        </div>
+        <div class="gallery-caption">Media Player — playback interface</div>
+      </div>
+
+    </div>
+
+    <!-- GRAPHIC DESIGN SECTION -->
+    <div class="gallery-section-label fade-up" style="margin-top:52px;"><i class="fa-solid fa-pen-nib"></i> Graphic Design</div>
+    <div class="gallery-grid" id="galleryGraphic">
+
+      <div class="gallery-item fade-up" data-cat="graphic">
+        <div class="gallery-img-wrap">
+          <img src="assets/gallery/graphic-logo-collection.png" alt="Logo collection"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder"><i class="fa-solid fa-pen-nib"></i><span>graphic-logo-collection.png</span></div>
+        </div>
+        <div class="gallery-caption">Logo Collection — brand identity designs</div>
+      </div>
+
+      <div class="gallery-item fade-up delay-1" data-cat="graphic">
+        <div class="gallery-img-wrap">
+          <img src="assets/gallery/graphic-branding-kit.png" alt="Branding kit"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder"><i class="fa-solid fa-swatchbook"></i><span>graphic-branding-kit.png</span></div>
+        </div>
+        <div class="gallery-caption">Branding Kit — colour palette &amp; typography</div>
+      </div>
+
+      <div class="gallery-item fade-up delay-2" data-cat="graphic">
+        <div class="gallery-img-wrap">
+          <img src="assets/gallery/graphic-poster-design.png" alt="Poster design"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder"><i class="fa-solid fa-image"></i><span>graphic-poster-design.png</span></div>
+        </div>
+        <div class="gallery-caption">Poster Design — event &amp; promotional artwork</div>
+      </div>
+
+      <div class="gallery-item fade-up" data-cat="graphic">
+        <div class="gallery-img-wrap">
+          <img src="assets/gallery/graphic-social-media.png" alt="Social media graphics"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder"><i class="fa-solid fa-share-nodes"></i><span>graphic-social-media.png</span></div>
+        </div>
+        <div class="gallery-caption">Social Media Graphics — posts &amp; banners</div>
+      </div>
+
+      <div class="gallery-item fade-up delay-1" data-cat="graphic">
+        <div class="gallery-img-wrap">
+          <img src="assets/gallery/graphic-ui-mockup.png" alt="UI mockup"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder"><i class="fa-solid fa-object-group"></i><span>graphic-ui-mockup.png</span></div>
+        </div>
+        <div class="gallery-caption">UI Mockup — app screen layout design</div>
+      </div>
+
+      <div class="gallery-item fade-up delay-2" data-cat="graphic">
+        <div class="gallery-img-wrap">
+          <img src="assets/gallery/graphic-motion-graphics.png" alt="Motion graphics"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder"><i class="fa-solid fa-film"></i><span>graphic-motion-graphics.png</span></div>
+        </div>
+        <div class="gallery-caption">Motion Graphics — animated visual content</div>
+      </div>
+
+    </div>
+
+  </div>
+</main>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Image lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+  <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+  <button class="lightbox-next" id="lightboxNext" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+  <div class="lightbox-inner">
+    <img id="lightboxImg" src="" alt="" />
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <p>Musamali Christopher &mdash; IT Technician &middot; Software Developer &middot; Technical Instructor</p>
+    <p style="margin-top:4px;">Kampala, Uganda &middot; <a href="mailto:christophermusamali27@gmail.com">christophermusamali27@gmail.com</a></p>
+    <div class="footer-links">
+      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="projects.html"><i class="fa-solid fa-code"></i> Projects</a>
+      <a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a>
+      <a href="blog.html"><i class="fa-solid fa-pen-nib"></i> Blog</a>
+      <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <a href="https://github.com/seal27sol-dotcom" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+    </div>
+    <p style="margin-top:16px; font-size:0.78rem; color: var(--text-faint);">&copy; 2026 Christopher Musamali Portfolio. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Nav
+  const cur = window.location.pathname.replace(/\/$/, "").split("/").pop() || "index.html";
+  document.querySelectorAll(".nav-links a").forEach(a => {
+    const href = a.getAttribute("href").replace(/\/$/, "").split("/").pop() || "index.html";
+    if (href === cur) a.classList.add("active");
+  });
+  const toggle = document.getElementById("navToggle");
+  const links  = document.getElementById("navLinks");
+  function closeNav() { links.classList.remove("open"); toggle.classList.remove("open"); toggle.setAttribute("aria-expanded","false"); }
+  toggle.addEventListener("click", e => { e.stopPropagation(); const open = links.classList.toggle("open"); toggle.classList.toggle("open", open); toggle.setAttribute("aria-expanded", open); });
+  links.querySelectorAll("a").forEach(a => a.addEventListener("click", closeNav));
+  document.addEventListener("click", e => { if (links.classList.contains("open") && !links.contains(e.target) && !toggle.contains(e.target)) closeNav(); });
+
+  // Gallery filter
+  document.getElementById("galleryFilters").addEventListener("click", e => {
+    const btn = e.target.closest(".gfilter-btn");
+    if (!btn) return;
+    document.querySelectorAll(".gfilter-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    const filter = btn.dataset.filter;
+    document.querySelectorAll(".gallery-item").forEach(item => {
+      if (filter === "all" || item.dataset.cat === filter) {
+        item.style.display = "";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  });
+
+  // Lightbox
+  const lightbox     = document.getElementById("lightbox");
+  const lightboxImg  = document.getElementById("lightboxImg");
+  const lightboxCap  = document.getElementById("lightboxCaption");
+  let lightboxItems  = [];
+  let lightboxIndex  = 0;
+
+  function openLightbox(img, caption, index) {
+    lightboxImg.src = img;
+    lightboxImg.alt = caption;
+    lightboxCap.textContent = caption;
+    lightboxIndex = index;
+    lightbox.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+  function closeLightbox() {
+    lightbox.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+  function showLightboxItem(index) {
+    const item = lightboxItems[index];
+    if (!item) return;
+    lightboxImg.src = item.src;
+    lightboxImg.alt = item.caption;
+    lightboxCap.textContent = item.caption;
+    lightboxIndex = index;
+  }
+
+  document.querySelectorAll(".gallery-item").forEach((item, i) => {
+    const img = item.querySelector("img");
+    const cap = item.querySelector(".gallery-caption");
+    if (!img) return;
+    lightboxItems.push({ src: img.src, caption: cap ? cap.textContent : "" });
+    item.style.cursor = "pointer";
+    item.addEventListener("click", () => {
+      if (img.style.display === "none") return; // placeholder, no lightbox
+      openLightbox(img.src, cap ? cap.textContent : "", i);
+    });
+  });
+
+  document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
+  document.getElementById("lightboxPrev").addEventListener("click", () => {
+    showLightboxItem((lightboxIndex - 1 + lightboxItems.length) % lightboxItems.length);
+  });
+  document.getElementById("lightboxNext").addEventListener("click", () => {
+    showLightboxItem((lightboxIndex + 1) % lightboxItems.length);
+  });
+  lightbox.addEventListener("click", e => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener("keydown", e => {
+    if (!lightbox.classList.contains("active")) return;
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowLeft")  showLightboxItem((lightboxIndex - 1 + lightboxItems.length) % lightboxItems.length);
+    if (e.key === "ArrowRight") showLightboxItem((lightboxIndex + 1) % lightboxItems.length);
+  });
+</script>
+</body>
+</html>

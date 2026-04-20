@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why I Build Desktop Apps with Python and PyQt6 — And When You Should Too — Christopher Musamali</title>
+  <meta name="description" content="The case for Python and PyQt6 desktop applications for real-world business problems in Uganda — from a developer who builds them." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="assets/visitor-tracker.js" defer></script>
+</head>
+<body>
+<nav>
+  <div class="nav-brand">CM<span>.</span></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+    <li><a href="about.html"><i class="fa-solid fa-user"></i> About</a></li>
+    <li><a href="projects.html"><i class="fa-solid fa-code"></i> Projects</a></li>
+    <li><a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a></li>
+    <li><a href="experience.html"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
+    <li><a href="skills.html"><i class="fa-solid fa-layer-group"></i> Skills</a></li>
+    <li><a href="certificates.html"><i class="fa-solid fa-certificate"></i> Certificates</a></li>
+    <li><a href="blog.html"><i class="fa-solid fa-pen-nib"></i> Blog</a></li>
+    <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+</nav>
+
+<main class="page">
+  <div class="container">
+    <div class="blog-article fade-up">
+
+      <div class="blog-article-back">
+        <a href="blog.html"><i class="fa-solid fa-arrow-left"></i> Back to Blog</a>
+      </div>
+
+      <header class="blog-article-header">
+        <div class="blog-article-icon blue"><i class="fa-brands fa-python"></i></div>
+        <div class="blog-meta" style="margin-bottom:14px;">
+          <span class="blog-tag">Software Development</span>
+          <span class="blog-date">March 2026</span>
+          <span class="blog-date"><i class="fa-solid fa-clock"></i> 7 min read</span>
+        </div>
+        <h1>Why I Build Desktop Apps with Python and PyQt6 — And When You Should Too</h1>
+        <div class="blog-article-byline">
+          <img src="assets/my_img.jpg" alt="Christopher Musamali" class="byline-avatar"
+               onerror="this.style.display='none'; this.nextElementSibling.classList.add('byline-avatar-fallback');" />
+          <div class="byline-avatar byline-avatar-fallback" style="display:none;">CM</div>
+          <div>
+            <div class="byline-name">Musamali Christopher</div>
+            <div class="byline-role">IT Technician &amp; Software Developer, Kampala</div>
+          </div>
+        </div>
+      </header>
+
+      <div class="blog-article-body">
+        
+<p class="blog-lead">Every conversation about software development today seems to assume the destination is a web app or a mobile app. And for many problems, that is right. But for the kinds of systems that businesses in Uganda actually need to run day-to-day — systems that must work reliably, without internet, on modest hardware, and be maintained by a single developer — there is a strong argument for desktop applications built with Python and PyQt6.</p>
+
+<p>I have built a banking management system, a student management platform, a document converter, and a media player with this stack. Here is what I have learned about when it works brilliantly, and when to choose something else.</p>
+
+<h2>Why Python?</h2>
+<p>Python is the most widely taught programming language in the world, which means extensive documentation, a massive community, and libraries for almost every problem you will encounter. For business applications specifically, Python has mature libraries for: database access (SQLite for local storage, MySQL connectors for server-based databases), PDF generation and manipulation, Excel and CSV file handling, printing and reporting, email, and networking.</p>
+<p>Python code is also readable — which matters more than most developers admit. When you come back to a project six months later, or when another developer picks it up, clear code saves hours. Python enforces readability in a way that many other languages do not.</p>
+
+<h2>Why PyQt6?</h2>
+<p>PyQt6 is a Python binding for the Qt framework — one of the most mature and capable UI frameworks available. It produces native-looking applications on Windows, macOS, and Linux from a single codebase. More importantly for professional use, it gives you the tools to build genuinely polished interfaces: proper table views with sorting and filtering, professional form controls, custom painting, print dialogs that integrate with Windows printers, and a layout system that handles window resizing correctly.</p>
+<p>The alternative most beginners reach for is Tkinter, which is simpler but produces interfaces that look outdated and lack many of the controls that business applications need. PyQt6 has a steeper initial learning curve, but the quality of the resulting application is significantly higher.</p>
+
+<h2>The Case for Desktop Over Web in Uganda</h2>
+<p>Internet connectivity in Uganda, while improving, is not reliable enough to build business-critical systems around. A web application that requires a constant internet connection will fail the moment there is a load shedding event or a network issue. A desktop application runs entirely locally and is completely unaffected.</p>
+<p>Hardware is also a real consideration. Many small and medium businesses are running older machines that handle a desktop application comfortably but would struggle to run a modern web browser with a complex web application. A Python desktop app, built thoughtfully, can run on hardware that is eight or ten years old without any performance issues.</p>
+
+<h2>What Desktop Apps Are Good For</h2>
+<p>Desktop applications excel when: the application is used by staff at a fixed workstation, data should be stored locally for speed or privacy, the system needs to integrate directly with local printers and hardware, reliable offline operation is non-negotiable, or the user base is small (one site, fewer than fifty users). Banking systems, school management software, point-of-sale systems, HR management tools, and inventory management systems are all strong candidates.</p>
+
+<h2>When to Choose Something Else</h2>
+<p>Desktop is not the right choice for everything. If your system needs to be accessed by users in multiple locations simultaneously, or by customers on their own devices, a web application makes more sense. If you need the application running on phones and tablets as the primary device, a mobile app or responsive web app is the right path. For applications with very large user bases, web infrastructure scales more easily.</p>
+<p>The honest answer is that most business problems require thinking carefully about the actual use case before choosing a platform — not defaulting to whichever technology is currently fashionable.</p>
+
+<h2>Getting Started</h2>
+<p>If you want to learn this stack, start with Python fundamentals (the official Python tutorial is excellent), then work through the basics of PyQt6 (the Qt documentation is comprehensive). Build something small first — a personal expense tracker, a note-taking app — before attempting a full business system. The investment in learning pays back quickly.</p>
+<p>If you have a specific business problem you want to solve with a desktop application and want to discuss whether it is the right approach, feel free to get in touch.</p>
+  
+      </div>
+
+      <div class="blog-article-cta">
+        <h3>Need IT help for your business?</h3>
+        <p>I offer IT consultations, software development, CCTV installation, and training services across Kampala.</p>
+        <a href="contact.html" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Get in Touch</a>
+        <a href="blog.html" class="btn btn-ghost"><i class="fa-solid fa-pen-nib"></i> More Articles</a>
+      </div>
+
+      <div class="blog-article-nav">
+        <a href="blog-cctv.html" class="blog-nav-link blog-nav-prev"><i class="fa-solid fa-arrow-left"></i><span>How to Plan a CCTV Installation</span></a>
+        <a href="blog-it-tips.html" class="blog-nav-link blog-nav-next"><span>5 IT Mistakes Small Businesses in Uganda Are Making</span><i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p>Musamali Christopher &mdash; IT Technician &middot; Software Developer &middot; Technical Instructor</p>
+    <p style="margin-top:4px;">Kampala, Uganda &middot; <a href="mailto:christophermusamali27@gmail.com">christophermusamali27@gmail.com</a></p>
+    <div class="footer-links">
+      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="projects.html"><i class="fa-solid fa-code"></i> Projects</a>
+      <a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a>
+      <a href="blog.html"><i class="fa-solid fa-pen-nib"></i> Blog</a>
+      <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <a href="https://github.com/seal27sol-dotcom" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+    </div>
+    <p style="margin-top:16px; font-size:0.78rem; color: var(--text-faint);">&copy; 2026 Christopher Musamali Portfolio. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+  const cur = window.location.pathname.replace(/\/$/, "").split("/").pop() || "index.html";
+  document.querySelectorAll(".nav-links a").forEach(a => { const href = a.getAttribute("href").replace(/\/$/, "").split("/").pop() || "index.html"; if (href === cur) a.classList.add("active"); });
+  const toggle = document.getElementById("navToggle"), links = document.getElementById("navLinks");
+  function closeNav() { links.classList.remove("open"); toggle.classList.remove("open"); toggle.setAttribute("aria-expanded","false"); }
+  toggle.addEventListener("click", e => { e.stopPropagation(); const open = links.classList.toggle("open"); toggle.classList.toggle("open", open); toggle.setAttribute("aria-expanded", open); });
+  links.querySelectorAll("a").forEach(a => a.addEventListener("click", closeNav));
+  document.addEventListener("click", e => { if (links.classList.contains("open") && !links.contains(e.target) && !toggle.contains(e.target)) closeNav(); });
+</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+See assets/gallery/REPLACE_THESE.txt for the full list of project screenshots.
+Files expected here:
+  banking-system.png
+  student-management.png
+  doc-converter.png
+  media-player.png
+  portfolio-site.png
+  cctv-installation.jpg

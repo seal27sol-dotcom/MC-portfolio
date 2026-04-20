@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Christopher Musamali</title>
+  <meta name="description" content="Software projects and IT field work by Musamali Christopher — Python desktop apps, web tools, and CCTV installations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="assets/visitor-tracker.js" defer></script>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-brand">CM<span>.</span></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+    <li><a href="about.html"><i class="fa-solid fa-user"></i> About</a></li>
+    <li><a href="projects.html"><i class="fa-solid fa-code"></i> Projects</a></li>
+    <li><a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a></li>
+    <li><a href="experience.html"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
+    <li><a href="skills.html"><i class="fa-solid fa-layer-group"></i> Skills</a></li>
+    <li><a href="certificates.html"><i class="fa-solid fa-certificate"></i> Certificates</a></li>
+    <li><a href="blog.html"><i class="fa-solid fa-pen-nib"></i> Blog</a></li>
+    <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<main class="page">
+  <div class="container">
+
+    <header class="page-header fade-up">
+      <p class="eyebrow">What I've Built</p>
+      <h1>Projects</h1>
+      <p>Software applications, IT field installations, and web work built for real use — not just as exercises.</p>
+    </header>
+
+    <div class="projects-full-grid">
+
+      <!-- 1: Banking Management System -->
+      <div class="project-full-card fade-up">
+        <div class="project-full-screenshot">
+          <img src="assets/projects/banking-system.png" alt="Banking Management System screenshot"
+               onerror="this.parentElement.classList.add('screenshot-missing'); this.style.display='none';" />
+          <div class="screenshot-placeholder"><i class="fa-solid fa-building-columns"></i><span>Replace with: assets/projects/banking-system.png</span></div>
+        </div>
+        <div class="project-full-body">
+          <div class="project-full-meta">
+            <span class="badge badge-accent">Desktop App</span>
+            <span class="badge badge-muted">Python</span>
+          </div>
+          <h3>Banking Management System</h3>
+          <p>A full-featured desktop banking application covering the complete lifecycle of a customer account — from opening to closing. Built for institutional use with a focus on security and auditability.</p>
+          <ul class="project-outcomes">
+            <li><i class="fa-solid fa-check"></i> Secure login with hashed passwords and session management</li>
+            <li><i class="fa-solid fa-check"></i> Role-based access: Admin, Manager, and Teller views</li>
+            <li><i class="fa-solid fa-check"></i> Full transaction processing: deposits, withdrawals, transfers</li>
+            <li><i class="fa-solid fa-check"></i> Audit log for every action — tamper-evident trail</li>
+            <li><i class="fa-solid fa-check"></i> PDF and CSV report export</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Python</span><span class="tag">PyQt6</span><span class="tag">SQLite</span>
+            <span class="tag">Role-Based Access</span><span class="tag">Audit Logging</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/seal27sol-dotcom" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="gallery.html"><i class="fa-solid fa-images"></i> See Screenshots</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2: Student Management System -->
+      <div class="project-full-card fade-up delay-1">
+        <div class="project-full-screenshot">
+          <img src="assets/projects/student-management.png" alt="Student Management System screenshot"
+               onerror="this.parentElement.classList.add('screenshot-missing'); this.style.display='none';" />
+          <div class="screenshot-placeholder"><i class="fa-solid fa-graduation-cap"></i><span>Replace with: assets/projects/student-management.png</span></div>
+        </div>
+        <div class="project-full-body">
+          <div class="project-full-meta">
+            <span class="badge badge-accent">Desktop App</span>
+            <span class="badge badge-muted">Python</span>
+          </div>
+          <h3>Class &amp; Student Management System</h3>
+          <p>An institutional management platform designed for schools and training centres. Centralises everything — from enrollment to final grades — in one desktop application accessible to admin staff.</p>
+          <ul class="project-outcomes">
+            <li><i class="fa-solid fa-check"></i> Student enrollment and profile management</li>
+            <li><i class="fa-solid fa-check"></i> Attendance tracking with daily and monthly summaries</li>
+            <li><i class="fa-solid fa-check"></i> Grade entry, GPA calculation, and academic reports</li>
+            <li><i class="fa-solid fa-check"></i> Class and timetable scheduling module</li>
+            <li><i class="fa-solid fa-check"></i> Excel and PDF data export for records and printing</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Python</span><span class="tag">PyQt6</span><span class="tag">MySQL</span>
+            <span class="tag">Admin Dashboard</span><span class="tag">Data Export</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/seal27sol-dotcom" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="gallery.html"><i class="fa-solid fa-images"></i> See Screenshots</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3: Document Converter -->
+      <div class="project-full-card fade-up">
+        <div class="project-full-screenshot">
+          <img src="assets/projects/doc-converter.png" alt="Document Converter screenshot"
+               onerror="this.parentElement.classList.add('screenshot-missing'); this.style.display='none';" />
+          <div class="screenshot-placeholder"><i class="fa-solid fa-file-export"></i><span>Replace with: assets/projects/doc-converter.png</span></div>
+        </div>
+        <div class="project-full-body">
+          <div class="project-full-meta">
+            <span class="badge badge-accent">Desktop Utility</span>
+            <span class="badge badge-muted">Python</span>
+          </div>
+          <h3>Document Converter Utility</h3>
+          <p>A productivity tool that solves a real everyday problem — converting documents between formats without needing an internet connection or paid software. Built with a clean, non-technical UI so anyone can use it.</p>
+          <ul class="project-outcomes">
+            <li><i class="fa-solid fa-check"></i> Word ↔ PDF ↔ plain text conversion</li>
+            <li><i class="fa-solid fa-check"></i> Drag-and-drop file input</li>
+            <li><i class="fa-solid fa-check"></i> Batch processing — convert multiple files at once</li>
+            <li><i class="fa-solid fa-check"></i> Progress bar and conversion status feedback</li>
+            <li><i class="fa-solid fa-check"></i> No internet connection required — fully offline</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Python</span><span class="tag">PyQt6</span>
+            <span class="tag">PDF Libraries</span><span class="tag">Batch Processing</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/seal27sol-dotcom" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4: Media Player -->
+      <div class="project-full-card fade-up delay-1">
+        <div class="project-full-screenshot">
+          <img src="assets/projects/media-player.png" alt="Media Player screenshot"
+               onerror="this.parentElement.classList.add('screenshot-missing'); this.style.display='none';" />
+          <div class="screenshot-placeholder blue"><i class="fa-solid fa-play"></i><span>Replace with: assets/projects/media-player.png</span></div>
+        </div>
+        <div class="project-full-body">
+          <div class="project-full-meta">
+            <span class="badge badge-blue">Desktop App</span>
+            <span class="badge badge-muted">Python</span>
+          </div>
+          <h3>Media Player Application</h3>
+          <p>A lightweight, custom-built desktop media player with a polished branded interface. Designed to be fast, simple, and visually distinct from generic system players.</p>
+          <ul class="project-outcomes">
+            <li><i class="fa-solid fa-check"></i> Play, pause, skip, seek, and volume controls</li>
+            <li><i class="fa-solid fa-check"></i> Playlist queue management</li>
+            <li><i class="fa-solid fa-check"></i> File browser for easy navigation</li>
+            <li><i class="fa-solid fa-check"></i> Custom branded UI with dark theme</li>
+            <li><i class="fa-solid fa-check"></i> Supports MP3, WAV, and common audio formats</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Python</span><span class="tag">PyQt6</span>
+            <span class="tag">Qt Multimedia</span><span class="tag">Playlist Management</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/seal27sol-dotcom" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5: Portfolio Website -->
+      <div class="project-full-card fade-up">
+        <div class="project-full-screenshot">
+          <img src="assets/projects/portfolio-site.png" alt="Portfolio website screenshot"
+               onerror="this.parentElement.classList.add('screenshot-missing'); this.style.display='none';" />
+          <div class="screenshot-placeholder blue"><i class="fa-solid fa-globe"></i><span>Replace with: assets/projects/portfolio-site.png</span></div>
+        </div>
+        <div class="project-full-body">
+          <div class="project-full-meta">
+            <span class="badge badge-blue">Web</span>
+            <span class="badge badge-muted">HTML/CSS/JS</span>
+          </div>
+          <h3>Personal Portfolio Website</h3>
+          <p>This portfolio — designed and built from scratch without any frameworks or templates. Every element is hand-coded with attention to performance, responsiveness, and professional presentation.</p>
+          <ul class="project-outcomes">
+            <li><i class="fa-solid fa-check"></i> 7-page responsive site with shared CSS design system</li>
+            <li><i class="fa-solid fa-check"></i> Mobile hamburger nav, fade animations, skills marquee</li>
+            <li><i class="fa-solid fa-check"></i> Formspree contact form — no backend required</li>
+            <li><i class="fa-solid fa-check"></i> Live and hosted at lakers-tech.wuaze.com</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+            <span class="tag">Formspree</span><span class="tag">Responsive Design</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/seal27sol-dotcom" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="http://www.lakers-tech.wuaze.com" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Site</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6: CCTV -->
+      <div class="project-full-card fade-up delay-1">
+        <div class="project-full-screenshot">
+          <img src="assets/projects/cctv-installation.jpg" alt="CCTV installation"
+               onerror="this.parentElement.classList.add('screenshot-missing'); this.style.display='none';" />
+          <div class="screenshot-placeholder"><i class="fa-solid fa-video"></i><span>Replace with: assets/projects/cctv-installation.jpg</span></div>
+        </div>
+        <div class="project-full-body">
+          <div class="project-full-meta">
+            <span class="badge badge-accent">Field Work</span>
+            <span class="badge badge-muted">Kampala</span>
+          </div>
+          <h3>CCTV Surveillance Installations</h3>
+          <p>End-to-end CCTV projects for clients across Kampala — from initial site visit to final handover. Each installation is planned for optimal coverage, clean cable management, and easy remote access for the client.</p>
+          <ul class="project-outcomes">
+            <li><i class="fa-solid fa-check"></i> Site assessment and camera positioning planning</li>
+            <li><i class="fa-solid fa-check"></i> Full cable routing, containment, and labelling</li>
+            <li><i class="fa-solid fa-check"></i> DVR/NVR configuration and storage setup</li>
+            <li><i class="fa-solid fa-check"></i> Remote viewing over network and mobile app setup</li>
+            <li><i class="fa-solid fa-check"></i> Client training on system use and basic maintenance</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">IP Cameras</span><span class="tag">DVR/NVR</span>
+            <span class="tag">Networking</span><span class="tag">Cable Management</span><span class="tag">Client Training</span>
+          </div>
+          <div class="project-links">
+            <a href="gallery.html"><i class="fa-solid fa-images"></i> View Installation Photos</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- GRAPHICS & DESIGN SECTION HEADER -->
+    <div class="fade-up" style="margin-top: 64px; margin-bottom: 8px;">
+      <div style="display:flex; align-items:center; gap:14px; border-left: 4px solid var(--accent); padding-left: 18px;">
+        <i class="fa-solid fa-pen-ruler" style="font-size:1.5rem; color:var(--accent);"></i>
+        <div>
+          <p class="eyebrow" style="margin:0;">Creative &amp; Visual Work</p>
+          <h2 style="margin:0; font-size:1.6rem;">Graphics &amp; Design Projects</h2>
+        </div>
+      </div>
+      <p style="margin-top:12px; color:var(--text-muted); max-width:680px;">Alongside my IT and software work, I have completed a wide range of graphic design and visual communication projects — using Adobe Creative Suite, CorelDRAW, Canva, Figma, Framer, Filmora, and Adobe Animate.</p>
+    </div>
+
+    <div class="projects-full-grid" style="margin-top: 28px;">
+
+      <!-- G1: Branding & Identity Kit -->
+      <div class="project-full-card fade-up">
+        <div class="project-full-screenshot">
+          <img src="assets/projects/graphic-branding-kit.png" alt="Branding and Identity Kit"
+               onerror="this.parentElement.classList.add('screenshot-missing'); this.style.display='none';" />
+          <div class="screenshot-placeholder"><i class="fa-solid fa-palette"></i><span>Replace with: assets/projects/graphic-branding-kit.png</span></div>
+        </div>
+        <div class="project-full-body">
+          <div class="project-full-meta">
+            <span class="badge badge-accent">Branding</span>
+            <span class="badge badge-muted">Adobe · CorelDRAW</span>
+          </div>
+          <h3>Brand Identity &amp; Logo Design Collection</h3>
+          <p>Full brand identity packages developed for multiple clients and organisations — covering logo design, colour systems, typography selection, and brand guidelines documentation. Each project started from client brief and delivered a complete, deployable visual identity.</p>
+          <ul class="project-outcomes">
+            <li><i class="fa-solid fa-check"></i> Primary and secondary logo variants (horizontal, stacked, icon-only)</li>
+            <li><i class="fa-solid fa-check"></i> Full brand colour palette and typography hierarchy</li>
+            <li><i class="fa-solid fa-check"></i> Business card, letterhead, and stationery designs</li>
+            <li><i class="fa-solid fa-check"></i> Brand guidelines PDF for consistent application</li>
+            <li><i class="fa-solid fa-check"></i> Delivered in print-ready and web-ready formats</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Adobe Illustrator</span><span class="tag">CorelDRAW</span>
+            <span class="tag">Brand Identity</span><span class="tag">Logo Design</span><span class="tag">Typography</span>
+          </div>
+          <div class="project-links">
+            <a href="gallery.html"><i class="fa-solid fa-images"></i> View Samples</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- G2: Poster & Print Design -->
+      <div class="project-full-card fade-up delay-1">
+        <div class="project-full-screenshot">
+          <img src="assets/projects/graphic-poster-design.png" alt="Poster and Print Design"
+               onerror="this.parentElement.classList.add('screenshot-missing'); this.style.display='none';" />
+          <div class="screenshot-placeholder"><i class="fa-solid fa-image"></i><span>Replace with: assets/projects/graphic-poster-design.png</span></div>
+        </div>
+        <div class="project-full-body">
+          <div class="project-full-meta">
+            <span class="badge badge-accent">Print Design</span>
+            <span class="badge badge-muted">Adobe · Canva</span>
+          </div>
+          <h3>Poster, Flyer &amp; Print Design Work</h3>
+          <p>A large collection of poster, flyer, and print design projects produced for events, businesses, and organisations across Kampala. Each piece was designed to communicate clearly, capture attention, and work both in print and digital distribution.</p>
+          <ul class="project-outcomes">
+            <li><i class="fa-solid fa-check"></i> Event posters for conferences, trainings, and promotions</li>
+            <li><i class="fa-solid fa-check"></i> Business promotional flyers and product cards</li>
+            <li><i class="fa-solid fa-check"></i> A4/A3 print layouts prepared at 300dpi for commercial printing</li>
+            <li><i class="fa-solid fa-check"></i> Digital versions optimised for WhatsApp, email, and web</li>
+            <li><i class="fa-solid fa-check"></i> Multiple revision rounds to match client requirements</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Adobe Photoshop</span><span class="tag">Adobe InDesign</span>
+            <span class="tag">Canva</span><span class="tag">Print Design</span><span class="tag">Event Graphics</span>
+          </div>
+          <div class="project-links">
+            <a href="gallery.html"><i class="fa-solid fa-images"></i> View Samples</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- G3: Social Media Graphics -->
+      <div class="project-full-card fade-up">
+        <div class="project-full-screenshot">
+          <img src="assets/projects/graphic-social-media.png" alt="Social Media Graphics"
+               onerror="this.parentElement.classList.add('screenshot-missing'); this.style.display='none';" />
+          <div class="screenshot-placeholder"><i class="fa-solid fa-share-nodes"></i><span>Replace with: assets/projects/graphic-social-media.png</span></div>
+        </div>
+        <div class="project-full-body">
+          <div class="project-full-meta">
+            <span class="badge badge-blue">Social Media</span>
+            <span class="badge badge-muted">Canva · Figma</span>
+          </div>
+          <h3>Social Media Content &amp; Template Systems</h3>
+          <p>Designed and produced social media content packages and reusable template systems for clients managing their own ongoing presence on Facebook, Instagram, and LinkedIn. Templates were built to be easily editable by non-designers.</p>
+          <ul class="project-outcomes">
+            <li><i class="fa-solid fa-check"></i> Post templates for Facebook, Instagram, and LinkedIn</li>
+            <li><i class="fa-solid fa-check"></i> Story and highlight cover designs</li>
+            <li><i class="fa-solid fa-check"></i> Profile and banner graphics for business pages</li>
+            <li><i class="fa-solid fa-check"></i> Editable Canva template libraries handed to clients</li>
+            <li><i class="fa-solid fa-check"></i> Content calendar visual layouts and infographic templates</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Canva</span><span class="tag">Figma</span>
+            <span class="tag">Social Media</span><span class="tag">Template Design</span><span class="tag">Infographics</span>
+          </div>
+          <div class="project-links">
+            <a href="gallery.html"><i class="fa-solid fa-images"></i> View Samples</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- G4: UI/UX Mockup Design -->
+      <div class="project-full-card fade-up delay-1">
+        <div class="project-full-screenshot">
+          <img src="assets/projects/graphic-ui-mockup.png" alt="UI/UX Mockup Design"
+               onerror="this.parentElement.classList.add('screenshot-missing'); this.style.display='none';" />
+          <div class="screenshot-placeholder blue"><i class="fa-solid fa-object-group"></i><span>Replace with: assets/projects/graphic-ui-mockup.png</span></div>
+        </div>
+        <div class="project-full-body">
+          <div class="project-full-meta">
+            <span class="badge badge-blue">UI/UX Design</span>
+            <span class="badge badge-muted">Figma · Framer</span>
+          </div>
+          <h3>UI/UX Wireframes &amp; Interactive Prototypes</h3>
+          <p>Designed application interfaces, web page mockups, and interactive prototypes for software and web projects — both for my own development work and for client projects requiring visual design before handoff to developers.</p>
+          <ul class="project-outcomes">
+            <li><i class="fa-solid fa-check"></i> Wireframes and high-fidelity UI designs in Figma</li>
+            <li><i class="fa-solid fa-check"></i> Interactive prototypes with click-through flows in Framer</li>
+            <li><i class="fa-solid fa-check"></i> Component libraries and design tokens for consistent UI</li>
+            <li><i class="fa-solid fa-check"></i> Mobile and desktop responsive layout designs</li>
+            <li><i class="fa-solid fa-check"></i> Design handoff documentation for developers</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Figma</span><span class="tag">Framer</span>
+            <span class="tag">UI Design</span><span class="tag">Prototyping</span><span class="tag">Design Systems</span>
+          </div>
+          <div class="project-links">
+            <a href="gallery.html"><i class="fa-solid fa-images"></i> View Samples</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- G5: Motion Graphics & Animation -->
+      <div class="project-full-card fade-up">
+        <div class="project-full-screenshot">
+          <img src="assets/projects/graphic-motion-graphics.png" alt="Motion Graphics and Animation"
+               onerror="this.parentElement.classList.add('screenshot-missing'); this.style.display='none';" />
+          <div class="screenshot-placeholder"><i class="fa-solid fa-film"></i><span>Replace with: assets/projects/graphic-motion-graphics.png</span></div>
+        </div>
+        <div class="project-full-body">
+          <div class="project-full-meta">
+            <span class="badge badge-accent">Motion &amp; Video</span>
+            <span class="badge badge-muted">Filmora · AA Animator</span>
+          </div>
+          <h3>Motion Graphics, Animation &amp; Video Editing</h3>
+          <p>Produced animated content, motion graphics, and edited video for clients and personal projects using Filmora for video editing and Adobe Animate (AA Animator) for 2D animation and frame-by-frame motion work.</p>
+          <ul class="project-outcomes">
+            <li><i class="fa-solid fa-check"></i> Animated intro and outro sequences for video content</li>
+            <li><i class="fa-solid fa-check"></i> 2D character and explainer animations in Adobe Animate</li>
+            <li><i class="fa-solid fa-check"></i> Promotional video editing with text overlays and transitions</li>
+            <li><i class="fa-solid fa-check"></i> Lower thirds, title cards, and animated logo reveals</li>
+            <li><i class="fa-solid fa-check"></i> Social media short-form video content packages</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Filmora</span><span class="tag">Adobe Animate</span>
+            <span class="tag">Motion Graphics</span><span class="tag">2D Animation</span><span class="tag">Video Editing</span>
+          </div>
+          <div class="project-links">
+            <a href="gallery.html"><i class="fa-solid fa-images"></i> View Samples</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- G6: Logo Design Collection -->
+      <div class="project-full-card fade-up delay-1">
+        <div class="project-full-screenshot">
+          <img src="assets/projects/graphic-logo-collection.png" alt="Logo Design Collection"
+               onerror="this.parentElement.classList.add('screenshot-missing'); this.style.display='none';" />
+          <div class="screenshot-placeholder"><i class="fa-solid fa-star"></i><span>Replace with: assets/projects/graphic-logo-collection.png</span></div>
+        </div>
+        <div class="project-full-body">
+          <div class="project-full-meta">
+            <span class="badge badge-accent">Logo Design</span>
+            <span class="badge badge-muted">Adobe · CorelDRAW</span>
+          </div>
+          <h3>Logo Design Portfolio — Multiple Clients</h3>
+          <p>An ongoing collection of logo and mark designs created for businesses, organisations, and individuals across various sectors — retail, services, education, technology, and community organisations. Each logo is delivered in vector format for unlimited scalability.</p>
+          <ul class="project-outcomes">
+            <li><i class="fa-solid fa-check"></i> Wordmarks, lettermarks, pictorial marks, and combination marks</li>
+            <li><i class="fa-solid fa-check"></i> Delivered as vector (AI, EPS, SVG) and raster (PNG, JPG) files</li>
+            <li><i class="fa-solid fa-check"></i> Full/colour, black &amp; white, and reversed colour variants</li>
+            <li><i class="fa-solid fa-check"></i> Concept exploration and iterative client feedback rounds</li>
+            <li><i class="fa-solid fa-check"></i> Usage documentation for print, web, and embroidery use cases</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Adobe Illustrator</span><span class="tag">CorelDRAW</span>
+            <span class="tag">Logo Design</span><span class="tag">Vector Graphics</span><span class="tag">Brand Marks</span>
+          </div>
+          <div class="project-links">
+            <a href="gallery.html"><i class="fa-solid fa-images"></i> View Samples</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- GitHub CTA -->
+    <div class="card fade-up" style="margin-top:48px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
+      <div>
+        <h3 style="font-size:1.1rem; margin-bottom:6px;">View Source Code on GitHub</h3>
+        <p style="font-size:0.88rem; color:var(--text-muted);">All code repositories available on my GitHub profile.</p>
+      </div>
+      <a href="https://github.com/seal27sol-dotcom" target="_blank" rel="noopener" class="btn btn-primary">
+        <i class="fa-brands fa-github"></i> github.com/seal27sol-dotcom
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p>Musamali Christopher &mdash; IT Technician &middot; Software Developer &middot; Technical Instructor</p>
+    <p style="margin-top:4px;">Kampala, Uganda &middot; <a href="mailto:christophermusamali27@gmail.com">christophermusamali27@gmail.com</a></p>
+    <div class="footer-links">
+      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="projects.html"><i class="fa-solid fa-code"></i> Projects</a>
+      <a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a>
+      <a href="blog.html"><i class="fa-solid fa-pen-nib"></i> Blog</a>
+      <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <a href="https://github.com/seal27sol-dotcom" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+    </div>
+    <p style="margin-top:16px; font-size:0.78rem; color: var(--text-faint);">&copy; 2026 Christopher Musamali Portfolio. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const cur = window.location.pathname.replace(/\/$/, "").split("/").pop() || "index.html";
+  document.querySelectorAll(".nav-links a").forEach(a => {
+    const href = a.getAttribute("href").replace(/\/$/, "").split("/").pop() || "index.html";
+    if (href === cur) a.classList.add("active");
+  });
+  const toggle = document.getElementById("navToggle");
+  const links  = document.getElementById("navLinks");
+  function closeNav() { links.classList.remove("open"); toggle.classList.remove("open"); toggle.setAttribute("aria-expanded","false"); }
+  toggle.addEventListener("click", e => { e.stopPropagation(); const open = links.classList.toggle("open"); toggle.classList.toggle("open", open); toggle.setAttribute("aria-expanded", open); });
+  links.querySelectorAll("a").forEach(a => a.addEventListener("click", closeNav));
+  document.addEventListener("click", e => { if (links.classList.contains("open") && !links.contains(e.target) && !toggle.contains(e.target)) closeNav(); });
+</script>
+</body>
+</html>
