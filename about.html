@@ -7,6 +7,7 @@
   <meta name="description" content="About Musamali Christopher — IT professional, software developer, and technical instructor based in Kampala, Uganda." />  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
   <script src="assets/visitor-tracker.js" defer></script>
+  <script src="js/global.js" defer></script>
 </head>
 <body>
 
@@ -24,6 +25,17 @@
     <li><a href="blog.html"><i class="fa-solid fa-pen-nib"></i> Blog</a></li>
     <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
   </ul>
+  <div class="clock-widget" id="clock-widget">
+    <div class="clock-face-digital" id="clock-digital-text"><i class="fa-regular fa-clock"></i></div>
+    <div class="clock-face-analog"><canvas id="clock-analog-canvas" width="36" height="36"></canvas></div>
+    <button class="clock-toggle-btn" id="clock-toggle-btn" onclick="toggleClock()" title="Switch to Analog" aria-label="Toggle clock mode">
+      <i class="fa-solid fa-rotate"></i>
+    </button>
+  </div>
+  <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode" aria-label="Toggle theme">
+    <span class="icon-sun"><i class="fa-solid fa-sun"></i></span>
+    <span class="icon-moon"><i class="fa-solid fa-moon"></i></span>
+  </button>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
     <span></span><span></span><span></span>
   </button>
@@ -183,46 +195,14 @@
       <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
       <a href="https://github.com/seal27sol-dotcom" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
     </div>
-    <p style="margin-top:16px; font-size:0.78rem; color: var(--text-faint);">&copy; 2026 Christopher Musamali Portfolio. All rights reserved.</p>
+    <div class="copyright-line">
+      <i class="fa-solid fa-shield-halved"></i>
+      &copy; 2026 <strong>Christopher Musamali</strong>. All rights reserved. Unauthorized reproduction prohibited.
+    </div>
   </div>
 </footer>
 
-<script>
-  // Active nav — robust against trailing slashes and directory paths
-  const cur = window.location.pathname.replace(/\/$/, "").split("/").pop() || "index.html";
-  document.querySelectorAll(".nav-links a").forEach(a => {
-    const href = a.getAttribute("href").replace(/\/$/, "").split("/").pop() || "index.html";
-    if (href === cur) a.classList.add("active");
-  });
 
-  // Mobile nav toggle
-  const toggle = document.getElementById("navToggle");
-  const links  = document.getElementById("navLinks");
-
-  function closeNav() {
-    links.classList.remove("open");
-    toggle.classList.remove("open");
-    toggle.setAttribute("aria-expanded", "false");
-  }
-
-  toggle.addEventListener("click", e => {
-    e.stopPropagation();
-    const open = links.classList.toggle("open");
-    toggle.classList.toggle("open", open);
-    toggle.setAttribute("aria-expanded", open);
-  });
-
-  // Close nav when a link is clicked on mobile
-  links.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", closeNav);
-  });
-
-  // Close nav when clicking outside
-  document.addEventListener("click", e => {
-    if (links.classList.contains("open") && !links.contains(e.target) && !toggle.contains(e.target)) {
-      closeNav();
-    }
-  });
-</script>
+<div id="pt-overlay" class="page-transition-overlay"><div class="pt-bar"></div><div class="pt-logo">CM<span style="color:var(--accent,#14b8a6)">.</span></div></div>
 </body>
 </html>
