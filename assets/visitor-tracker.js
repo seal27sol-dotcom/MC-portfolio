@@ -108,12 +108,15 @@
 
       /* ── MODAL CARD ── */
       .cm-card {
-        background: #0e1729;
-        border: 1px solid rgba(20,184,166,0.18);
-        border-radius: 22px; padding: 40px 36px 32px;
+        background: rgba(14, 23, 41, 0.78);
+        border: 1px solid rgba(255,255,255,0.16);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border-radius: 22px;
+        padding: 40px 36px 32px;
         max-width: 420px; width: 100%;
         box-shadow: 0 32px 80px rgba(0,0,0,0.65),
-                    0 0 0 1px rgba(20,184,166,0.06);
+                    0 0 0 1px rgba(255,255,255,0.06);
         animation: cmSlideUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         text-align: center;
       }
@@ -309,20 +312,12 @@
         <div class="cm-field">
           <label>Email Address <span class="cm-opt">(optional)</span></label>
           <input id="cmEmail" type="email" placeholder="you@example.com" autocomplete="email" />
-          <div class="cm-err-msg" id="cmEmailErr">That email doesn't look right.</div>
+          <div class="cm-err-msg" id="cmEmailErr">Please enter a valid email address.</div>
         </div>
 
         <div class="cm-actions">
           <button class="cm-btn-primary" id="cmContinue">
             <i class="fa-solid fa-rocket"></i> Continue
-          </button>
-          <div class="cm-divider">
-            <span class="cm-divider-line"></span>
-            <span class="cm-divider-text">or</span>
-            <span class="cm-divider-line"></span>
-          </div>
-          <button class="cm-btn-ghost" id="cmGuest">
-            <i class="fa-solid fa-user-secret"></i> Continue as Guest
           </button>
         </div>
       </div>`;
@@ -339,11 +334,10 @@
       if (e.key === 'Enter') handleSubmit(false);
     });
 
-    document.getElementById('cmContinue').addEventListener('click', () => handleSubmit(false));
-    document.getElementById('cmGuest').addEventListener('click',    () => handleSubmit(true));
+    document.getElementById('cmContinue').addEventListener('click', () => handleSubmit());
   }
 
-  function handleSubmit(isGuest) {
+  function handleSubmit() {
     const nameEl  = document.getElementById('cmName');
     const emailEl = document.getElementById('cmEmail');
     const nameErr = document.getElementById('cmNameErr');
@@ -353,32 +347,32 @@
     nameErr.classList.remove('show');
     mailErr.classList.remove('show');
 
-    if (isGuest) {
-      commitVisitor('Guest', '', true);
-      return;
-    }
-
     const name  = nameEl.value.trim();
     const email = emailEl.value.trim();
+    const normalized = name.toLowerCase().replace(/\s+/g, ' ').trim();
+    const blacklisted = ['dog', 'cat', 'guest', 'admin', 'test', 'anonymous', 'none', 'user', 'qwerty', 'asdf', 'hello'];
+    const nameWords = normalized.split(' ').filter(Boolean);
 
-    if (!name) {
+    if (!name || name.length < 3 || /[0-9!@#$%^&*()_+=[\]{};:'"\\|,<>/?]/.test(name) || nameWords.some(word => blacklisted.includes(word))) {
+      nameErr.textContent = 'Please enter your real name.';
       nameErr.classList.add('show');
       nameEl.focus();
       return;
     }
 
     if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      mailErr.textContent = 'Please enter a valid email address.';
       mailErr.classList.add('show');
       emailEl.focus();
       return;
     }
 
-    commitVisitor(name, email, false);
+    commitVisitor(name, email);
   }
 
-  function commitVisitor(name, email, isGuest) {
+  function commitVisitor(name, email) {
     const entryTime = new Date();
-    const visitor   = { name, email, isGuest, entryTime: entryTime.toISOString() };
+    const visitor   = { name, email, isGuest: false, entryTime: entryTime.toISOString() };
 
     sessionStorage.setItem(SESSION_KEY, JSON.stringify(visitor));
     sessionStorage.setItem(ENTRY_TS_KEY, entryTime.toISOString());
@@ -390,7 +384,7 @@
       setTimeout(() => modal.remove(), 380);
     }
 
-    sendEntry(name, email, isGuest, entryTime);
+    sendEntry(name, email, false, entryTime);
     setupExitTracking(name, email);
   }
 
