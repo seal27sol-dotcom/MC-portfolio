@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Christopher Musamali</title>
+  <meta name="description" content="Get in touch with Musamali Christopher — IT Technician, Software Developer & Technical Instructor based in Kampala, Uganda. Available for roles, projects & consultations." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="assets/visitor-tracker.js" defer></script>
+  <script src="js/global.js" defer></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">CM<span>.</span></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+    <li><a href="about.html"><i class="fa-solid fa-user"></i> About</a></li>
+    <li><a href="projects.html"><i class="fa-solid fa-code"></i> Projects</a></li>
+    <li><a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a></li>
+    <li><a href="experience.html"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
+    <li><a href="skills.html"><i class="fa-solid fa-layer-group"></i> Skills</a></li>
+    <li><a href="certificates.html"><i class="fa-solid fa-certificate"></i> Certificates</a></li>
+    <li><a href="blog.html"><i class="fa-solid fa-pen-nib"></i> Blog</a></li>
+    <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+  </ul>
+  <div class="clock-widget" id="clock-widget">
+    <div class="clock-face-digital" id="clock-digital-text"><i class="fa-regular fa-clock"></i></div>
+    <div class="clock-face-analog"><canvas id="clock-analog-canvas" width="36" height="36"></canvas></div>
+    <button class="clock-toggle-btn" id="clock-toggle-btn" onclick="toggleClock()" title="Switch to Analog" aria-label="Toggle clock mode">
+      <i class="fa-solid fa-rotate"></i>
+    </button>
+  </div>
+  <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode" aria-label="Toggle theme">
+    <span class="icon-sun"><i class="fa-solid fa-sun"></i></span>
+    <span class="icon-moon"><i class="fa-solid fa-moon"></i></span>
+  </button>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<main class="page">
+  <div class="container">
+
+    <!-- ── HERO STRIP ─────────────────────────────────────── -->
+    <div class="contact-hero fade-up">
+      <div class="contact-hero-text">
+        <h1>Let's <span>Work Together</span></h1>
+        <p>
+          Whether you need a custom software solution, CCTV installation, network setup, IT training, or just want to talk tech — I'd love to hear from you. Based in Kampala and available remotely across Uganda and beyond.
+        </p>
+      </div>
+      <div class="contact-hero-badges">
+        <div class="availability-badge open">
+          <span class="dot"></span> Open to Opportunities
+        </div>
+        <div class="response-badge">
+          <i class="fa-solid fa-bolt"></i> Typical reply within 24 hrs
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SERVICES CHIPS ──────────────────────────────────── -->
+    <div class="contact-services fade-up delay-1">
+      <div class="service-chip"><i class="fa-solid fa-code"></i> Software Development</div>
+      <div class="service-chip"><i class="fa-solid fa-network-wired"></i> Network Setup & Support</div>
+      <div class="service-chip"><i class="fa-solid fa-video"></i> CCTV Installation</div>
+      <div class="service-chip"><i class="fa-solid fa-chalkboard-teacher"></i> IT Training & Workshops</div>
+      <div class="service-chip"><i class="fa-solid fa-palette"></i> Graphic Design</div>
+      <div class="service-chip"><i class="fa-solid fa-screwdriver-wrench"></i> Hardware Repair</div>
+      <div class="service-chip"><i class="fa-solid fa-shield-halved"></i> Cybersecurity Consultation</div>
+      <div class="service-chip"><i class="fa-solid fa-briefcase"></i> IT Roles & Full-time</div>
+    </div>
+
+    <!-- ── QUICK CONTACT SHORTCUTS ─────────────────────────── -->
+    <div class="quick-contact-bar fade-up delay-1">
+      <a href="mailto:christophermusamali27@gmail.com" class="quick-contact-item">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Email</span>
+      </a>
+      <a href="tel:+256705722874" class="quick-contact-item">
+        <i class="fa-solid fa-phone"></i>
+        <span>Call</span>
+      </a>
+      <a href="https://wa.me/256705722874" target="_blank" rel="noopener" class="quick-contact-item">
+        <i class="fa-brands fa-whatsapp" style="color:#25d366;"></i>
+        <span>WhatsApp</span>
+      </a>
+      <a href="https://www.linkedin.com/in/christopher-musamali-7bb768295" target="_blank" rel="noopener" class="quick-contact-item">
+        <i class="fa-brands fa-linkedin" style="color:#0a66c2;"></i>
+        <span>LinkedIn</span>
+      </a>
+      <a href="https://github.com/seal27sol-dotcom" target="_blank" rel="noopener" class="quick-contact-item">
+        <i class="fa-brands fa-github"></i>
+        <span>GitHub</span>
+      </a>
+    </div>
+
+    <!-- ── MAIN GRID ───────────────────────────────────────── -->
+    <div class="contact-layout">
+
+      <!-- LEFT: Info Card -->
+      <aside class="fade-up delay-1">
+        <div class="contact-info-card card">
+
+          <div class="info-header">
+            <h3><i class="fa-solid fa-address-card"></i> Contact Details</h3>
+            <p>Reach Christopher through any of these channels</p>
+          </div>
+
+          <div class="contact-row">
+            <div class="contact-row-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="contact-row-body">
+              <div class="lbl">Email</div>
+              <div class="val"><a href="mailto:christophermusamali27@gmail.com">christophermusamali27@gmail.com</a></div>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <div class="contact-row-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="contact-row-body">
+              <div class="lbl">Phone / WhatsApp</div>
+              <div class="val">
+                <a href="tel:+256705722874">+256 705 722 874</a><br>
+                <a href="tel:+256783855750">+256 783 855 750</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <div class="contact-row-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="contact-row-body">
+              <div class="lbl">Location</div>
+              <div class="val">Kampala, Uganda 🇺🇬<br>
+                <span style="font-size:0.78rem; color:var(--text-faint);">Available remotely across Uganda &amp; East Africa</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <div class="contact-row-icon"><i class="fa-brands fa-linkedin"></i></div>
+            <div class="contact-row-body">
+              <div class="lbl">LinkedIn</div>
+              <div class="val"><a href="https://www.linkedin.com/in/christopher-musamali-7bb768295" target="_blank" rel="noopener">Musamali Christopher</a></div>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <div class="contact-row-icon"><i class="fa-brands fa-github"></i></div>
+            <div class="contact-row-body">
+              <div class="lbl">GitHub</div>
+              <div class="val"><a href="https://github.com/seal27sol-dotcom" target="_blank" rel="noopener">seal27sol-dotcom</a></div>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <div class="contact-row-icon"><i class="fa-solid fa-globe"></i></div>
+            <div class="contact-row-body">
+              <div class="lbl">Portfolio</div>
+              <div class="val"><a href="http://www.lakers-tech.wuaze.com" target="_blank" rel="noopener">lakers-tech.wuaze.com</a></div>
+            </div>
+          </div>
+
+          <!-- Working Hours -->
+          <div class="working-hours">
+            <h4><i class="fa-solid fa-clock" style="color:var(--accent);margin-right:5px;"></i> Working Hours (EAT, UTC+3)</h4>
+            <div class="hours-row"><span class="day">Mon – Fri</span><span class="time">8:00 AM – 6:00 PM</span></div>
+            <div class="hours-row"><span class="day">Saturday</span><span class="time">9:00 AM – 2:00 PM</span></div>
+            <div class="hours-row"><span class="day">Sunday</span><span class="time">Emergency only</span></div>
+          </div>
+
+          <!-- CV Download -->
+          <div style="margin-top:22px; padding-top:20px; border-top:1px solid var(--border);">
+            <a href="assets/Musamali_Christopher_CV.pdf" class="btn btn-primary" style="width:100%; justify-content:center;" download>
+              <i class="fa-solid fa-download"></i> Download CV (PDF)
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT: Contact Form -->
+      <div class="contact-form-card fade-up delay-2">
+        <h3 style="font-size:1.2rem; margin-bottom:4px;">Send a Message</h3>
+        <p style="font-size:0.87rem; color:var(--text-muted); margin-bottom:22px;">
+          Tell me what you need — I'll get back to you within 24 hours.
+        </p>
+
+        <!-- Subject quick-pick -->
+        <span class="form-section-label">What's this about?</span>
+        <div class="subject-chips" id="subjectChips">
+          <button class="subject-chip" type="button">Job Opportunity</button>
+          <button class="subject-chip" type="button">Software Project</button>
+          <button class="subject-chip" type="button">CCTV / Networking</button>
+          <button class="subject-chip" type="button">IT Training</button>
+          <button class="subject-chip" type="button">Freelance Work</button>
+          <button class="subject-chip" type="button">General Inquiry</button>
+        </div>
+
+        <form id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="nameInput">Your Name <span style="color:#ef4444;">*</span></label>
+            <input type="text" id="nameInput" placeholder="e.g. Jane Mwangi" required />
+          </div>
+
+          <div class="form-row contact-method-row">
+            <div class="form-group">
+              <label for="emailInput"><i class="fa-solid fa-envelope" style="color:var(--accent);margin-right:5px;"></i>Email</label>
+              <input type="email" id="emailInput" placeholder="you@example.com" />
+            </div>
+            <div class="form-group">
+              <label for="whatsappInput"><i class="fa-brands fa-whatsapp" style="color:#25d366;margin-right:5px;"></i>WhatsApp</label>
+              <input type="tel" id="whatsappInput" placeholder="+256 700 123 456" />
+            </div>
+          </div>
+          <p class="form-hint" id="contactMethodHint">
+            <i class="fa-solid fa-circle-info"></i> Provide at least one — Email or WhatsApp.
+          </p>
+
+          <div class="form-group">
+            <label for="subjectInput">Subject <span style="color:#ef4444;">*</span></label>
+            <input type="text" id="subjectInput" placeholder="e.g. Job opportunity / Project inquiry" required />
+          </div>
+
+          <div class="form-group">
+            <label for="messageInput">Message <span style="color:#ef4444;">*</span></label>
+            <textarea id="messageInput" rows="6" maxlength="1000" placeholder="Describe your project, question, or opportunity in detail — the more context, the better I can help..." required></textarea>
+            <div class="char-counter" id="charCounter">0 / 1000</div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:4px;">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+          <div class="form-status" id="formStatus"></div>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p>Musamali Christopher &mdash; IT Technician &middot; Software Developer &middot; Technical Instructor</p>
+    <p style="margin-top:4px;">Kampala, Uganda &middot; <a href="mailto:christophermusamali27@gmail.com">christophermusamali27@gmail.com</a></p>
+    <div class="footer-links">
+      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="projects.html"><i class="fa-solid fa-code"></i> Projects</a>
+      <a href="experience.html"><i class="fa-solid fa-briefcase"></i> Experience</a>
+      <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <a href="https://github.com/seal27sol-dotcom" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+    </div>
+    <div class="copyright-line">
+      <i class="fa-solid fa-shield-halved"></i>
+      &copy; 2026 <strong>Christopher Musamali</strong>. All rights reserved. Unauthorized reproduction prohibited.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Subject chip → fill subject input
+  document.querySelectorAll('#subjectChips .subject-chip').forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      document.querySelectorAll('#subjectChips .subject-chip').forEach(function(c){ c.classList.remove('active'); });
+      chip.classList.add('active');
+      document.getElementById('subjectInput').value = chip.textContent.trim();
+    });
+  });
+
+  // Character counter
+  var msgInput = document.getElementById('messageInput');
+  var counter  = document.getElementById('charCounter');
+  msgInput.addEventListener('input', function() {
+    var len = msgInput.value.length;
+    counter.textContent = len + ' / 1000';
+    counter.className = 'char-counter' + (len > 900 ? ' over' : len > 700 ? ' warn' : '');
+  });
+
+  // Contact form submission
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    var name     = document.getElementById('nameInput').value.trim();
+    var email    = document.getElementById('emailInput').value.trim();
+    var whatsapp = document.getElementById('whatsappInput').value.trim();
+    var subject  = document.getElementById('subjectInput').value.trim();
+    var message  = document.getElementById('messageInput').value.trim();
+    var status   = document.getElementById('formStatus');
+    var btn      = this.querySelector('button[type="submit"]');
+
+    status.className = 'form-status';
+    status.textContent = '';
+
+    if (!name) { status.className='form-status show-error'; status.textContent='Please enter your name.'; return; }
+    if (!email && !whatsapp) { status.className='form-status show-error'; status.innerHTML='<i class="fa-solid fa-triangle-exclamation"></i> Please provide at least an Email or WhatsApp number.'; return; }
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { status.className='form-status show-error'; status.textContent="That email address doesn't look right."; return; }
+    if (whatsapp && !/^\+[\d\s\-]{7,}$/.test(whatsapp)) { status.className='form-status show-error'; status.innerHTML='<i class="fa-solid fa-triangle-exclamation"></i> WhatsApp number must start with a country code (e.g. <strong>+256 700 123 456</strong>).'; return; }
+    if (!subject) { status.className='form-status show-error'; status.textContent='Please add a subject.'; return; }
+    if (!message) { status.className='form-status show-error'; status.textContent='Please write a message.'; return; }
+
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending\u2026';
+
+    try {
+      var res = await fetch('https://formspree.io/f/maqpropp', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email: email||'(not provided)', whatsapp: whatsapp||'(not provided)', subject, message })
+      });
+      if (res.ok) {
+        status.className = 'form-status show-success';
+        status.innerHTML = '<i class="fa-solid fa-circle-check"></i> Message sent! Christopher will get back to you shortly.';
+        this.reset();
+        counter.textContent = '0 / 1000';
+        counter.className = 'char-counter';
+        document.querySelectorAll('#subjectChips .subject-chip').forEach(function(c){ c.classList.remove('active'); });
+      } else {
+        throw new Error('failed');
+      }
+    } catch(err) {
+      status.className = 'form-status show-error';
+      status.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Something went wrong — email directly at <a href="mailto:christophermusamali27@gmail.com">christophermusamali27@gmail.com</a>.';
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+    }
+  });
+</script>
+<div id="pt-overlay" class="page-transition-overlay"><div class="pt-bar"></div><div class="pt-logo">CM<span style="color:var(--accent,#14b8a6)">.</span></div></div>
+</body>
+</html>

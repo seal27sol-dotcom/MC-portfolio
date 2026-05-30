@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Master stylesheet — imports existing partials only */
 /* All pages use css/style.css which contains everything */
 /* This file exists for reference; pages link style.css directly */
@@ -5,3 +6,19 @@
 @import url("base/reset-variables.css");
 @import url("components/nav.css");
 @import url("themes/light-mode.css");
+=======
+/* Master stylesheet — imports all partials */
+/* For static hosting, reference main.css directly from HTML */
+
+@import url("base/reset-variables.css");
+@import url("base/typography.css");
+@import url("components/nav.css");
+@import url("components/buttons.css");
+@import url("components/cards.css");
+@import url("components/blog.css");
+@import url("pages/home.css");
+@import url("pages/projects.css");
+@import url("pages/gallery.css");
+@import url("themes/light-mode.css");
+@import url("themes/transitions.css");
+>>>>>>> 026fc6af119aa5fab4cd80203a27e49ebee16b7e
