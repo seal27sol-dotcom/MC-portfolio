@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why I Build Desktop Apps with Python and PyQt6 — And When You Should Too — Christopher Musamali</title>
+  <meta name="description" content="The case for Python and PyQt6 desktop applications for real-world business problems in Uganda — from a developer who builds them." />
+  <link rel="canonical" href="http://www.lakers-tech.wuaze.com/blog-python.html" />
+  <meta property="og:title" content="Why I Build Desktop Apps with Python and PyQt6 — And When You Should Too" />
+  <meta property="og:description" content="A practical case for choosing desktop apps over web apps for Ugandan business problems where reliability and offline access matter." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://www.lakers-tech.wuaze.com/blog-python.html" />
+  <meta property="og:image" content="http://www.lakers-tech.wuaze.com/assets/my_img.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../../css/style.css" />
+  <script src="../../js/env-config.js"></script>
+  <script src="../../js/activity-logger.js" defer></script>
+  <script src="../../js/session-tracker.js"></script>
+  <script src="../../js/utils/visitor-tracker.js" defer></script>
+  <script src="../../js/core/global.js" defer></script>
+</head>
+<body>
+
+<div id="reading-progress"></div>
+<nav>
+  <div class="nav-brand">CM<span>.</span></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+    <li><a href="../about.html"><i class="fa-solid fa-user"></i> About</a></li>
+    <li><a href="../projects.html"><i class="fa-solid fa-code"></i> Projects</a></li>
+    <li><a href="../gallery.html"><i class="fa-solid fa-images"></i> Gallery</a></li>
+    <li><a href="../experience.html"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
+    <li><a href="../skills.html"><i class="fa-solid fa-layer-group"></i> Skills</a></li>
+    <li><a href="../certificates.html"><i class="fa-solid fa-certificate"></i> Certificates</a></li>
+    <li><a href="../blog.html"><i class="fa-solid fa-pen-nib"></i> Blog</a></li>
+    <li><a href="../contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+    <li><a href="../support.html"><i class="fa-solid fa-headset"></i> Support</a></li>
+  </ul>
+  <div class="clock-widget" id="clock-widget">
+    <div class="clock-face-digital" id="clock-digital-text"><i class="fa-regular fa-clock"></i></div>
+    <div class="clock-face-analog"><canvas id="clock-analog-canvas" width="36" height="36"></canvas></div>
+    <button class="clock-toggle-btn" id="clock-toggle-btn" onclick="toggleClock()" title="Switch to Analog" aria-label="Toggle clock mode">
+      <i class="fa-solid fa-rotate"></i>
+    </button>
+  </div>
+  <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode" aria-label="Toggle theme">
+    <span class="icon-sun"><i class="fa-solid fa-sun"></i></span>
+    <span class="icon-moon"><i class="fa-solid fa-moon"></i></span>
+  </button>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+</nav>
+
+<main class="page">
+  <div class="container">
+    <div class="blog-article fade-up">
+
+      <div class="blog-article-back">
+        <a href="../blog.html"><i class="fa-solid fa-arrow-left"></i> Back to Blog</a>
+      </div>
+
+      <div class="blog-breadcrumbs fade-up">
+        <a href="../../index.html">Home</a>
+        <span>/</span>
+        <a href="../blog.html">Blog</a>
+        <span>/</span>
+        <span>Article</span>
+      </div>
+
+      <header class="blog-article-header">
+        <div class="blog-article-icon blue"><i class="fa-brands fa-python"></i></div>
+        <div class="blog-meta" style="margin-bottom:14px;">
+          <span class="blog-tag">Software Development</span>
+          <span class="blog-date">March 2026</span>
+          <span class="blog-date"><i class="fa-solid fa-clock"></i> 7 min read</span>
+        </div>
+        <h1>Why I Build Desktop Apps with Python and PyQt6 — And When You Should Too</h1>
+        <div class="blog-article-byline">
+          <img src="../../assets/images/profile/my_img.jpg" alt="Christopher Musamali" class="byline-avatar"
+               onerror="this.style.display='none'; this.nextElementSibling.classList.add('byline-avatar-fallback');" />
+          <div class="byline-avatar byline-avatar-fallback" style="display:none;">CM</div>
+          <div>
+            <div class="byline-name">Musamali Christopher</div>
+            <div class="byline-role">IT Technician &amp; Software Developer, Kampala</div>
+          </div>
+        </div>
+      </header>
+
+      <div class="blog-summary-box">
+        <h3>What you'll learn</h3>
+        <ul>
+          <li>Why desktop apps still make sense for many business projects.</li>
+          <li>How Python and PyQt6 deliver reliable apps with lower maintenance costs.</li>
+          <li>When a desktop solution is better than a website for your business need.</li>
+        </ul>
+      </div>
+
+      <div class="blog-share">
+        <span>Share this article with your team.</span>
+      </div>
+      <a class="article-downloadable-tag" href="#article-download-section" aria-label="Jump to download section">
+        <i class="fa-solid fa-file-arrow-down"></i> Downloadable Article
+      </a>
+      <div class="blog-article-body">
+        
+<p class="blog-lead">Every conversation about software development today seems to assume the destination is a web app or a mobile app. And for many problems, that is right. But for the kinds of systems that businesses in Uganda actually need to run day-to-day — systems that must work reliably, without internet, on modest hardware, and be maintained by a single developer — there is a strong argument for desktop applications built with Python and PyQt6.</p>
+
+<p>I have built a banking management system, a student management platform, a document converter, and a media player with this stack. Here is what I have learned about when it works brilliantly, and when to choose something else.</p>
+
+<h2>Why Python?</h2>
+<p>Python is the most widely taught programming language in the world, which means extensive documentation, a massive community, and libraries for almost every problem you will encounter. For business applications specifically, Python has mature libraries for: database access (SQLite for local storage, MySQL connectors for server-based databases), PDF generation and manipulation, Excel and CSV file handling, printing and reporting, email, and networking.</p>
+<p>Python code is also readable — which matters more than most developers admit. When you come back to a project six months later, or when another developer picks it up, clear code saves hours. Python enforces readability in a way that many other languages do not.</p>
+
+<h2>Why PyQt6?</h2>
+<p>PyQt6 is a Python binding for the Qt framework — one of the most mature and capable UI frameworks available. It produces native-looking applications on Windows, macOS, and Linux from a single codebase. More importantly for professional use, it gives you the tools to build genuinely polished interfaces: proper table views with sorting and filtering, professional form controls, custom painting, print dialogs that integrate with Windows printers, and a layout system that handles window resizing correctly.</p>
+<p>The alternative most beginners reach for is Tkinter, which is simpler but produces interfaces that look outdated and lack many of the controls that business applications need. PyQt6 has a steeper initial learning curve, but the quality of the resulting application is significantly higher.</p>
+
+<h2>The Case for Desktop Over Web in Uganda</h2>
+<p>Internet connectivity in Uganda, while improving, is not reliable enough to build business-critical systems around. A web application that requires a constant internet connection will fail the moment there is a load shedding event or a network issue. A desktop application runs entirely locally and is completely unaffected.</p>
+<p>Hardware is also a real consideration. Many small and medium businesses are running older machines that handle a desktop application comfortably but would struggle to run a modern web browser with a complex web application. A Python desktop app, built thoughtfully, can run on hardware that is eight or ten years old without any performance issues.</p>
+
+<h2>What Desktop Apps Are Good For</h2>
+<p>Desktop applications excel when: the application is used by staff at a fixed workstation, data should be stored locally for speed or privacy, the system needs to integrate directly with local printers and hardware, reliable offline operation is non-negotiable, or the user base is small (one site, fewer than fifty users). Banking systems, school management software, point-of-sale systems, HR management tools, and inventory management systems are all strong candidates.</p>
+
+<h2>When to Choose Something Else</h2>
+<p>Desktop is not the right choice for everything. If your system needs to be accessed by users in multiple locations simultaneously, or by customers on their own devices, a web application makes more sense. If you need the application running on phones and tablets as the primary device, a mobile app or responsive web app is the right path. For applications with very large user bases, web infrastructure scales more easily.</p>
+<p>The honest answer is that most business problems require thinking carefully about the actual use case before choosing a platform — not defaulting to whichever technology is currently fashionable.</p>
+
+<h2>Getting Started</h2>
+<p>If you want to learn this stack, start with Python fundamentals (the official Python tutorial is excellent), then work through the basics of PyQt6 (the Qt documentation is comprehensive). Build something small first — a personal expense tracker, a note-taking app — before attempting a full business system. The investment in learning pays back quickly.</p>
+<p>If you have a specific business problem you want to solve with a desktop application and want to discuss whether it is the right approach, feel free to get in touch.</p>
+  
+      
+      
+      <div class="article-download-end" id="article-download-section">
+        <div class="dl-info">
+          <span class="dl-label"><i class="fa-solid fa-file-pdf"></i> Save for offline reading</span>
+          <span class="dl-sub" id="article-download-sub">Download this article as a PDF — available once per article.</span>
+        </div>
+        <button class="btn-pdf" id="article-download-btn" onclick="downloadArticleAsPDF(this)">
+          <i class="fa-solid fa-file-pdf"></i> Download as PDF
+        </button>
+      </div>
+      <div class="blog-article-copyright" style="margin-top:32px; padding:14px 20px; background:rgba(20,184,166,0.05); border-left:3px solid var(--accent); border-radius:0 var(--radius-sm) var(--radius-sm) 0;">
+        <p style="font-size:0.82rem; color:var(--text-muted); margin:0;">
+          <i class="fa-solid fa-shield-halved" style="color:var(--accent);"></i>
+          &copy; 2026 <strong>Christopher Musamali</strong>. All rights reserved. This article may not be reproduced without permission.
+        </p>
+      </div>
+      </div>
+
+      <div class="blog-article-cta">
+        <h3>Need IT help for your business?</h3>
+        <p>I offer IT consultations, software development, CCTV installation, and training services across Kampala.</p>
+        <a href="../contact.html" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Get in Touch</a>
+        <a href="../blog.html" class="btn btn-ghost"><i class="fa-solid fa-pen-nib"></i> More Articles</a>
+      </div>
+
+      <div class="blog-article-nav">
+        <a href="blog-cctv.html" class="blog-nav-link blog-nav-prev"><i class="fa-solid fa-arrow-left"></i><span>How to Plan a CCTV Installation</span></a>
+        <a href="blog-it-tips.html" class="blog-nav-link blog-nav-next"><span>5 IT Mistakes Small Businesses in Uganda Are Making</span><i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p>Musamali Christopher &mdash; IT Technician &middot; Software Developer &middot; Technical Instructor</p>
+    <p style="margin-top:4px;">Kampala, Uganda &middot; <a href="mailto:christophermusamali27@gmail.com">christophermusamali27@gmail.com</a></p>
+    <div class="footer-links">
+      <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="../projects.html"><i class="fa-solid fa-code"></i> Projects</a>
+      <a href="../gallery.html"><i class="fa-solid fa-images"></i> Gallery</a>
+      <a href="../blog.html"><i class="fa-solid fa-pen-nib"></i> Blog</a>
+      <a href="../contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <a href="https://github.com/seal27sol-dotcom" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+    </div>
+    <div class="copyright-line">
+      <i class="fa-solid fa-shield-halved"></i>
+      &copy; 2026 <strong>Christopher Musamali</strong>. All rights reserved. Unauthorized reproduction prohibited.
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var bar = document.getElementById('reading-progress');
+    if(!bar) return;
+    window.addEventListener('scroll', function(){
+      var el = document.documentElement;
+      var scrolled = el.scrollTop || document.body.scrollTop;
+      var total = el.scrollHeight - el.clientHeight;
+      bar.style.width = (total > 0 ? (scrolled/total*100) : 0) + '%';
+    });
+  })();
+</script>
+<div id="pt-overlay" class="page-transition-overlay"><div class="pt-bar"></div><div class="pt-logo">CM<span style="color:var(--accent,#14b8a6)">.</span></div></div>
+</body>
+</html>

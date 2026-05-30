@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Christopher Musamali</title>
+  <meta name="description" content="IT insights, tutorials, and practical tech advice from Musamali Christopher — IT Technician and Software Developer based in Kampala, Uganda." />
+  <link rel="canonical" href="http://www.lakers-tech.wuaze.com/blog.html" />
+  <meta property="og:title" content="Blog — Christopher Musamali" />
+  <meta property="og:description" content="Practical IT articles, cybersecurity advice, and business technology guidance from a Kampala-based IT professional." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://www.lakers-tech.wuaze.com/blog.html" />
+  <meta property="og:image" content="http://www.lakers-tech.wuaze.com/assets/my_img.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="../js/env-config.js"></script>
+  <script src="../js/activity-logger.js" defer></script>
+  <script src="../js/session-tracker.js"></script>
+  <script src="../js/utils/visitor-tracker.js" defer></script>
+  <script src="../js/core/global.js" defer></script>
+</head>
+<body>
+<nav>
+  <div class="nav-brand">CM<span>.</span></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+    <li><a href="about.html"><i class="fa-solid fa-user"></i> About</a></li>
+    <li><a href="projects.html"><i class="fa-solid fa-code"></i> Projects</a></li>
+    <li><a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a></li>
+    <li><a href="experience.html"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
+    <li><a href="skills.html"><i class="fa-solid fa-layer-group"></i> Skills</a></li>
+    <li><a href="certificates.html"><i class="fa-solid fa-certificate"></i> Certificates</a></li>
+    <li><a href="blog.html"><i class="fa-solid fa-pen-nib"></i> Blog</a></li>
+    <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+    <li><a href="support.html"><i class="fa-solid fa-headset"></i> Support</a></li>
+  </ul>
+  <div class="clock-widget" id="clock-widget">
+    <div class="clock-face-digital" id="clock-digital-text"><i class="fa-regular fa-clock"></i></div>
+    <div class="clock-face-analog"><canvas id="clock-analog-canvas" width="36" height="36"></canvas></div>
+    <button class="clock-toggle-btn" id="clock-toggle-btn" onclick="toggleClock()" title="Switch to Analog" aria-label="Toggle clock mode">
+      <i class="fa-solid fa-rotate"></i>
+    </button>
+  </div>
+  <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode" aria-label="Toggle theme">
+    <span class="icon-sun"><i class="fa-solid fa-sun"></i></span>
+    <span class="icon-moon"><i class="fa-solid fa-moon"></i></span>
+  </button>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+</nav>
+<main class="page">
+  <div class="container">
+    <header class="page-header fade-up">
+      <p class="eyebrow">Insights &amp; Articles</p>
+      <h1>Blog</h1>
+      <p>Practical IT knowledge from the field — for business owners, developers, and anyone navigating technology in Uganda.</p>
+    </header>
+    <div class="blog-filters fade-up">
+      <a href="#" class="blog-filter">All</a>
+      <a href="#" class="blog-filter">IT Support</a>
+      <a href="#" class="blog-filter">Cybersecurity</a>
+      <a href="#" class="blog-filter">Design</a>
+      <a href="#" class="blog-filter">Software</a>
+      <a href="#" class="blog-filter">CCTV</a>
+    </div>
+    <div class="blog-featured fade-up">
+      <div class="blog-featured-label">Featured article</div>
+      <h2>Cybersecurity Basics Every Ugandan Business Should Know in 2026</h2>
+      <p>Learn the practical security changes that protect data, staff, and customers without requiring expensive tools. This article is the fastest way to make your business more resilient today.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:12px; align-items:center;">
+        <a href="blog/blog-cybersecurity.html" class="btn btn-primary">Read Featured Article</a>
+        <a href="blog/blog-it-tips.html" class="btn btn-ghost">Browse All Articles</a>
+      </div>
+    </div>
+    <div class="blog-grid">
+      <a href="blog/blog-industrial-training.html" class="blog-card fade-up">
+        <div class="blog-card-icon"><i class="fa-solid fa-user-graduate"></i></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="blog-tag"> Industrial training / internships</span><span class="blog-date">May 2026</span></div>
+          <h3>Bridging Theory and Practice Through Industrial Training</h3>
+          <p>Industrial training is more than a university requirement. It is the bridge between classroom learning and real workplace experience. This session explores why industrial training is important, the skills students gain, and how organizations can create supportive learning environments that help interns develop professionally, practically, and ethically for future careers.
+          </p>
+          <span class="blog-read-more">Read Article <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a href="blog/blog-it-tips.html" class="blog-card fade-up">
+        <div class="blog-card-icon"><i class="fa-solid fa-lightbulb"></i></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="blog-tag">IT for Business</span><span class="blog-date">March 2026</span></div>
+          <h3>5 IT Mistakes Small Businesses in Uganda Are Making (And How to Fix Them)</h3>
+          <p>From no data backups to unmanaged networks — these are the most common and costly IT mistakes I see when I walk into small businesses across Kampala, and exactly what you can do about them.</p>
+          <span class="blog-read-more">Read Article <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a href="blog/blog-cybersecurity.html" class="blog-card fade-up delay-1">
+        <div class="blog-card-icon blue"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="blog-tag">Cybersecurity</span><span class="blog-date">March 2026</span></div>
+          <h3>Cybersecurity Basics Every Ugandan Business Should Know in 2026</h3>
+          <p>Cyber threats are no longer a "big company" problem. Here are the foundational security practices that protect your business data, your staff, and your reputation — without needing a dedicated IT department.</p>
+          <span class="blog-read-more">Read Article <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a href="blog/blog-cctv.html" class="blog-card fade-up">
+        <div class="blog-card-icon"><i class="fa-solid fa-video"></i></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="blog-tag">CCTV &amp; Surveillance</span><span class="blog-date">Feb 2026</span></div>
+          <h3>How to Plan a CCTV Installation: What Every Business Owner Needs to Know</h3>
+          <p>Before you buy a single camera, there are decisions that will determine whether your surveillance system actually works. This guide covers everything from camera placement to storage and remote access.</p>
+          <span class="blog-read-more">Read Article <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a href="blog/blog-python.html" class="blog-card fade-up delay-1">
+        <div class="blog-card-icon blue"><i class="fa-brands fa-python"></i></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="blog-tag">Software Development</span><span class="blog-date">Feb 2026</span></div>
+          <h3>Why I Build Desktop Apps with Python and PyQt6 — And When You Should Too</h3>
+          <p>Web apps get all the attention, but for many real-world business problems — especially in Uganda — a well-built desktop application is faster, more reliable, and works without internet. Here is my case for Python + PyQt6.</p>
+          <span class="blog-read-more">Read Article <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a href="blog/blog-graphic-design.html" class="blog-card fade-up">
+        <div class="blog-card-icon"><i class="fa-solid fa-palette"></i></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="blog-tag">Graphic Design</span><span class="blog-date">Jan 2026</span></div>
+          <h3>Why Good Design Matters for Small Businesses in Uganda</h3>
+          <p>How professional graphic design builds trust, attracts customers, and separates serious businesses from the rest — practical advice from a designer and IT professional in Kampala.</p>
+          <span class="blog-read-more">Read Article <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a href="blog/blog-figma-vs-canva.html" class="blog-card fade-up delay-1">
+        <div class="blog-card-icon blue"><i class="fa-brands fa-figma"></i></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="blog-tag">Design Tools</span><span class="blog-date">Jan 2026</span></div>
+          <h3>Figma vs Canva: Which Design Tool Should You Use?</h3>
+          <p>A practical comparison from a working designer — which tool fits which job, when you need both, and where Adobe and CorelDRAW still belong in the stack.</p>
+          <span class="blog-read-more">Read Article <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a href="blog/blog-video-editing.html" class="blog-card fade-up">
+        <div class="blog-card-icon"><i class="fa-solid fa-film"></i></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="blog-tag">Video Editing</span><span class="blog-date">Jan 2026</span></div>
+          <h3>Getting Started with Video Editing Using Filmora</h3>
+          <p>The fundamentals — timeline, cuts, colour, audio, and export — that will get you producing clean, professional video content quickly without needing to spend months in tutorials.</p>
+          <span class="blog-read-more">Read Article <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a href="blog/blog-networking-uganda.html" class="blog-card fade-up delay-1">
+        <div class="blog-card-icon blue"><i class="fa-solid fa-network-wired"></i></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="blog-tag">Networking</span><span class="blog-date">Jan 2026</span></div>
+          <h3>Networking Fundamentals Every IT Pro in Uganda Must Know</h3>
+          <p>IP addressing, subnetting, DHCP, DNS, switches, routers, and troubleshooting methodology — the concepts that separate competent IT technicians from those who can only handle surface-level problems.</p>
+          <span class="blog-read-more">Read Article <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a href="blog/blog-it-career-uganda.html" class="blog-card fade-up">
+        <div class="blog-card-icon"><i class="fa-solid fa-briefcase"></i></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="blog-tag">IT Career</span><span class="blog-date">Jan 2026</span></div>
+          <h3>How to Build an IT Career in Uganda in 2026</h3>
+          <p>Practical, direct advice on developing the right skills, building a portfolio, getting certified, charging properly, and communicating with clients — from someone doing it in Kampala right now.</p>
+          <span class="blog-read-more">Read Article <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="footer-inner">
+    <p>Musamali Christopher &mdash; IT Technician &middot; Software Developer &middot; Technical Instructor</p>
+    <p style="margin-top:4px;">Kampala, Uganda &middot; <a href="mailto:christophermusamali27@gmail.com">christophermusamali27@gmail.com</a></p>
+    <div class="footer-links">
+      <a href="../index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="projects.html"><i class="fa-solid fa-code"></i> Projects</a>
+      <a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a>
+      <a href="blog.html"><i class="fa-solid fa-pen-nib"></i> Blog</a>
+      <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <a href="https://github.com/seal27sol-dotcom" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+    </div>
+    <div class="copyright-line">
+      <i class="fa-solid fa-shield-halved"></i>
+      &copy; 2026 <strong>Christopher Musamali</strong>. All rights reserved. Unauthorized reproduction prohibited.
+    </div>
+  </div>
+</footer>
+
+<div id="pt-overlay" class="page-transition-overlay"><div class="pt-bar"></div><div class="pt-logo">CM<span style="color:var(--accent,#14b8a6)">.</span></div></div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+/* Master stylesheet — imports existing partials only */
+/* All pages use css/style.css which contains everything */
+/* This file exists for reference; pages link style.css directly */
+
+@import url("base/reset-variables.css");
+@import url("components/nav.css");
+@import url("themes/light-mode.css");

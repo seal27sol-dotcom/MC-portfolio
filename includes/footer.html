@@ -1,0 +1,25 @@
+<!--
+  includes/footer.html — Shared footer
+-->
+<footer>
+  <div class="footer-inner">
+    <p>Musamali Christopher &mdash; IT Technician &middot; Software Developer &middot; Technical Instructor</p>
+    <p style="margin-top:4px;">Kampala, Uganda &middot; <a href="mailto:christophermusamali27@gmail.com">christophermusamali27@gmail.com</a></p>
+    <div class="footer-links">
+      <a href="../index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="../projects.html"><i class="fa-solid fa-code"></i> Projects</a>
+      <a href="../gallery.html"><i class="fa-solid fa-images"></i> Gallery</a>
+      <a href="../blog.html"><i class="fa-solid fa-pen-nib"></i> Blog</a>
+      <a href="../contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <a href="https://github.com/seal27sol-dotcom" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+    </div>
+    <div class="copyright-line">
+      <i class="fa-solid fa-shield-halved"></i>
+      &copy; <span id="footer-year">2026</span> <strong>Christopher Musamali</strong>. All rights reserved. Unauthorized reproduction prohibited.
+    </div>
+  </div>
+</footer>
+<script>
+  var el = document.getElementById('footer-year');
+  if (el) el.textContent = new Date().getFullYear();
+</script>
