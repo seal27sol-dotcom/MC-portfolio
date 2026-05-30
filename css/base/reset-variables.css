@@ -1,0 +1,60 @@
+/* ============================================================
+   MUSAMALI CHRISTOPHER — PORTFOLIO v2.0
+   Dark tech theme · Space Grotesk + DM Sans · Teal accent
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+
+/* === RESET === */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+/* === CSS VARIABLES === */
+:root {
+  --bg:           #09101f;
+  --bg-card:      #0e1729;
+  --bg-surface:   #152038;
+  --bg-hover:     #1a2845;
+  --accent:       #14b8a6;
+  --accent-hover: #0d9488;
+  --accent-dim:   rgba(20,184,166,0.13);
+  --accent-glow:  rgba(20,184,166,0.22);
+  --blue:         #60a5fa;
+  --blue-dim:     rgba(96,165,250,0.12);
+  --text:         #e2e8f0;
+  --text-muted:   #8899b4;
+  --text-faint:   #4a5a74;
+  --border:       rgba(255,255,255,0.07);
+  --border-hover: rgba(20,184,166,0.35);
+  --radius:       14px;
+  --radius-sm:    8px;
+  --radius-lg:    20px;
+  --nav-h:        66px;
+  --ease:         0.22s ease;
+  --shadow:       0 8px 32px rgba(0,0,0,0.45);
+}
+
+/* === BASE === */
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  line-height: 1.15;
+  letter-spacing: -0.3px;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--ease);
+}
+a:hover { color: var(--accent-hover); }
+
+ul { list-style: none; }

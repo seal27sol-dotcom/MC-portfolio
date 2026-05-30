@@ -1,0 +1,50 @@
+{
+  "_comment": "Portfolio projects data — edit here, not in HTML",
+  "projects": [
+    {
+      "id": "banking-system",
+      "title": "Banking Dashboard System",
+      "category": "software",
+      "tags": ["Python", "PyQt6", "SQLite"],
+      "description": "Desktop banking dashboard with transaction management and reporting.",
+      "image": "assets/images/projects/banking-system.png",
+      "status": "completed"
+    },
+    {
+      "id": "student-management",
+      "title": "Student Management System",
+      "category": "software",
+      "tags": ["Python", "PyQt6", "MySQL"],
+      "description": "Full student records and grades management desktop app.",
+      "image": "assets/images/projects/student-management.png",
+      "status": "completed"
+    },
+    {
+      "id": "doc-converter",
+      "title": "Document Converter",
+      "category": "software",
+      "tags": ["Python", "Tkinter"],
+      "description": "Batch document format converter supporting PDF, DOCX, and more.",
+      "image": "assets/images/projects/doc-converter.png",
+      "status": "completed"
+    },
+    {
+      "id": "media-player",
+      "title": "Media Player",
+      "category": "software",
+      "tags": ["Python", "PyQt6", "VLC"],
+      "description": "Custom desktop media player with playlist and equalizer.",
+      "image": "assets/images/projects/media-player.png",
+      "status": "completed"
+    },
+    {
+      "id": "cctv-installation",
+      "title": "CCTV Installation Projects",
+      "category": "networking",
+      "tags": ["CCTV", "Networking", "DVR"],
+      "description": "End-to-end CCTV planning and installation for Kampala businesses.",
+      "image": "assets/images/projects/cctv-installation.jpg",
+      "status": "ongoing"
+    }
+  ]
+}

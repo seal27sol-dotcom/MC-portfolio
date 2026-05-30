@@ -1,0 +1,32 @@
+<!--
+  includes/nav.html — Shared navigation bar
+  Adjust href paths based on page depth.
+  For pages in /pages/: href="../pages/about.html" etc.
+  For pages in /pages/blog/: href="../../pages/about.html" etc.
+-->
+<nav>
+  <div class="nav-brand">CM<span>.</span></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+    <li><a href="../about.html"><i class="fa-solid fa-user"></i> About</a></li>
+    <li><a href="../projects.html"><i class="fa-solid fa-code"></i> Projects</a></li>
+    <li><a href="../gallery.html"><i class="fa-solid fa-images"></i> Gallery</a></li>
+    <li><a href="../experience.html"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
+    <li><a href="../skills.html"><i class="fa-solid fa-layer-group"></i> Skills</a></li>
+    <li><a href="../certificates.html"><i class="fa-solid fa-certificate"></i> Certificates</a></li>
+    <li><a href="../blog.html"><i class="fa-solid fa-pen-nib"></i> Blog</a></li>
+    <li><a href="../contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+  </ul>
+  <div class="clock-widget" id="clock-widget">
+    <div class="clock-face-digital" id="clock-digital-text"><i class="fa-regular fa-clock"></i></div>
+    <div class="clock-face-analog"><canvas id="clock-analog-canvas" width="36" height="36"></canvas></div>
+    <button class="clock-toggle-btn" id="clock-toggle-btn" onclick="toggleClock()" title="Switch to Analog" aria-label="Toggle clock mode">
+      <i class="fa-solid fa-rotate"></i>
+    </button>
+  </div>
+  <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode" aria-label="Toggle theme">
+    <span class="icon-sun"><i class="fa-solid fa-sun"></i></span>
+    <span class="icon-moon"><i class="fa-solid fa-moon"></i></span>
+  </button>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+</nav>

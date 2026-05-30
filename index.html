@@ -6,7 +6,11 @@
   <title>Christopher Musamali — IT Technician &amp; Software Developer</title>
   <meta name="description" content="Portfolio of Musamali Christopher — IT Technician, Software Developer, and Technical Instructor based in Kampala, Uganda." />  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
-  <script src="assets/visitor-tracker.js" defer></script>
+  <script src="js/env-config.js"></script>
+  <script src="js/activity-logger.js" defer></script>
+  <script src="js/session-tracker.js"></script>
+  <script src="js/utils/visitor-tracker.js" defer></script>
+  <script src="js/core/global.js" defer></script>
 </head>
 <body>
 
@@ -15,15 +19,27 @@
   <div class="nav-brand">CM<span>.</span></div>
     <ul class="nav-links" id="navLinks">
     <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
-    <li><a href="about.html"><i class="fa-solid fa-user"></i> About</a></li>
-    <li><a href="projects.html"><i class="fa-solid fa-code"></i> Projects</a></li>
-    <li><a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a></li>
-    <li><a href="experience.html"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
-    <li><a href="skills.html"><i class="fa-solid fa-layer-group"></i> Skills</a></li>
-    <li><a href="certificates.html"><i class="fa-solid fa-certificate"></i> Certificates</a></li>
-    <li><a href="blog.html"><i class="fa-solid fa-pen-nib"></i> Blog</a></li>
-    <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+    <li><a href="pages/about.html"><i class="fa-solid fa-user"></i> About</a></li>
+    <li><a href="pages/projects.html"><i class="fa-solid fa-code"></i> Projects</a></li>
+    <li><a href="pages/gallery.html"><i class="fa-solid fa-images"></i> Gallery</a></li>
+    <li><a href="pages/experience.html"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
+    <li><a href="pages/skills.html"><i class="fa-solid fa-layer-group"></i> Skills</a></li>
+    <li><a href="pages/certificates.html"><i class="fa-solid fa-certificate"></i> Certificates</a></li>
+    <li><a href="pages/blog.html"><i class="fa-solid fa-pen-nib"></i> Blog</a></li>
+    <li><a href="pages/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+    <li><a href="pages/support.html"><i class="fa-solid fa-headset"></i> Support</a></li>
   </ul>
+  <div class="clock-widget" id="clock-widget">
+    <div class="clock-face-digital" id="clock-digital-text"><i class="fa-regular fa-clock"></i></div>
+    <div class="clock-face-analog"><canvas id="clock-analog-canvas" width="36" height="36"></canvas></div>
+    <button class="clock-toggle-btn" id="clock-toggle-btn" onclick="toggleClock()" title="Switch to Analog" aria-label="Toggle clock mode">
+      <i class="fa-solid fa-rotate"></i>
+    </button>
+  </div>
+  <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode" aria-label="Toggle theme">
+    <span class="icon-sun"><i class="fa-solid fa-sun"></i></span>
+    <span class="icon-moon"><i class="fa-solid fa-moon"></i></span>
+  </button>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
     <span></span><span></span><span></span>
   </button>
@@ -53,13 +69,13 @@
         </p>
 
         <div class="hero-cta fade-up delay-3">
-          <a href="projects.html" class="btn btn-primary">
+          <a href="pages/projects.html" class="btn btn-primary">
             <i class="fa-solid fa-rocket"></i> View My Work
           </a>
-          <a href="assets/Musamali_Christopher_CV.pdf" class="btn btn-ghost" download>
+          <a href="#" class="btn btn-ghost cv-download-btn" data-cv-download>
             <i class="fa-solid fa-download"></i> Download CV
           </a>
-          <a href="contact.html" class="btn btn-ghost">
+          <a href="pages/contact.html" class="btn btn-ghost">
             <i class="fa-solid fa-paper-plane"></i> Contact Me
           </a>
         </div>
@@ -84,7 +100,7 @@
         </div>
       </div>
 
-      <img src="assets/my_img.jpg" alt="Christopher Musamali" class="hero-avatar fade-up delay-2" style="object-fit:cover;" />
+      <img src="assets/images/profile/my_img.jpg" alt="Christopher Musamali" class="hero-avatar fade-up delay-2" style="object-fit:cover;" />
 
     </div>
   </div>
@@ -141,7 +157,7 @@
   <section class="home-section">
     <div class="home-section-header">
       <h2>Featured Projects</h2>
-      <a href="projects.html" class="btn btn-ghost btn-sm">View All <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="pages/projects.html" class="btn btn-ghost btn-sm">View All <i class="fa-solid fa-arrow-right"></i></a>
     </div>
     <div class="projects-grid">
 
@@ -155,7 +171,7 @@
           <span class="tag">SQLite</span>
         </div>
         <div class="project-links">
-          <a href="projects.html"><i class="fa-solid fa-arrow-right"></i> See Details</a>
+          <a href="pages/projects.html"><i class="fa-solid fa-arrow-right"></i> See Details</a>
         </div>
       </div>
 
@@ -169,7 +185,7 @@
           <span class="tag">MySQL</span>
         </div>
         <div class="project-links">
-          <a href="projects.html"><i class="fa-solid fa-arrow-right"></i> See Details</a>
+          <a href="pages/projects.html"><i class="fa-solid fa-arrow-right"></i> See Details</a>
         </div>
       </div>
 
@@ -183,7 +199,7 @@
           <span class="tag">Networking</span>
         </div>
         <div class="project-links">
-          <a href="projects.html"><i class="fa-solid fa-arrow-right"></i> See Details</a>
+          <a href="pages/projects.html"><i class="fa-solid fa-arrow-right"></i> See Details</a>
         </div>
       </div>
 
@@ -199,8 +215,8 @@
         <p class="bio-strip-sub">Leading IT operations, training programs, and digital infrastructure · Kampala, Uganda</p>
       </div>
       <div class="bio-strip-actions">
-        <a href="experience.html" class="btn btn-ghost btn-sm"><i class="fa-solid fa-briefcase"></i> Full Experience</a>
-        <a href="about.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-user"></i> About Me</a>
+        <a href="pages/experience.html" class="btn btn-ghost btn-sm"><i class="fa-solid fa-briefcase"></i> Full Experience</a>
+        <a href="pages/about.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-user"></i> About Me</a>
       </div>
     </div>
   </section>
@@ -214,51 +230,70 @@
     <p style="margin-top:4px;">Kampala, Uganda &middot; <a href="mailto:christophermusamali27@gmail.com">christophermusamali27@gmail.com</a></p>
     <div class="footer-links">
       <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-      <a href="projects.html"><i class="fa-solid fa-code"></i> Projects</a>
-      <a href="experience.html"><i class="fa-solid fa-briefcase"></i> Experience</a>
-      <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <a href="pages/projects.html"><i class="fa-solid fa-code"></i> Projects</a>
+      <a href="pages/experience.html"><i class="fa-solid fa-briefcase"></i> Experience</a>
+      <a href="pages/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
       <a href="https://github.com/seal27sol-dotcom" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
     </div>
-    <p style="margin-top:16px; font-size:0.78rem; color: var(--text-faint);">&copy; 2026 Christopher Musamali Portfolio. All rights reserved.</p>
+    <div class="copyright-line">
+      <i class="fa-solid fa-shield-halved"></i>
+      &copy; 2026 <strong>Christopher Musamali</strong>. All rights reserved. Unauthorized reproduction prohibited.
+    </div>
   </div>
 </footer>
 
-<script>
-  // Active nav — robust against trailing slashes and directory paths
-  const cur = window.location.pathname.replace(/\/$/, "").split("/").pop() || "index.html";
-  document.querySelectorAll(".nav-links a").forEach(a => {
-    const href = a.getAttribute("href").replace(/\/$/, "").split("/").pop() || "index.html";
-    if (href === cur) a.classList.add("active");
-  });
 
-  // Mobile nav toggle
-  const toggle = document.getElementById("navToggle");
-  const links  = document.getElementById("navLinks");
 
-  function closeNav() {
-    links.classList.remove("open");
-    toggle.classList.remove("open");
-    toggle.setAttribute("aria-expanded", "false");
-  }
+<!-- ══ CV DOWNLOAD MODAL ══ -->
+<div id="cvModalOverlay" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.75);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:16px;">
+  <div style="background:var(--bg-card,#0e1729);border:1px solid var(--border,rgba(255,255,255,0.08));border-radius:20px;padding:44px 40px 36px;max-width:440px;width:100%;box-shadow:0 32px 80px rgba(0,0,0,0.6);position:relative;animation:cvModalIn .3s cubic-bezier(.22,1,.36,1) both;">
+    <button onclick="closeCvModal()" style="position:absolute;top:16px;right:18px;background:none;border:none;cursor:pointer;color:var(--text-muted,#8899b4);font-size:22px;line-height:1;padding:4px 8px;border-radius:6px;" title="Close">&times;</button>
+    <div style="text-align:center;margin-bottom:28px;">
+      <div style="display:inline-flex;align-items:center;justify-content:center;width:60px;height:60px;border-radius:16px;border:1px solid var(--accent,#14b8a6);background:rgba(20,184,166,0.08);font-size:24px;color:var(--accent,#14b8a6);margin-bottom:16px;"><i class="fa-solid fa-file-shield"></i></div>
+      <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:700;color:var(--text,#e2e8f0);margin:0 0 8px;">Verify to Download CV</h3>
+      <p style="color:var(--text-muted,#8899b4);font-size:.86rem;line-height:1.55;margin:0;">Enter your details — a verification code will be sent to your email.</p>
+    </div>
+    <div id="cvStep1">
+      <div style="margin-bottom:14px;">
+        <label style="display:block;font-size:.75rem;font-weight:700;color:var(--text-muted,#8899b4);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;">Your Full Name <span style="color:var(--accent,#14b8a6)">*</span></label>
+        <input id="cvInputName" type="text" placeholder="e.g. Sarah Nakato" autocomplete="name" style="width:100%;padding:11px 14px;border-radius:10px;font-size:.93rem;background:var(--bg,#09101f);border:1.5px solid var(--border,rgba(255,255,255,0.1));color:var(--text,#e2e8f0);outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='var(--accent,#14b8a6)'" onblur="this.style.borderColor=''"/>
+      </div>
+      <div style="margin-bottom:18px;">
+        <label style="display:block;font-size:.75rem;font-weight:700;color:var(--text-muted,#8899b4);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;">Email Address <span style="color:var(--accent,#14b8a6)">*</span></label>
+        <input id="cvInputEmail" type="email" placeholder="you@company.com" autocomplete="email" style="width:100%;padding:11px 14px;border-radius:10px;font-size:.93rem;background:var(--bg,#09101f);border:1.5px solid var(--border,rgba(255,255,255,0.1));color:var(--text,#e2e8f0);outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='var(--accent,#14b8a6)'" onblur="this.style.borderColor=''"/>
+      </div>
+      <p id="cvStep1Err" style="display:none;color:#f87171;font-size:.8rem;margin-bottom:12px;"></p>
+      <button id="cvStep1Btn" onclick="cvStep1Submit()" style="width:100%;padding:13px 20px;border-radius:11px;border:none;cursor:pointer;background:var(--accent,#14b8a6);color:#071018;font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:700;display:flex;align-items:center;justify-content:center;gap:9px;transition:background .2s;">
+        <i class="fa-solid fa-paper-plane"></i> Send Verification Code
+      </button>
+    </div>
+    <div id="cvStep2" style="display:none;">
+      <p style="font-size:.87rem;color:var(--text-muted,#8899b4);margin:0 0 20px;line-height:1.55;">Code sent to <strong id="cvStep2EmailShown" style="color:var(--text,#e2e8f0);"></strong>. Enter it below:</p>
+      <div id="cvCodeHint" style="display:none;background:rgba(20,184,166,0.08);border:1px solid rgba(20,184,166,0.25);border-radius:10px;padding:10px 14px;margin-bottom:16px;font-size:.82rem;color:var(--text-muted,#8899b4);">
+        <i class="fa-solid fa-info-circle" style="color:var(--accent,#14b8a6);"></i> Your code: <strong id="cvCodeHintVal" style="color:var(--accent,#14b8a6);letter-spacing:.15em;font-size:1rem;"></strong>
+      </div>
+      <input id="cvCodeInput" type="text" inputmode="numeric" maxlength="6" placeholder="• • • • • •" style="width:100%;padding:14px;border-radius:10px;font-size:1.4rem;letter-spacing:.4em;text-align:center;background:var(--bg,#09101f);border:1.5px solid var(--border,rgba(255,255,255,0.1));color:var(--text,#e2e8f0);outline:none;margin-bottom:12px;" onfocus="this.style.borderColor='var(--accent,#14b8a6)'" onblur="this.style.borderColor=''"/>
+      <p id="cvStep2Err" style="display:none;color:#f87171;font-size:.8rem;margin-bottom:12px;"></p>
+      <button onclick="cvStep2Verify()" style="width:100%;padding:13px 20px;border-radius:11px;border:none;cursor:pointer;background:var(--accent,#14b8a6);color:#071018;font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:700;display:flex;align-items:center;justify-content:center;gap:9px;margin-bottom:12px;">
+        <i class="fa-solid fa-shield-check"></i> Verify &amp; Download
+      </button>
+      <p style="text-align:center;font-size:.78rem;color:var(--text-faint,#4a5a74);">
+        Didn't receive it? <button id="cvResendBtn" onclick="cvResend()" style="background:none;border:none;cursor:pointer;color:var(--accent,#14b8a6);font-size:.78rem;padding:0;text-decoration:underline;">Resend code</button>
+      </p>
+    </div>
+    <div id="cvStep3" style="display:none;text-align:center;padding:16px 0;">
+      <div style="font-size:3rem;margin-bottom:16px;">✅</div>
+      <h4 style="font-family:'Space Grotesk',sans-serif;margin:0 0 10px;color:var(--text,#e2e8f0);font-size:1.15rem;">Verified! Downloading…</h4>
+      <p style="color:var(--text-muted,#8899b4);font-size:.875rem;">Christopher has been notified of your download.</p>
+    </div>
+    <p style="text-align:center;color:var(--text-faint,#4a5a74);font-size:.72rem;margin:20px 0 0;"><i class="fa-solid fa-lock"></i> Your details are only used to verify and log this download.</p>
+  </div>
+</div>
+<style>@keyframes cvModalIn{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:none}}</style>
+<script src="js/cv-download.js"></script>
 
-  toggle.addEventListener("click", e => {
-    e.stopPropagation();
-    const open = links.classList.toggle("open");
-    toggle.classList.toggle("open", open);
-    toggle.setAttribute("aria-expanded", open);
-  });
+<div id="pt-overlay" class="page-transition-overlay"><div class="pt-bar"></div><div class="pt-logo">CM<span style="color:var(--accent,#14b8a6)">.</span></div></div>
 
-  // Close nav when a link is clicked on mobile
-  links.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", closeNav);
-  });
 
-  // Close nav when clicking outside
-  document.addEventListener("click", e => {
-    if (links.classList.contains("open") && !links.contains(e.target) && !toggle.contains(e.target)) {
-      closeNav();
-    }
-  });
-</script>
 </body>
 </html>

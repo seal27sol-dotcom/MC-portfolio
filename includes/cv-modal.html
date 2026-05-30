@@ -1,0 +1,71 @@
+<!-- ══ CV DOWNLOAD MODAL — include in any page that has a Download CV button ══ -->
+<div id="cvModalOverlay" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.75);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:16px;">
+  <div style="background:var(--bg-card,#0e1729);border:1px solid var(--border,rgba(255,255,255,0.08));border-radius:20px;padding:44px 40px 36px;max-width:440px;width:100%;box-shadow:0 32px 80px rgba(0,0,0,0.6);position:relative;animation:cvModalIn .3s cubic-bezier(.22,1,.36,1) both;">
+
+    <!-- Close -->
+    <button onclick="closeCvModal()" style="position:absolute;top:16px;right:18px;background:none;border:none;cursor:pointer;color:var(--text-muted,#8899b4);font-size:22px;line-height:1;padding:4px 8px;border-radius:6px;" title="Close">&times;</button>
+
+    <!-- Icon + title -->
+    <div style="text-align:center;margin-bottom:28px;">
+      <div style="display:inline-flex;align-items:center;justify-content:center;width:60px;height:60px;border-radius:16px;border:1px solid var(--accent,#14b8a6);background:rgba(20,184,166,0.08);font-size:24px;color:var(--accent,#14b8a6);margin-bottom:16px;"><i class="fa-solid fa-file-shield"></i></div>
+      <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:700;color:var(--text,#e2e8f0);margin:0 0 8px;">Verify to Download CV</h3>
+      <p style="color:var(--text-muted,#8899b4);font-size:.86rem;line-height:1.55;margin:0;">Enter your details — a verification code will be sent to your email so I know who's downloading my CV.</p>
+    </div>
+
+    <!-- STEP 1: Name + Email -->
+    <div id="cvStep1">
+      <div style="margin-bottom:14px;">
+        <label style="display:block;font-size:.75rem;font-weight:700;color:var(--text-muted,#8899b4);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;">Your Full Name <span style="color:var(--accent,#14b8a6)">*</span></label>
+        <input id="cvInputName" type="text" placeholder="e.g. Sarah Nakato" autocomplete="name"
+          style="width:100%;padding:11px 14px;border-radius:10px;font-size:.93rem;background:var(--bg,#09101f);border:1.5px solid var(--border,rgba(255,255,255,0.1));color:var(--text,#e2e8f0);outline:none;transition:border-color .2s;"
+          onfocus="this.style.borderColor='var(--accent,#14b8a6)'" onblur="this.style.borderColor=''"/>
+      </div>
+      <div style="margin-bottom:18px;">
+        <label style="display:block;font-size:.75rem;font-weight:700;color:var(--text-muted,#8899b4);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;">Email Address <span style="color:var(--accent,#14b8a6)">*</span></label>
+        <input id="cvInputEmail" type="email" placeholder="you@company.com" autocomplete="email"
+          style="width:100%;padding:11px 14px;border-radius:10px;font-size:.93rem;background:var(--bg,#09101f);border:1.5px solid var(--border,rgba(255,255,255,0.1));color:var(--text,#e2e8f0);outline:none;transition:border-color .2s;"
+          onfocus="this.style.borderColor='var(--accent,#14b8a6)'" onblur="this.style.borderColor=''"/>
+      </div>
+      <p id="cvStep1Err" style="display:none;color:#f87171;font-size:.8rem;margin-bottom:12px;"><i class="fa-solid fa-circle-exclamation"></i> <span></span></p>
+      <button id="cvStep1Btn" onclick="cvStep1Submit()" style="width:100%;padding:13px 20px;border-radius:11px;border:none;cursor:pointer;background:var(--accent,#14b8a6);color:#071018;font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:700;display:flex;align-items:center;justify-content:center;gap:9px;transition:background .2s,transform .15s;" onmouseover="this.style.background='var(--accent-hover,#0d9488)'" onmouseout="this.style.background='var(--accent,#14b8a6)'">
+        <i class="fa-solid fa-paper-plane"></i> Send Verification Code
+      </button>
+    </div>
+
+    <!-- STEP 2: OTP Code -->
+    <div id="cvStep2" style="display:none;">
+      <p style="font-size:.87rem;color:var(--text-muted,#8899b4);margin:0 0 20px;line-height:1.55;">
+        A verification code was sent to <strong id="cvStep2EmailShown" style="color:var(--text,#e2e8f0);"></strong>. Check your inbox and enter the 6-digit code below.
+      </p>
+      <!-- Fallback hint: shown if email delivery uncertain -->
+      <div id="cvCodeHint" style="display:none;background:rgba(20,184,166,0.08);border:1px solid rgba(20,184,166,0.25);border-radius:10px;padding:10px 14px;margin-bottom:16px;font-size:.82rem;color:var(--text-muted,#8899b4);">
+        <i class="fa-solid fa-info-circle" style="color:var(--accent,#14b8a6);"></i> Can't find the email? Your code is: <strong id="cvCodeHintVal" style="color:var(--accent,#14b8a6);letter-spacing:.15em;font-size:1rem;"></strong>
+      </div>
+      <input id="cvCodeInput" type="text" inputmode="numeric" maxlength="6" placeholder="• • • • • •"
+        style="width:100%;padding:14px;border-radius:10px;font-size:1.4rem;letter-spacing:.4em;text-align:center;background:var(--bg,#09101f);border:1.5px solid var(--border,rgba(255,255,255,0.1));color:var(--text,#e2e8f0);outline:none;transition:border-color .2s;margin-bottom:12px;"
+        onfocus="this.style.borderColor='var(--accent,#14b8a6)'" onblur="this.style.borderColor=''"/>
+      <p id="cvStep2Err" style="display:none;color:#f87171;font-size:.8rem;margin-bottom:12px;"><i class="fa-solid fa-circle-exclamation"></i> <span></span></p>
+      <button onclick="cvStep2Verify()" style="width:100%;padding:13px 20px;border-radius:11px;border:none;cursor:pointer;background:var(--accent,#14b8a6);color:#071018;font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:700;display:flex;align-items:center;justify-content:center;gap:9px;margin-bottom:12px;" onmouseover="this.style.background='#0d9488'" onmouseout="this.style.background='var(--accent,#14b8a6)'">
+        <i class="fa-solid fa-shield-check"></i> Verify &amp; Download
+      </button>
+      <p style="text-align:center;font-size:.78rem;color:var(--text-faint,#4a5a74);">
+        Didn't receive it? <button id="cvResendBtn" onclick="cvResend()" style="background:none;border:none;cursor:pointer;color:var(--accent,#14b8a6);font-size:.78rem;padding:0;text-decoration:underline;">Resend code</button>
+        &nbsp;·&nbsp; <button onclick="closeCvModal();openCvModal(null);" style="background:none;border:none;cursor:pointer;color:var(--text-faint,#4a5a74);font-size:.78rem;padding:0;text-decoration:underline;">Wrong email?</button>
+      </p>
+    </div>
+
+    <!-- STEP 3: Success -->
+    <div id="cvStep3" style="display:none;text-align:center;padding:16px 0;">
+      <div style="font-size:3rem;margin-bottom:16px;">✅</div>
+      <h4 style="font-family:'Space Grotesk',sans-serif;margin:0 0 10px;color:var(--text,#e2e8f0);font-size:1.15rem;">Email verified! Downloading…</h4>
+      <p style="color:var(--text-muted,#8899b4);font-size:.875rem;line-height:1.55;">Thank you, your download will start in a moment. Christopher has been notified.</p>
+    </div>
+
+    <p style="text-align:center;color:var(--text-faint,#4a5a74);font-size:.72rem;margin:20px 0 0;"><i class="fa-solid fa-lock"></i> Your details are only used to verify and log this download. Never shared.</p>
+  </div>
+</div>
+<style>
+@keyframes cvModalIn { from{opacity:0;transform:translateY(20px) scale(.97)} to{opacity:1;transform:none} }
+#cvModalOverlay { display:none; }
+#cvModalOverlay.open { display:flex; }
+</style>

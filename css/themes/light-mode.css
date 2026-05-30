@@ -1,0 +1,314 @@
+/* ============================================================
+   LIGHT MODE THEME — Christopher Musamali Portfolio
+   Full contrast overrides — visible text, legible backgrounds
+   ============================================================ */
+
+body.light-mode {
+  /* --- Backgrounds: warm off-whites, NOT blinding white --- */
+  --bg:           #f5f7fa;
+  --bg-card:      #ffffff;
+  --bg-surface:   #eaf0f7;
+  --bg-hover:     #dde6f0;
+
+  /* --- Accent: slightly deeper teal for contrast on light --- */
+  --accent:       #0c7a72;
+  --accent-hover: #0a6560;
+  --accent-dim:   rgba(12,122,114,0.10);
+  --accent-glow:  rgba(12,122,114,0.18);
+
+  /* --- Blue --- */
+  --blue:         #1d4ed8;
+  --blue-dim:     rgba(29,78,216,0.10);
+
+  /* --- Text: deep slate, NOT pure black (softer) --- */
+  --text:         #0f172a;
+  --text-muted:   #374151;
+  --text-faint:   #6b7280;
+
+  /* --- Borders: subtle, visible --- */
+  --border:       rgba(15,23,42,0.12);
+  --border-hover: rgba(12,122,114,0.35);
+
+  /* --- Shadow: soft on light bg --- */
+  --shadow:       0 4px 24px rgba(15,23,42,0.10);
+}
+
+/* ── Body & page backgrounds ─────────────────────────────── */
+body.light-mode { background: var(--bg); color: var(--text); }
+
+/* ── Navigation ──────────────────────────────────────────── */
+body.light-mode nav {
+  background: rgba(245,247,250,0.95);
+  border-bottom: 1px solid rgba(15,23,42,0.10);
+  box-shadow: 0 1px 12px rgba(15,23,42,0.08);
+}
+body.light-mode .nav-brand { color: var(--text); }
+body.light-mode .nav-links a { color: var(--text-muted); }
+body.light-mode .nav-links a:hover { color: var(--text); background: var(--bg-surface); }
+body.light-mode .nav-links a.active { color: var(--accent); background: var(--accent-dim); }
+body.light-mode .nav-toggle span { background: var(--text); }
+body.light-mode .nav-links {
+  background: rgba(245,247,250,0.98);
+  border-bottom-color: rgba(15,23,42,0.10);
+}
+
+/* ── Hero ────────────────────────────────────────────────── */
+body.light-mode .hero { background: var(--bg); }
+body.light-mode .hero::before {
+  background:
+    radial-gradient(ellipse 60% 80% at 70% 40%, rgba(12,122,114,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 20% 60%, rgba(29,78,216,0.05) 0%, transparent 50%);
+}
+body.light-mode .hero h1,
+body.light-mode .hero-subtitle,
+body.light-mode .hero p { color: var(--text); }
+body.light-mode .hero-eyebrow { color: var(--text-muted); }
+body.light-mode .hero-stat-value,
+body.light-mode .stat-value   { color: var(--accent); }
+body.light-mode .hero-stat-label { color: var(--text-muted); }
+body.light-mode .stat-divider { background: var(--border); }
+
+/* ── Role tags in hero ───────────────────────────────────── */
+body.light-mode .role-tag {
+  background: var(--bg-surface);
+  color: var(--text-muted);
+  border-color: var(--border);
+}
+
+/* ── Cards ───────────────────────────────────────────────── */
+body.light-mode .card,
+body.light-mode .project-card,
+body.light-mode .cert-card,
+body.light-mode .skill-card,
+body.light-mode .experience-card,
+body.light-mode .blog-card,
+body.light-mode .quick-contact-item {
+  background: var(--bg-card);
+  border-color: var(--border);
+  box-shadow: 0 2px 12px rgba(15,23,42,0.07);
+}
+body.light-mode .card:hover,
+body.light-mode .project-card:hover,
+body.light-mode .cert-card:hover,
+body.light-mode .skill-card:hover,
+body.light-mode .blog-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 8px 32px rgba(12,122,114,0.13);
+}
+
+/* ── Card text visibility ────────────────────────────────── */
+body.light-mode .project-card h3,
+body.light-mode .cert-card h3,
+body.light-mode .skill-card h3,
+body.light-mode .blog-card h3,
+body.light-mode .card h2,
+body.light-mode .card h3,
+body.light-mode .section-title,
+body.light-mode .page-header h1,
+body.light-mode h1, body.light-mode h2, body.light-mode h3, body.light-mode h4 {
+  color: var(--text);
+}
+body.light-mode p,
+body.light-mode li,
+body.light-mode .project-desc,
+body.light-mode .cert-desc,
+body.light-mode .blog-card p { color: var(--text-muted); }
+
+/* ── Tags, badges ────────────────────────────────────────── */
+body.light-mode .tag,
+body.light-mode .tech-tag {
+  background: var(--bg-surface);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+body.light-mode .badge-muted  { background: var(--bg-surface); color: var(--text-muted); border-color: var(--border); }
+body.light-mode .badge-accent { background: rgba(12,122,114,0.10); color: var(--accent); }
+body.light-mode .badge-blue   { background: rgba(29,78,216,0.10);  color: var(--blue); }
+body.light-mode .blog-tag     { background: var(--accent-dim); color: var(--accent); }
+
+/* ── Marquee / skill strip ───────────────────────────────── */
+body.light-mode .marquee-section { background: var(--bg-surface); border-color: var(--border); }
+body.light-mode .marquee-item { color: var(--text-muted); border-color: var(--border); background: var(--bg-card); }
+
+/* ── Forms ───────────────────────────────────────────────── */
+body.light-mode input,
+body.light-mode textarea,
+body.light-mode select {
+  background: var(--bg-card);
+  color: var(--text);
+  border-color: rgba(15,23,42,0.15);
+}
+body.light-mode input::placeholder,
+body.light-mode textarea::placeholder { color: var(--text-faint); }
+body.light-mode input:focus,
+body.light-mode textarea:focus {
+  border-color: var(--accent);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(12,122,114,0.10);
+}
+body.light-mode label,
+body.light-mode .form-label,
+body.light-mode .form-section-label { color: var(--text-muted); }
+
+/* ── Buttons ─────────────────────────────────────────────── */
+body.light-mode .btn-ghost {
+  color: var(--text);
+  border-color: var(--border);
+  background: var(--bg-card);
+}
+body.light-mode .btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+/* ── Social buttons ──────────────────────────────────────── */
+body.light-mode .soc-btn {
+  background: var(--bg-surface);
+  color: var(--text-muted);
+  border-color: var(--border);
+}
+body.light-mode .soc-btn:hover { background: var(--accent-dim); color: var(--accent); }
+
+/* ── Blog article specifics ──────────────────────────────── */
+body.light-mode .blog-article { color: var(--text); }
+body.light-mode .blog-article-body p,
+body.light-mode .blog-article-body li { color: var(--text-muted); }
+body.light-mode .blog-article-body h2,
+body.light-mode .blog-article-body h3 { color: var(--text); }
+body.light-mode .blog-article-body strong { color: var(--text); }
+body.light-mode .blog-article-body .blog-lead { color: var(--text); }
+body.light-mode .blog-summary-box {
+  background: var(--bg-surface);
+  border-color: var(--accent);
+  color: var(--text-muted);
+}
+body.light-mode .blog-summary-box h3 { color: var(--text); }
+body.light-mode .blog-article-copyright { background: rgba(12,122,114,0.05); }
+body.light-mode .byline-name { color: var(--text); }
+body.light-mode .byline-role { color: var(--text-muted); }
+body.light-mode .blog-date   { color: var(--text-faint); }
+body.light-mode .blog-share  { color: var(--text-muted); border-color: var(--border); }
+body.light-mode .blog-breadcrumbs,
+body.light-mode .blog-breadcrumbs a { color: var(--text-faint); }
+body.light-mode .blog-breadcrumbs span { color: var(--text-faint); }
+
+/* ── Article back link ───────────────────────────────────── */
+body.light-mode .blog-article-back a { color: var(--text-muted); }
+body.light-mode .blog-article-back a:hover { color: var(--accent); }
+
+/* ── Blog nav (prev/next) ────────────────────────────────── */
+body.light-mode .blog-nav-link {
+  background: var(--bg-card);
+  border-color: var(--border);
+  color: var(--text-muted);
+}
+body.light-mode .blog-nav-link:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── Article CTA box ─────────────────────────────────────── */
+body.light-mode .blog-article-cta {
+  background: var(--bg-surface);
+  border-color: var(--border);
+}
+body.light-mode .blog-article-cta h3 { color: var(--text); }
+body.light-mode .blog-article-cta p  { color: var(--text-muted); }
+
+/* ── Download bar ────────────────────────────────────────── */
+body.light-mode .article-download-end {
+  background: linear-gradient(135deg, rgba(225,29,72,0.05), rgba(12,122,114,0.05));
+  border-color: rgba(225,29,72,0.20);
+}
+body.light-mode .article-download-end .dl-label { color: var(--text); }
+body.light-mode .article-download-end .dl-sub   { color: var(--text-muted); }
+
+/* ── Project full card ───────────────────────────────────── */
+body.light-mode .project-full-card {
+  background: var(--bg-card);
+  border-color: var(--border);
+}
+body.light-mode .project-full-card h2,
+body.light-mode .project-full-card h3 { color: var(--text); }
+body.light-mode .project-full-card p  { color: var(--text-muted); }
+
+/* ── Experience cards ────────────────────────────────────── */
+body.light-mode .exp-item {
+  background: var(--bg-card);
+  border-color: var(--border);
+}
+body.light-mode .exp-role  { color: var(--text); }
+body.light-mode .exp-org   { color: var(--accent); }
+body.light-mode .exp-dates { color: var(--text-faint); }
+body.light-mode .exp-desc  { color: var(--text-muted); }
+body.light-mode .exp-dot   { background: var(--accent); }
+body.light-mode .exp-line  { background: var(--border); }
+
+/* ── Skills ──────────────────────────────────────────────── */
+body.light-mode .skill-bar-bg { background: var(--bg-surface); }
+body.light-mode .skill-label,
+body.light-mode .skill-pct   { color: var(--text-muted); }
+body.light-mode .lang-tag {
+  background: var(--bg-surface);
+  color: var(--text-muted);
+  border-color: var(--border);
+}
+
+/* ── Gallery lightbox ────────────────────────────────────── */
+body.light-mode .gallery-label { color: var(--text-muted); background: var(--bg-surface); }
+
+/* ── Certificates ────────────────────────────────────────── */
+body.light-mode .cert-issuer { color: var(--text-muted); }
+body.light-mode .cert-date   { color: var(--text-faint); }
+
+/* ── Contact page ────────────────────────────────────────── */
+body.light-mode .contact-info-card {
+  background: var(--bg-card);
+  border-color: var(--border);
+}
+body.light-mode .contact-info-card h3 { color: var(--text); }
+body.light-mode .contact-info-card p  { color: var(--text-muted); }
+body.light-mode .hours-row .day  { color: var(--text); }
+body.light-mode .hours-row       { color: var(--text-muted); }
+body.light-mode .subject-chip    { background: var(--bg-surface); color: var(--text-muted); border-color: var(--border); }
+body.light-mode .subject-chip:hover,
+body.light-mode .subject-chip.active { background: var(--accent-dim); border-color: var(--accent); color: var(--accent); }
+body.light-mode .char-counter    { color: var(--text-faint); }
+body.light-mode .form-section-label { color: var(--text-faint); }
+body.light-mode .quick-contact-item i { color: var(--accent); }
+
+/* ── Footer ──────────────────────────────────────────────── */
+body.light-mode footer {
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+}
+body.light-mode footer a { color: var(--text-muted); }
+body.light-mode footer a:hover { color: var(--accent); }
+body.light-mode .copyright-line { color: var(--text-faint); }
+
+/* ── Page headers / section titles ──────────────────────── */
+body.light-mode .page-header p { color: var(--text-muted); }
+body.light-mode .home-section-header h2 { color: var(--text); }
+body.light-mode .home-section-header p  { color: var(--text-muted); }
+body.light-mode .section-eyebrow { color: var(--accent); }
+
+/* ── Misc ────────────────────────────────────────────────── */
+body.light-mode #reading-progress  { box-shadow: 0 0 8px rgba(12,122,114,0.35); }
+body.light-mode .blog-article-icon { background: var(--bg-surface); color: var(--accent); }
+body.light-mode .about-fact-value  { color: var(--text); }
+body.light-mode .about-fact-label  { color: var(--text-faint); }
+
+/* ── Clock widget ────────────────────────────────────────── */
+body.light-mode .clock-widget {
+  background: var(--bg-surface);
+  border-color: rgba(15,23,42,0.12);
+}
+body.light-mode .clock-face-digital { color: var(--accent); }
+body.light-mode .clock-face-digital .clock-tz {
+  background: rgba(0,0,0,0.06);
+  color: var(--text-muted);
+}
+body.light-mode .clock-toggle-btn { color: var(--text-muted); }
+
+/* ── Theme toggle ────────────────────────────────────────── */
+body.light-mode .theme-toggle .icon-sun  { opacity: 1; transform: translateY(0); }
+body.light-mode .theme-toggle .icon-moon { opacity: 0; transform: translateY(-10px); }

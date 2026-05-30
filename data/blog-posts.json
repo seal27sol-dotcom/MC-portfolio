@@ -1,0 +1,15 @@
+{
+  "_comment": "Blog post index — update when adding new articles",
+  "posts": [
+    { "slug": "blog-cctv",              "title": "How to Plan a CCTV Installation",                   "category": "CCTV",          "date": "2026-03", "readTime": 8  },
+    { "slug": "blog-cybersecurity",     "title": "Cybersecurity Basics Every Ugandan Business Needs", "category": "Security",      "date": "2026-02", "readTime": 7  },
+    { "slug": "blog-python",            "title": "Why I Build Desktop Apps with Python and PyQt6",    "category": "Development",   "date": "2026-01", "readTime": 6  },
+    { "slug": "blog-networking-uganda", "title": "Networking Realities in Uganda",                    "category": "Networking",    "date": "2025-12", "readTime": 9  },
+    { "slug": "blog-graphic-design",    "title": "Graphic Design Principles I Use Every Day",         "category": "Design",        "date": "2025-11", "readTime": 7  },
+    { "slug": "blog-figma-vs-canva",    "title": "Figma vs Canva: Which Should You Use?",             "category": "Design",        "date": "2025-10", "readTime": 5  },
+    { "slug": "blog-video-editing",     "title": "Video Editing Workflows for IT Professionals",      "category": "Media",         "date": "2025-09", "readTime": 6  },
+    { "slug": "blog-it-career-uganda",  "title": "Breaking into IT in Uganda",                        "category": "Career",        "date": "2025-08", "readTime": 8  },
+    { "slug": "blog-it-tips",           "title": "10 IT Tips Every Small Business Needs",             "category": "IT Tips",       "date": "2025-07", "readTime": 5  },
+    { "slug": "blog-industrial-training","title": "What Industrial Training Taught Me",               "category": "Career",        "date": "2025-06", "readTime": 10 }
+  ]
+}
