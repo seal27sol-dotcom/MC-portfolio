@@ -15,6 +15,7 @@
 </head>
 <body>
 
+<!-- NAV (unchanged from your existing pages) -->
 <nav>
   <div class="nav-brand">CM<span>.</span></div>
   <ul class="nav-links" id="navLinks">
@@ -41,129 +42,143 @@
   <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- HERO -->
-<section style="padding:110px 0 36px;text-align:center;background:linear-gradient(180deg,rgba(20,184,166,0.07)0%,transparent 100%);">
+<!-- PAGE -->
+<main class="page">
   <div class="container">
-    <div class="hero-eyebrow fade-up" style="display:flex;justify-content:center;">
-      <i class="fa-brands fa-google" style="margin-right:7px;color:#4285f4;"></i> Gemini AI Support
-    </div>
-    <h1 class="fade-up delay-1" style="font-size:clamp(1.9rem,5vw,2.8rem);margin-bottom:12px;">
-      How can I help<br><span class="name-accent">you today?</span>
-    </h1>
-    <p class="fade-up delay-2" style="color:var(--text-muted);max-width:480px;margin:0 auto;font-size:.95rem;line-height:1.7;">
-      Chat with my Gemini-powered assistant about my work, skills, and availability. Your live session details are shown on the right.
-    </p>
-  </div>
-</section>
 
-<div class="container" style="padding-bottom:80px;">
-  <div id="supportGrid" style="display:grid;grid-template-columns:1fr 360px;gap:26px;align-items:start;">
+    <!-- Page Header -->
+    <header class="page-header fade-up">
+      <p class="eyebrow"><i class="fa-solid fa-robot" style="margin-right:6px;"></i>AI Assistant</p>
+      <h1>Support &amp; <span style="color:var(--accent)">Chat</span></h1>
+      <p>Ask my Gemini-powered assistant anything about my work, skills, and availability — or browse your live session details below.</p>
+    </header>
 
-    <!-- ══ CHATBOT ══ -->
-    <div>
-      <div class="card" style="padding:0;overflow:hidden;border-radius:var(--radius-lg);">
+    <!-- Main Grid -->
+    <div class="sp-layout fade-up delay-1">
 
-        <!-- Header -->
-        <div style="display:flex;align-items:center;gap:13px;padding:17px 22px;background:var(--bg-surface);border-bottom:1px solid var(--border);">
-          <div style="position:relative;flex-shrink:0;">
-            <div style="width:40px;height:40px;border-radius:11px;background:linear-gradient(135deg,#4285f4 0%,#34a853 50%,#fbbc05 75%,#ea4335 100%);display:flex;align-items:center;justify-content:center;font-size:17px;color:#fff;">
+      <!-- ══ LEFT: CHAT ══ -->
+      <div class="sp-chat-col">
+
+        <!-- Chat Card -->
+        <div class="sp-chat-card">
+
+          <!-- Chat Header -->
+          <div class="sp-chat-header">
+            <div class="sp-bot-avatar">
               <i class="fa-solid fa-robot"></i>
+              <span class="sp-online-dot"></span>
             </div>
-            <span style="position:absolute;bottom:-1px;right:-1px;width:10px;height:10px;border-radius:50%;background:#4ade80;border:2px solid var(--bg-surface);"></span>
-          </div>
-          <div style="flex:1;">
-            <div style="font-weight:700;font-family:'Space Grotesk',sans-serif;font-size:.92rem;display:flex;align-items:center;gap:8px;">
-              CM Assistant
-              <span style="font-size:.68rem;background:rgba(66,133,244,0.15);color:#4285f4;padding:2px 7px;border-radius:20px;font-weight:600;">Gemini 2.0 Flash</span>
+            <div class="sp-bot-info">
+              <div class="sp-bot-name">
+                CM Assistant
+                <span class="sp-gemini-badge"><i class="fa-brands fa-google"></i> Gemini 2.0</span>
+              </div>
+              <div class="sp-bot-status">
+                <span class="sp-status-dot"></span>
+                Online · Knows Christopher's full portfolio
+              </div>
             </div>
-            <div style="font-size:.71rem;color:var(--text-muted);">Online · Knows Christopher's complete portfolio</div>
-          </div>
-          <button onclick="clearChat()" style="background:none;border:1px solid var(--border);border-radius:8px;cursor:pointer;color:var(--text-muted);font-size:.72rem;padding:5px 10px;font-family:'DM Sans',sans-serif;white-space:nowrap;"
-            onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'"
-            onmouseout="this.style.borderColor='';this.style.color=''">
-            <i class="fa-solid fa-rotate-left"></i> Clear
-          </button>
-        </div>
-
-        <!-- Messages -->
-        <div id="chatMessages" style="height:420px;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:13px;scroll-behavior:smooth;">
-          <div style="display:flex;gap:9px;align-items:flex-start;">
-            <div style="width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,#4285f4,#34a853);display:flex;align-items:center;justify-content:center;font-size:13px;color:#fff;flex-shrink:0;margin-top:2px;"><i class="fa-solid fa-robot"></i></div>
-            <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:4px 14px 14px 14px;padding:12px 15px;max-width:88%;font-size:.875rem;line-height:1.65;color:var(--text);">
-              👋 Hi! I'm Christopher's AI assistant, powered by <strong>Google Gemini</strong>. I know everything about his skills, projects, experience, and how to get in touch.<br><br>
-              What would you like to know?
+            <div class="sp-header-actions">
+              <button class="sp-icon-btn" onclick="exportChat()" title="Export conversation">
+                <i class="fa-solid fa-download"></i>
+              </button>
+              <button class="sp-icon-btn sp-icon-btn--danger" onclick="clearChat()" title="Clear chat">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
             </div>
           </div>
+
+          <!-- Messages -->
+          <div class="sp-messages" id="chatMessages">
+            <div class="sp-msg sp-msg--bot">
+              <div class="sp-msg-avi sp-msg-avi--bot"><i class="fa-solid fa-robot"></i></div>
+              <div class="sp-msg-bubble sp-msg-bubble--bot">
+                <div class="sp-msg-text">
+                  👋 Hi! I'm Christopher's AI assistant, powered by <strong>Google Gemini</strong>.<br><br>
+                  I know his full background — skills, projects, experience, education, and how to reach him. Ask me anything!
+                </div>
+                <div class="sp-msg-time">Just now</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Suggestions -->
+          <div class="sp-suggestions" id="chatSuggestions">
+            <button class="sp-chip" onclick="suggest(this)">🛠️ Tech skills</button>
+            <button class="sp-chip" onclick="suggest(this)">💼 Projects built</button>
+            <button class="sp-chip" onclick="suggest(this)">🎓 Education</button>
+            <button class="sp-chip" onclick="suggest(this)">✅ Available for hire?</button>
+            <button class="sp-chip" onclick="suggest(this)">📍 Location & remote work</button>
+            <button class="sp-chip" onclick="suggest(this)">💰 Services & rates</button>
+            <button class="sp-chip" onclick="suggest(this)">📄 Download CV</button>
+            <button class="sp-chip" onclick="suggest(this)">🌐 Languages spoken</button>
+          </div>
+
+          <!-- Input -->
+          <div class="sp-input-row">
+            <textarea
+              id="chatInput"
+              class="sp-textarea"
+              placeholder="Ask me anything about Christopher…"
+              rows="1"
+              onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendChat();}"
+              oninput="autoResize(this)"
+            ></textarea>
+            <button class="sp-send-btn" id="chatSendBtn" onclick="sendChat()" title="Send">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </div>
+
+          <!-- Footer note -->
+          <div class="sp-chat-foot">
+            <i class="fa-brands fa-google"></i> Powered by Google Gemini · Answers based on Christopher's real portfolio data
+          </div>
+
+        </div><!-- /sp-chat-card -->
+      </div><!-- /sp-chat-col -->
+
+      <!-- ══ RIGHT: SESSION PANEL ══ -->
+      <div class="sp-side-col">
+
+        <!-- Session identity -->
+        <div class="sp-panel">
+          <div class="sp-panel-head">
+            <i class="fa-solid fa-user-shield"></i>
+            <span>Your Session</span>
+            <span class="sp-live-badge"><span class="sp-live-dot"></span> Live</span>
+          </div>
+          <div id="sessionInfo" class="sp-panel-body"></div>
         </div>
 
-        <!-- Quick suggestions -->
-        <div id="chatSuggestions" style="padding:0 20px 11px;display:flex;flex-wrap:wrap;gap:7px;">
-          <button class="chip-btn" onclick="suggest(this)">🛠️ Tech skills</button>
-          <button class="chip-btn" onclick="suggest(this)">💼 Projects built</button>
-          <button class="chip-btn" onclick="suggest(this)">🎓 Education & background</button>
-          <button class="chip-btn" onclick="suggest(this)">✅ Available for hire?</button>
-          <button class="chip-btn" onclick="suggest(this)">📍 Location & remote work</button>
-          <button class="chip-btn" onclick="suggest(this)">💰 Services & rates</button>
-          <button class="chip-btn" onclick="suggest(this)">📄 How to download CV</button>
+        <!-- Pages trail -->
+        <div class="sp-panel">
+          <div class="sp-panel-head">
+            <i class="fa-solid fa-route"></i>
+            <span>Navigation Trail</span>
+            <span id="pageCount" class="sp-panel-count"></span>
+          </div>
+          <div id="pagesVisited" class="sp-trail-body"></div>
         </div>
 
-        <!-- Input -->
-        <div style="padding:13px 20px 18px;border-top:1px solid var(--border);display:flex;gap:9px;">
-          <input id="chatInput" type="text" placeholder="Ask me anything about Christopher…"
-            style="flex:1;padding:11px 14px;border-radius:10px;font-size:.875rem;background:var(--bg);border:1.5px solid var(--border);color:var(--text);outline:none;transition:border-color .2s;font-family:'DM Sans',sans-serif;"
-            onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor=''"
-            onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendChat();}"/>
-          <button onclick="sendChat()" id="chatSendBtn"
-            style="padding:11px 16px;border-radius:10px;border:none;cursor:pointer;background:var(--accent);color:#071018;font-weight:700;display:flex;align-items:center;gap:6px;transition:background .2s;flex-shrink:0;"
-            onmouseover="this.style.background='var(--accent-hover)'" onmouseout="this.style.background='var(--accent)'">
-            <i class="fa-solid fa-paper-plane"></i>
-          </button>
+        <!-- Quick actions -->
+        <div class="sp-panel sp-panel--actions">
+          <div class="sp-panel-head">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Quick Actions</span>
+          </div>
+          <div class="sp-actions-body">
+            <a href="contact.html" class="btn btn-primary btn-sm" style="justify-content:center;width:100%;"><i class="fa-solid fa-envelope"></i> Contact Christopher</a>
+            <a href="#" class="btn btn-ghost btn-sm cv-download-btn" data-cv-download style="justify-content:center;width:100%;"><i class="fa-solid fa-file-arrow-down"></i> Download CV</a>
+            <a href="projects.html" class="btn btn-ghost btn-sm" style="justify-content:center;width:100%;"><i class="fa-solid fa-code"></i> View Projects</a>
+            <a href="https://github.com/seal27sol-dotcom" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" style="justify-content:center;width:100%;"><i class="fa-brands fa-github"></i> GitHub Profile</a>
+          </div>
         </div>
-      </div>
-      <p style="font-size:.72rem;color:var(--text-faint);margin-top:8px;text-align:center;">
-        <i class="fa-brands fa-google"></i> Powered by Google Gemini 2.0 Flash · Based on Christopher's real portfolio data
-      </p>
-    </div>
 
-    <!-- ══ SESSION PANEL ══ -->
-    <div style="display:flex;flex-direction:column;gap:16px;">
+      </div><!-- /sp-side-col -->
+    </div><!-- /sp-layout -->
 
-      <!-- Identity -->
-      <div class="card" style="padding:0;overflow:hidden;">
-        <div style="padding:13px 18px;background:var(--bg-surface);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;">
-          <i class="fa-solid fa-user-shield" style="color:var(--accent);font-size:14px;"></i>
-          <span style="font-weight:700;font-family:'Space Grotesk',sans-serif;font-size:.86rem;">Your Session</span>
-          <span style="margin-left:auto;display:flex;align-items:center;gap:5px;font-size:.69rem;color:#4ade80;">
-            <span id="liveDot" style="width:6px;height:6px;border-radius:50%;background:#4ade80;display:inline-block;"></span> Live
-          </span>
-        </div>
-        <div id="sessionInfo" style="padding:4px 0 8px;"></div>
-      </div>
-
-      <!-- Pages trail -->
-      <div class="card" style="padding:0;overflow:hidden;">
-        <div style="padding:13px 18px;background:var(--bg-surface);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;">
-          <i class="fa-solid fa-route" style="color:var(--accent);font-size:13px;"></i>
-          <span style="font-weight:700;font-family:'Space Grotesk',sans-serif;font-size:.86rem;">Navigation Trail</span>
-          <span id="pageCount" style="margin-left:auto;font-size:.7rem;color:var(--text-muted);"></span>
-        </div>
-        <div id="pagesVisited" style="padding:10px 14px;display:flex;flex-direction:column;gap:4px;max-height:200px;overflow-y:auto;"></div>
-      </div>
-
-      <!-- Actions -->
-      <div class="card" style="padding:16px 18px;">
-        <div style="font-weight:700;font-family:'Space Grotesk',sans-serif;font-size:.85rem;margin-bottom:11px;display:flex;align-items:center;gap:7px;">
-          <i class="fa-solid fa-bolt" style="color:var(--accent);"></i> Quick Actions
-        </div>
-        <div style="display:flex;flex-direction:column;gap:7px;">
-          <a href="contact.html" class="btn btn-primary btn-sm" style="justify-content:center;"><i class="fa-solid fa-envelope"></i> Contact Christopher</a>
-          <a href="#" class="btn btn-ghost btn-sm cv-download-btn" data-cv-download style="justify-content:center;"><i class="fa-solid fa-file-arrow-down"></i> Download CV</a>
-          <a href="projects.html" class="btn btn-ghost btn-sm" style="justify-content:center;"><i class="fa-solid fa-code"></i> View Projects</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  </div><!-- /container -->
+</main>
 
 <!-- FOOTER -->
 <footer>
@@ -184,352 +199,773 @@
   </div>
 </footer>
 
-<!-- CV Modal -->
-<div id="cvModalOverlay" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.78);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:16px;">
-  <div style="background:var(--bg-card,#0e1729);border:1px solid var(--border,rgba(255,255,255,0.08));border-radius:20px;padding:44px 38px 34px;max-width:430px;width:100%;box-shadow:0 32px 80px rgba(0,0,0,0.65);position:relative;animation:cvIn .3s cubic-bezier(.22,1,.36,1) both;">
-    <button onclick="closeCvModal()" style="position:absolute;top:14px;right:16px;background:none;border:none;cursor:pointer;color:var(--text-muted);font-size:22px;line-height:1;padding:4px 8px;" title="Close">&times;</button>
-    <div style="text-align:center;margin-bottom:26px;">
-      <div style="display:inline-flex;align-items:center;justify-content:center;width:58px;height:58px;border-radius:15px;border:1px solid var(--accent);background:rgba(20,184,166,0.08);font-size:23px;color:var(--accent);margin-bottom:14px;"><i class="fa-solid fa-file-shield"></i></div>
-      <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:700;color:var(--text);margin:0 0 7px;">Verify to Download CV</h3>
-      <p style="color:var(--text-muted);font-size:.85rem;line-height:1.55;margin:0;">Enter your details and we'll email you a verification code.</p>
+<!-- CV Modal (identical to other pages) -->
+<div id="cvModalOverlay" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.75);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:16px;">
+  <div style="background:var(--bg-card,#0e1729);border:1px solid var(--border,rgba(255,255,255,0.08));border-radius:20px;padding:44px 40px 36px;max-width:440px;width:100%;box-shadow:0 32px 80px rgba(0,0,0,0.6);position:relative;animation:cvModalIn .3s cubic-bezier(.22,1,.36,1) both;">
+    <button onclick="closeCvModal()" style="position:absolute;top:16px;right:18px;background:none;border:none;cursor:pointer;color:var(--text-muted,#8899b4);font-size:22px;line-height:1;padding:4px 8px;border-radius:6px;" title="Close">&times;</button>
+    <div style="text-align:center;margin-bottom:28px;">
+      <div style="display:inline-flex;align-items:center;justify-content:center;width:60px;height:60px;border-radius:16px;border:1px solid var(--accent,#14b8a6);background:rgba(20,184,166,0.08);font-size:24px;color:var(--accent,#14b8a6);margin-bottom:16px;"><i class="fa-solid fa-file-shield"></i></div>
+      <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:700;color:var(--text,#e2e8f0);margin:0 0 8px;">Verify to Download CV</h3>
+      <p style="color:var(--text-muted,#8899b4);font-size:.86rem;line-height:1.55;margin:0;">Enter your details — a verification code will be sent to your email.</p>
     </div>
-
-    <!-- Step 1 -->
     <div id="cvStep1">
-      <label style="display:block;font-size:.72rem;font-weight:700;color:var(--text-muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:7px;">Full Name <span style="color:var(--accent)">*</span></label>
-      <input id="cvInputName" type="text" placeholder="e.g. Sarah Nakato" autocomplete="name"
-        style="width:100%;padding:11px 13px;border-radius:9px;font-size:.92rem;background:var(--bg);border:1.5px solid var(--border);color:var(--text);outline:none;transition:border-color .2s;margin-bottom:13px;"
-        onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor=''"/>
-      <label style="display:block;font-size:.72rem;font-weight:700;color:var(--text-muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:7px;">Email Address <span style="color:var(--accent)">*</span></label>
-      <input id="cvInputEmail" type="email" placeholder="you@company.com" autocomplete="email"
-        style="width:100%;padding:11px 13px;border-radius:9px;font-size:.92rem;background:var(--bg);border:1.5px solid var(--border);color:var(--text);outline:none;transition:border-color .2s;margin-bottom:16px;"
-        onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor=''"/>
-      <p id="cvStep1Err" style="display:none;color:#f87171;font-size:.8rem;margin-bottom:11px;"></p>
-      <button id="cvStep1Btn" onclick="cvStep1Submit()" style="width:100%;padding:13px;border-radius:10px;border:none;cursor:pointer;background:var(--accent);color:#071018;font-family:'DM Sans',sans-serif;font-size:.93rem;font-weight:700;display:flex;align-items:center;justify-content:center;gap:9px;">
+      <label style="display:block;font-size:.75rem;font-weight:700;color:var(--text-muted,#8899b4);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;">Full Name <span style="color:var(--accent,#14b8a6)">*</span></label>
+      <input id="cvInputName" type="text" placeholder="e.g. Sarah Nakato" autocomplete="name" style="width:100%;padding:11px 14px;border-radius:10px;font-size:.93rem;background:var(--bg,#09101f);border:1.5px solid var(--border,rgba(255,255,255,0.1));color:var(--text,#e2e8f0);outline:none;margin-bottom:13px;"/>
+      <label style="display:block;font-size:.75rem;font-weight:700;color:var(--text-muted,#8899b4);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;">Email Address <span style="color:var(--accent,#14b8a6)">*</span></label>
+      <input id="cvInputEmail" type="email" placeholder="you@company.com" autocomplete="email" style="width:100%;padding:11px 14px;border-radius:10px;font-size:.93rem;background:var(--bg,#09101f);border:1.5px solid var(--border,rgba(255,255,255,0.1));color:var(--text,#e2e8f0);outline:none;margin-bottom:18px;"/>
+      <p id="cvStep1Err" style="display:none;color:#f87171;font-size:.8rem;margin-bottom:12px;"></p>
+      <button id="cvStep1Btn" onclick="cvStep1Submit()" style="width:100%;padding:13px 20px;border-radius:11px;border:none;cursor:pointer;background:var(--accent,#14b8a6);color:#071018;font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:700;display:flex;align-items:center;justify-content:center;gap:9px;">
         <i class="fa-solid fa-paper-plane"></i> Send Verification Code
       </button>
     </div>
-
-    <!-- Step 2 -->
     <div id="cvStep2" style="display:none;">
-      <p style="font-size:.86rem;color:var(--text-muted);margin:0 0 8px;line-height:1.55;">
-        Check your inbox at <strong id="cvStep2EmailShown" style="color:var(--text);"></strong> for the 6-digit code.
-      </p>
-      <div id="cvCodeHint" style="display:none;background:rgba(20,184,166,0.08);border:1px solid rgba(20,184,166,0.25);border-radius:9px;padding:9px 13px;margin-bottom:14px;font-size:.82rem;color:var(--text-muted);">
-        <i class="fa-solid fa-info-circle" style="color:var(--accent);"></i>
-        Can't find it? Your code is: <strong id="cvCodeHintVal" style="color:var(--accent);letter-spacing:.15em;font-size:1rem;"></strong>
+      <p style="font-size:.87rem;color:var(--text-muted,#8899b4);margin:0 0 20px;">Code sent to <strong id="cvStep2EmailShown" style="color:var(--text,#e2e8f0);"></strong></p>
+      <div id="cvCodeHint" style="display:none;background:rgba(20,184,166,0.08);border:1px solid rgba(20,184,166,0.25);border-radius:10px;padding:10px 14px;margin-bottom:16px;font-size:.82rem;color:var(--text-muted,#8899b4);">
+        <i class="fa-solid fa-info-circle" style="color:var(--accent,#14b8a6);"></i> Your code: <strong id="cvCodeHintVal" style="color:var(--accent,#14b8a6);letter-spacing:.15em;font-size:1rem;"></strong>
       </div>
-      <input id="cvCodeInput" type="text" inputmode="numeric" maxlength="6" placeholder="• • • • • •"
-        style="width:100%;padding:14px;border-radius:9px;font-size:1.5rem;letter-spacing:.4em;text-align:center;background:var(--bg);border:1.5px solid var(--border);color:var(--text);outline:none;margin-bottom:11px;"
-        onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor=''"/>
-      <p id="cvStep2Err" style="display:none;color:#f87171;font-size:.8rem;margin-bottom:11px;"></p>
-      <button onclick="cvStep2Verify()" style="width:100%;padding:13px;border-radius:10px;border:none;cursor:pointer;background:var(--accent);color:#071018;font-family:'DM Sans',sans-serif;font-size:.93rem;font-weight:700;display:flex;align-items:center;justify-content:center;gap:9px;margin-bottom:11px;">
+      <input id="cvCodeInput" type="text" inputmode="numeric" maxlength="6" placeholder="• • • • • •" style="width:100%;padding:14px;border-radius:10px;font-size:1.4rem;letter-spacing:.4em;text-align:center;background:var(--bg,#09101f);border:1.5px solid var(--border,rgba(255,255,255,0.1));color:var(--text,#e2e8f0);outline:none;margin-bottom:12px;"/>
+      <p id="cvStep2Err" style="display:none;color:#f87171;font-size:.8rem;margin-bottom:12px;"></p>
+      <button onclick="cvStep2Verify()" style="width:100%;padding:13px 20px;border-radius:11px;border:none;cursor:pointer;background:var(--accent,#14b8a6);color:#071018;font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:700;display:flex;align-items:center;justify-content:center;gap:9px;margin-bottom:12px;">
         <i class="fa-solid fa-shield-check"></i> Verify &amp; Download
       </button>
-      <p style="text-align:center;font-size:.77rem;color:var(--text-faint);">
-        Didn't receive it?
-        <button id="cvResendBtn" onclick="cvResend()" style="background:none;border:none;cursor:pointer;color:var(--accent);font-size:.77rem;padding:0;text-decoration:underline;">Resend code</button>
+      <p style="text-align:center;font-size:.78rem;color:var(--text-faint,#4a5a74);">
+        Didn't receive it? <button id="cvResendBtn" onclick="cvResend()" style="background:none;border:none;cursor:pointer;color:var(--accent,#14b8a6);font-size:.78rem;padding:0;text-decoration:underline;">Resend code</button>
       </p>
     </div>
-
-    <!-- Step 3 -->
-    <div id="cvStep3" style="display:none;text-align:center;padding:14px 0;">
-      <div style="font-size:3rem;margin-bottom:14px;">✅</div>
-      <h4 style="font-family:'Space Grotesk',sans-serif;margin:0 0 9px;color:var(--text);font-size:1.1rem;">Verified! Downloading…</h4>
-      <p style="color:var(--text-muted);font-size:.875rem;">Thank you. Christopher has been notified.</p>
+    <div id="cvStep3" style="display:none;text-align:center;padding:16px 0;">
+      <div style="font-size:3rem;margin-bottom:16px;">✅</div>
+      <h4 style="font-family:'Space Grotesk',sans-serif;margin:0 0 10px;color:var(--text,#e2e8f0);font-size:1.15rem;">Verified! Downloading…</h4>
+      <p style="color:var(--text-muted,#8899b4);font-size:.875rem;">Christopher has been notified of your download.</p>
     </div>
-
-    <p style="text-align:center;color:var(--text-faint);font-size:.71rem;margin:18px 0 0;">
-      <i class="fa-solid fa-lock"></i> Your details are only used to verify this download. Never shared.
-    </p>
+    <p style="text-align:center;color:var(--text-faint,#4a5a74);font-size:.72rem;margin:20px 0 0;"><i class="fa-solid fa-lock"></i> Your details are only used to verify this download.</p>
   </div>
 </div>
+<style>@keyframes cvModalIn{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:none}}</style>
+<script src="../js/cv-download.js"></script>
 
 <div id="pt-overlay" class="page-transition-overlay"><div class="pt-bar"></div><div class="pt-logo">CM<span style="color:var(--accent,#14b8a6)">.</span></div></div>
 
+<!-- ══ SUPPORT PAGE STYLES ══ -->
 <style>
-@keyframes cvIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
-@keyframes livePulse{0%,100%{opacity:.5}50%{opacity:1;transform:scale(1.4)}}
+/* ── Layout ─────────────────────────────────────────────── */
+.sp-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
+}
 
-.chip-btn{padding:6px 12px;border-radius:20px;border:1px solid var(--border);background:var(--bg-surface);color:var(--text-muted);font-size:.75rem;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .18s;white-space:nowrap;}
-.chip-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim);}
+/* ── Chat card ───────────────────────────────────────────── */
+.sp-chat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
 
-.srow{display:flex;align-items:flex-start;gap:9px;padding:8px 18px;border-bottom:1px solid var(--border);font-size:.82rem;}
-.srow:last-child{border-bottom:none;}
-.srow-icon{width:25px;height:25px;border-radius:7px;background:var(--bg-surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:10px;flex-shrink:0;margin-top:1px;}
-.srow-lbl{color:var(--text-muted);font-size:.68rem;text-transform:uppercase;letter-spacing:.07em;font-weight:700;margin-bottom:2px;}
-.srow-val{color:var(--text);font-size:.81rem;line-height:1.3;word-break:break-word;}
-.srow-val.hi{color:var(--accent);font-weight:600;}
+/* Header */
+.sp-chat-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+}
+.sp-bot-avatar {
+  position: relative;
+  width: 44px; height: 44px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #4285f4 0%, #34a853 50%, #fbbc05 75%, #ea4335 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; color: #fff; flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(66,133,244,0.35);
+}
+.sp-online-dot {
+  position: absolute; bottom: -1px; right: -1px;
+  width: 11px; height: 11px;
+  border-radius: 50%; background: #4ade80;
+  border: 2px solid var(--bg-surface);
+  animation: spPulse 2.5s ease-in-out infinite;
+}
+@keyframes spPulse { 0%,100%{box-shadow:0 0 0 0 rgba(74,222,128,0.4)} 50%{box-shadow:0 0 0 5px rgba(74,222,128,0)} }
 
-.trail-item{display:flex;align-items:center;gap:7px;padding:4px 6px;border-radius:6px;font-size:.77rem;transition:background .15s;cursor:default;}
-.trail-item:hover{background:var(--bg-surface);}
-.trail-icon{color:var(--accent);font-size:.62rem;flex-shrink:0;}
-.trail-name{flex:1;color:var(--text);font-size:.78rem;}
-.trail-time{font-size:.67rem;color:var(--text-faint);}
+.sp-bot-info { flex: 1; }
+.sp-bot-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700; font-size: .93rem;
+  color: var(--text);
+  display: flex; align-items: center; gap: 8px;
+}
+.sp-gemini-badge {
+  font-size: .66rem;
+  background: rgba(66,133,244,0.13);
+  color: #6ba4f8;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 600;
+  border: 1px solid rgba(66,133,244,0.2);
+  display: flex; align-items: center; gap: 4px;
+}
+.sp-bot-status {
+  font-size: .72rem; color: var(--text-muted);
+  display: flex; align-items: center; gap: 6px;
+  margin-top: 3px;
+}
+.sp-status-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%; background: #4ade80;
+  display: inline-block;
+}
+.sp-header-actions { display: flex; gap: 6px; }
+.sp-icon-btn {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer; font-size: 12px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .18s;
+}
+.sp-icon-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+.sp-icon-btn--danger:hover { border-color: #f87171; color: #f87171; background: rgba(248,113,113,0.08); }
 
-.typing-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--text-muted);animation:tBounce 1.2s infinite;}
-.typing-dot:nth-child(2){animation-delay:.2s}.typing-dot:nth-child(3){animation-delay:.4s}
-@keyframes tBounce{0%,80%,100%{transform:scale(.6);opacity:.4}40%{transform:scale(1);opacity:1}}
+/* Messages area */
+.sp-messages {
+  flex: 1;
+  min-height: 420px;
+  max-height: 480px;
+  overflow-y: auto;
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  scroll-behavior: smooth;
+}
+.sp-messages::-webkit-scrollbar { width: 4px; }
+.sp-messages::-webkit-scrollbar-track { background: transparent; }
+.sp-messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
 
-#liveDot{animation:livePulse 2s ease-in-out infinite;}
-@media(max-width:880px){#supportGrid{grid-template-columns:1fr!important;}}
+/* Message rows */
+.sp-msg { display: flex; gap: 10px; align-items: flex-end; animation: msgIn .3s cubic-bezier(.22,1,.36,1) both; }
+.sp-msg--user { flex-direction: row-reverse; }
+@keyframes msgIn { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:none} }
+
+.sp-msg-avi {
+  width: 32px; height: 32px;
+  border-radius: 10px; font-size: 13px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.sp-msg-avi--bot {
+  background: linear-gradient(135deg,#4285f4,#34a853);
+  color: #fff;
+}
+.sp-msg-avi--user {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.sp-msg-bubble { max-width: 82%; display: flex; flex-direction: column; }
+.sp-msg-bubble--bot { align-items: flex-start; }
+.sp-msg-bubble--user { align-items: flex-end; }
+
+.sp-msg-text {
+  padding: 12px 16px;
+  font-size: .875rem;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.sp-msg-bubble--bot .sp-msg-text {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 4px 16px 16px 16px;
+  color: var(--text);
+}
+.sp-msg-bubble--user .sp-msg-text {
+  background: var(--accent);
+  border-radius: 16px 4px 16px 16px;
+  color: #071018;
+  font-weight: 500;
+}
+.sp-msg-time {
+  font-size: .66rem;
+  color: var(--text-faint);
+  margin-top: 4px;
+  padding: 0 4px;
+}
+
+/* Typing indicator */
+.sp-typing { display: flex; gap: 5px; align-items: center; padding: 14px 16px; }
+.sp-typing span {
+  width: 7px; height: 7px;
+  border-radius: 50%; background: var(--text-muted);
+  animation: spBounce 1.2s infinite;
+}
+.sp-typing span:nth-child(2) { animation-delay: .15s; }
+.sp-typing span:nth-child(3) { animation-delay: .3s; }
+@keyframes spBounce { 0%,80%,100%{transform:scale(.55);opacity:.4} 40%{transform:scale(1);opacity:1} }
+
+/* Markdown-ish rendering in bot messages */
+.sp-msg-text strong { color: inherit; font-weight: 700; }
+.sp-msg-text em { font-style: italic; }
+.sp-msg-text code {
+  background: rgba(20,184,166,0.12);
+  border: 1px solid rgba(20,184,166,0.2);
+  border-radius: 4px; padding: 1px 6px;
+  font-family: 'Courier New', monospace; font-size: .82em;
+  color: var(--accent);
+}
+.sp-msg-text ul { padding-left: 16px; margin: 8px 0; list-style: disc; display: flex; flex-direction: column; gap: 4px; }
+.sp-msg-text ol { padding-left: 16px; margin: 8px 0; list-style: decimal; display: flex; flex-direction: column; gap: 4px; }
+.sp-msg-text li { font-size: .875rem; }
+.sp-msg-text h3, .sp-msg-text h4 { font-family: 'Space Grotesk', sans-serif; margin: 10px 0 4px; color: var(--text); }
+
+/* Suggestions chips */
+.sp-suggestions {
+  padding: 0 20px 14px;
+  display: flex; flex-wrap: wrap; gap: 7px;
+}
+.sp-chip {
+  padding: 6px 13px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--bg-surface);
+  color: var(--text-muted);
+  font-size: .75rem;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: all .18s;
+  white-space: nowrap;
+}
+.sp-chip:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); transform: translateY(-1px); }
+
+/* Input row */
+.sp-input-row {
+  display: flex;
+  gap: 10px;
+  padding: 14px 20px;
+  border-top: 1px solid var(--border);
+  align-items: flex-end;
+  background: var(--bg-card);
+}
+.sp-textarea {
+  flex: 1;
+  padding: 11px 14px;
+  border-radius: 12px;
+  font-size: .875rem;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  color: var(--text);
+  outline: none;
+  resize: none;
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.5;
+  max-height: 120px;
+  overflow-y: auto;
+  transition: border-color .2s;
+}
+.sp-textarea:focus { border-color: var(--accent); }
+.sp-textarea::placeholder { color: var(--text-faint); }
+.sp-send-btn {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  border: none;
+  background: var(--accent);
+  color: #071018;
+  cursor: pointer;
+  font-size: 15px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .18s;
+  flex-shrink: 0;
+}
+.sp-send-btn:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 4px 16px var(--accent-glow); }
+.sp-send-btn:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+
+/* Chat footer */
+.sp-chat-foot {
+  text-align: center;
+  padding: 8px 20px 14px;
+  font-size: .69rem;
+  color: var(--text-faint);
+  display: flex; align-items: center; justify-content: center; gap: 5px;
+}
+
+/* ── Side panels ─────────────────────────────────────────── */
+.sp-side-col { display: flex; flex-direction: column; gap: 16px; }
+.sp-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.sp-panel-head {
+  display: flex; align-items: center; gap: 8px;
+  padding: 13px 18px;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700; font-size: .86rem; color: var(--text);
+}
+.sp-panel-head i { color: var(--accent); font-size: 13px; }
+.sp-live-badge {
+  margin-left: auto;
+  display: flex; align-items: center; gap: 5px;
+  font-size: .68rem; color: #4ade80;
+  font-family: 'DM Sans', sans-serif; font-weight: 600;
+}
+.sp-live-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%; background: #4ade80;
+  animation: spPulse 2s infinite;
+}
+.sp-panel-count {
+  margin-left: auto;
+  font-size: .7rem; color: var(--text-muted);
+  font-family: 'DM Sans', sans-serif; font-weight: 400;
+}
+
+/* Session rows */
+.sp-panel-body { padding: 4px 0 8px; }
+.sp-srow {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: .82rem;
+}
+.sp-srow:last-child { border-bottom: none; }
+.sp-srow-icon {
+  width: 26px; height: 26px;
+  border-radius: 7px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent); font-size: 10px;
+  flex-shrink: 0; margin-top: 1px;
+}
+.sp-srow-lbl {
+  font-size: .65rem;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.sp-srow-val { color: var(--text); font-size: .8rem; line-height: 1.35; word-break: break-word; }
+.sp-srow-val--hi { color: var(--accent); font-weight: 600; }
+
+/* Navigation trail */
+.sp-trail-body {
+  padding: 10px 14px;
+  display: flex; flex-direction: column; gap: 3px;
+  max-height: 200px; overflow-y: auto;
+}
+.sp-trail-body::-webkit-scrollbar { width: 3px; }
+.sp-trail-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+.sp-trail-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 5px 7px; border-radius: 7px;
+  transition: background .15s;
+}
+.sp-trail-item:hover { background: var(--bg-surface); }
+.sp-trail-icon { color: var(--accent); font-size: .62rem; flex-shrink: 0; }
+.sp-trail-name { flex: 1; color: var(--text); font-size: .78rem; }
+.sp-trail-name--now { color: var(--accent); font-weight: 600; }
+.sp-trail-now-badge {
+  font-size: .61rem;
+  background: var(--accent-dim);
+  color: var(--accent);
+  padding: 1px 5px; border-radius: 4px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.sp-trail-time { font-size: .66rem; color: var(--text-faint); white-space: nowrap; }
+
+/* Actions panel */
+.sp-panel--actions .sp-panel-head { border-bottom: 1px solid var(--border); }
+.sp-actions-body {
+  padding: 14px 16px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .sp-layout { grid-template-columns: 1fr; }
+  .sp-side-col { order: 2; }
+  .sp-chat-col { order: 1; }
+}
+@media (max-width: 480px) {
+  .sp-messages { min-height: 340px; max-height: 380px; }
+  .sp-bot-avatar { width: 38px; height: 38px; font-size: 15px; }
+}
+
+/* ── Light mode ──────────────────────────────────────────── */
+body.light-mode .sp-chat-card,
+body.light-mode .sp-panel { border-color: var(--border); }
+body.light-mode .sp-textarea { background: var(--bg); }
+body.light-mode .sp-msg-bubble--user .sp-msg-text { color: #fff; }
+body.light-mode .sp-msg-text code { background: rgba(12,122,114,0.08); }
 </style>
 
-<script src="../js/cv-download.js"></script>
+<!-- ══ JAVASCRIPT ══ -->
 <script>
-/* ══════════════════════════════════════════════
+/* ────────────────────────────────────────────────────────────
    GEMINI CHATBOT
-══════════════════════════════════════════════ */
-var GEMINI_KEY = (window.ENV && window.ENV.GEMINI_API_KEY) || 'AIzaSyBNVj6b4PGB1elMPhUx1HEn471jS0wiUwo';
+──────────────────────────────────────────────────────────── */
+var GEMINI_KEY = (window.ENV && window.ENV.GEMINI_API_KEY) || '';
 var GEMINI_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + GEMINI_KEY;
 var FORMSPREE  = (window.ENV && window.ENV.FORMSPREE_ENDPOINT) || 'https://formspree.io/f/maqpropp';
-
 var chatHistory = [];
+var chatStartTime = Date.now();
 
 var SYS = [
-  'You are the official AI assistant for Musamali Christopher\'s professional portfolio website.',
-  'Help visitors — especially potential employers and clients — learn about Christopher.',
-  'Be warm, professional, and concise. Use bullet points when listing multiple items.',
+  'You are the official AI assistant embedded in the portfolio website of Musamali Christopher.',
+  'Your role: help visitors (employers, clients, collaborators) learn about Christopher in the most compelling way.',
+  'Tone: warm, professional, enthusiastic about Christopher\'s work. Concise but thorough.',
+  'Format: use markdown — **bold** for emphasis, bullet lists for skills/projects, headers for sections.',
+  'Never fabricate information. If unsure, say so and direct them to email Christopher.',
   '',
-  '══ ABOUT CHRISTOPHER ══',
+  '══ IDENTITY ══',
   'Full name: Musamali Christopher',
-  'Location: Kampala, Uganda (open to remote work)',
-  'Roles: IT Technician · Software Developer · Graphics Designer · Technical Instructor',
-  'Current: Deputy Director of IT — Bouwen Legacy Limited, Kampala',
-<<<<<<< HEAD
-  'Education: Bachelors of Information Technology (in progress) — Kampala International University (KIU)',
-=======
-  'Education: BSc Information Technology (in progress) — Kampala International University (KIU)',
->>>>>>> 026fc6af119aa5fab4cd80203a27e49ebee16b7e
-  'Experience: 3+ years · 15+ projects · 3 companies served · 50+ staff trained',
+  'Location: Kampala, Uganda (open to remote work worldwide)',
+  'Titles: IT Technician · Software Developer · Graphics Designer · Technical Instructor',
+  'Current role: Deputy Director of IT & Lead Instructor — Bouwen Legacy Limited, Kampala',
   'Email: christophermusamali27@gmail.com',
   'GitHub: https://github.com/seal27sol-dotcom',
+  'LinkedIn: https://ug.linkedin.com/in/christopher-musamali-7bb768295',
   'Portfolio: https://lakers-tech.wuaze.com',
   '',
-  '══ SKILLS ══',
-  'Programming: Python (primary), PyQt6, HTML5, CSS3, JavaScript, SQL',
-  'Databases: MySQL, SQLite',
-  'Networking: LAN/WAN design, IP addressing, subnetting, WiFi deployment, structured cabling, server room setup',
-  'Security/CCTV: IP camera installation, DVR/NVR config, cable management, remote viewing, surveillance commissioning',
-  'IT Support: Windows 10/11 admin, hardware repair, Active Directory basics, remote support',
-  'Design: Adobe Photoshop, Illustrator, CorelDRAW, Canva, Figma, Framer',
-  'Video: Filmora, AA Animator, motion graphics',
-  'Tools: Git, GitHub, version control',
-  'Soft skills: Team leadership, IT training delivery, technical documentation',
-  '',
-  '══ PROJECTS ══',
-  '1. Banking Management System — desktop app with auth, accounts, transactions, role-based access, audit logging (Python/PyQt6/SQLite)',
-  '2. Student Management System — enrollment, attendance, grades, schedules, admin dashboard, CSV export (Python/PyQt6/MySQL)',
-  '3. Document Converter — converts between PDF/DOCX/TXT formats (Python/PyQt6)',
-  '4. Custom Media Player — full-featured with playlist support (Python/PyQt6)',
-  '5. Portfolio Website — this site, built from scratch (HTML5/CSS3/JS) with dark mode, visitor tracking, AI chatbot, email-verified CV download',
-  '6. CCTV Installations — multiple real-world projects: site survey, camera placement, cable routing, DVR/NVR setup, remote viewing config, user training',
+  '══ EDUCATION ══',
+  '• Bachelor of Information Technology (in progress) — Kampala International University, 2025–present',
+  '• Diploma in Information Technology — Kampala International University, 2023–2025 (completed)',
+  'Languages: English (fluent), Luganda (native), German/Deutsch (beginner)',
   '',
   '══ WORK EXPERIENCE ══',
-  'Deputy Director of IT — Bouwen Legacy Limited (current):',
-  '  · Oversees all IT infrastructure and operations',
-  '  · Delivers IT training programmes (50+ staff trained)',
-  '  · Leads digital transformation and systems implementation',
-  '  · Network setup, server management, CCTV systems',
-  'Previous: IT Technician roles (hardware repair, LAN setup, CCTV) and Technical Instructor positions',
+  '1. Deputy Director of IT — Bouwen Legacy Limited (current)',
+  '   · Oversees all IT infrastructure, servers, network, and CCTV systems',
+  '   · Delivers structured IT training to 50+ staff members',
+  '   · Leads digital transformation and systems implementation',
+  '   · Manages hardware procurement and vendor relationships',
   '',
-  '══ AVAILABILITY ══',
-  'Open to: full-time roles, freelance projects, network/CCTV contracts, graphics commissions, IT training/consultancy',
-  'Professional, deadline-driven, passionate about practical tech solutions',
+  '2. IT Support Technician — MSkitech Technological Solutions',
+  '   · Client-facing IT support, hardware repair, diagnostics',
+  '   · CCTV installation and commissioning for businesses',
+  '   · Technical instruction and user training',
+  '   · Network configuration and troubleshooting',
   '',
-  '══ DOWNLOADING CV ══',
-  'Click "Download CV" → enter full name + real email → receive 6-digit code in inbox → enter code → CV downloads. Christopher is notified of every verified download.',
+  '3. IT Officer — Divine Guardian Foundation',
+  '   · Day-to-day IT operations management',
+  '   · Staff digital skills training and capacity building',
+  '   · Documentation, SOPs, and system maintenance',
+  '',
+  '══ TECHNICAL SKILLS ══',
+  'Programming: Python (primary), PyQt6, HTML5, CSS3, JavaScript, SQL',
+  'Databases: MySQL, SQLite',
+  'Networking: LAN/WAN design, IP addressing, subnetting, WiFi deployment, structured cabling, server room setup, Cisco basics',
+  'Security/CCTV: IP camera installation, DVR/NVR configuration, cable management, remote viewing, surveillance commissioning',
+  'IT Support: Windows 10/11 administration, hardware repair/assembly, Active Directory basics, remote support tools',
+  'Design tools: Adobe Photoshop, Illustrator, CorelDRAW, Canva, Figma, Framer',
+  'Video/Motion: Filmora, Adobe Animate (AA Animator), motion graphics production',
+  'Dev tools: Git, GitHub, VS Code',
+  'Soft skills: Team leadership, IT training delivery, technical documentation, project management',
+  '',
+  '══ SOFTWARE PROJECTS ══',
+  '1. **Banking Management System** (Python · PyQt6 · SQLite)',
+  '   Full desktop app: user authentication, account management, deposits/withdrawals, inter-account transfers, transaction history, role-based access control, audit logging, PDF statement export.',
+  '',
+  '2. **Student Management System** (Python · PyQt6 · MySQL)',
+  '   Complete academic management: student enrollment, class scheduling, attendance tracking, grade management, teacher assignments, admin dashboard, CSV/PDF export.',
+  '',
+  '3. **Document Converter** (Python · PyQt6)',
+  '   Batch conversion between PDF, DOCX, TXT and other document formats. Drag-and-drop interface.',
+  '',
+  '4. **Custom Media Player** (Python · PyQt6 · VLC)',
+  '   Full-featured desktop player with playlist management, seek bar, volume control, equalizer, and subtitle support.',
+  '',
+  '5. **Portfolio Website** (HTML5 · CSS3 · Vanilla JS)',
+  '   Multi-page portfolio built from scratch: dark/light theme, Gemini AI chatbot, email-verified CV download system, visitor session tracking, page transitions, responsive design.',
+  '',
+  '6. **CCTV Installation Projects** (field work)',
+  '   Multiple commercial installations in Kampala: site surveys, camera placement planning, structured cabling, DVR/NVR setup, remote viewing configuration, user training and handover.',
+  '',
+  '══ GRAPHICS & DESIGN WORK ══',
+  'Logo design, brand identity kits, poster design, social media graphics, UI mockups/prototypes, motion graphics, video editing for clients and institutions.',
+  'Tools: Adobe Photoshop, Illustrator, CorelDRAW, Canva, Figma, Framer, Filmora.',
+  '',
+  '══ AVAILABILITY & SERVICES ══',
+  'Open to: full-time employment, freelance contracts, remote work, IT training/consultancy, network/CCTV project contracts, graphics design commissions.',
+  'Response time: usually within 24 hours. Professional, deadline-driven, solutions-focused.',
+  '',
+  '══ HOW TO DOWNLOAD THE CV ══',
+  'Click any "Download CV" button → enter full name + real email → receive 6-digit verification code in inbox → enter code → PDF downloads automatically. Christopher is notified of every verified download.',
   '',
   '══ CONTACT ══',
-  'Email: christophermusamali27@gmail.com · Contact form on the Contact page',
-  '',
-  'Rules: Never fabricate info. If unsure, say so and suggest contacting Christopher directly.',
-  'When asked about projects or skills, be specific and enthusiastic — this helps Christopher get hired.',
+  'Email: christophermusamali27@gmail.com | Phone: +256 705 722 874 / +256 783 855 750',
+  'Contact form: available on the Contact page of this portfolio.',
 ].join('\n');
 
-function mkBubble(role, text, isTyping) {
-  var wrap = document.createElement('div');
-  wrap.style.cssText = 'display:flex;gap:9px;align-items:flex-start;' + (role==='user'?'flex-direction:row-reverse;':'');
-
-  var avi = document.createElement('div');
-  avi.style.cssText = 'width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;margin-top:2px;';
-  if (role === 'user') {
-    avi.style.background='var(--bg-surface)'; avi.style.border='1px solid var(--border)'; avi.style.color='var(--text-muted)';
-    avi.innerHTML='<i class="fa-solid fa-user"></i>';
-  } else {
-    avi.style.background='linear-gradient(135deg,#4285f4,#34a853)'; avi.style.color='#fff';
-    avi.innerHTML='<i class="fa-solid fa-robot"></i>';
-  }
-
-  var bub = document.createElement('div');
-  var base = 'padding:11px 14px;max-width:87%;font-size:.865rem;line-height:1.65;white-space:pre-wrap;';
-  bub.style.cssText = base + (role==='user'
-    ? 'border-radius:14px 4px 14px 14px;background:var(--accent-dim);border:1px solid rgba(20,184,166,0.2);color:var(--text);'
-    : 'border-radius:4px 14px 14px 14px;background:var(--bg-surface);border:1px solid var(--border);color:var(--text);');
-
-  if (isTyping) {
-    bub.innerHTML='<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
-    wrap.id='typingBubble';
-  } else {
-    bub.textContent = text;
-  }
-  wrap.appendChild(avi); wrap.appendChild(bub);
-  return wrap;
+/* ── Markdown-lite renderer ─────────────────────────────── */
+function renderMd(text) {
+  return text
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g,'<em>$1</em>')
+    .replace(/`(.+?)`/g,'<code>$1</code>')
+    .replace(/^### (.+)$/gm,'<h4>$1</h4>')
+    .replace(/^## (.+)$/gm,'<h3>$1</h3>')
+    .replace(/^[\-\•] (.+)$/gm,'<li>$1</li>')
+    .replace(/(<li>[\s\S]+?<\/li>)/g,'<ul>$1</ul>')
+    .replace(/<\/ul>\s*<ul>/g,'')
+    .replace(/\n\n/g,'<br><br>')
+    .replace(/\n/g,'<br>');
 }
 
+/* ── Time formatter ─────────────────────────────────────── */
+function msgTime() {
+  return new Date().toLocaleTimeString(undefined,{hour:'2-digit',minute:'2-digit'});
+}
+
+/* ── Append message ─────────────────────────────────────── */
 function appendMsg(role, text, isTyping) {
   var msgs = document.getElementById('chatMessages');
-  var node = mkBubble(role, text, isTyping);
-  msgs.appendChild(node);
+
+  var row = document.createElement('div');
+  row.className = 'sp-msg sp-msg--' + (role==='user'?'user':'bot');
+
+  var avi = document.createElement('div');
+  avi.className = 'sp-msg-avi sp-msg-avi--' + (role==='user'?'user':'bot');
+  avi.innerHTML = role==='user' ? '<i class="fa-solid fa-user"></i>' : '<i class="fa-solid fa-robot"></i>';
+
+  var bubble = document.createElement('div');
+  bubble.className = 'sp-msg-bubble sp-msg-bubble--' + (role==='user'?'user':'bot');
+
+  var msgDiv = document.createElement('div');
+  msgDiv.className = 'sp-msg-text';
+
+  if (isTyping) {
+    msgDiv.innerHTML = '<div class="sp-typing"><span></span><span></span><span></span></div>';
+    row.id = 'typingBubble';
+  } else {
+    if (role === 'bot') {
+      msgDiv.innerHTML = renderMd(text);
+    } else {
+      msgDiv.textContent = text;
+    }
+  }
+
+  var timeDiv = document.createElement('div');
+  timeDiv.className = 'sp-msg-time';
+  timeDiv.textContent = msgTime();
+
+  bubble.appendChild(msgDiv);
+  if (!isTyping) bubble.appendChild(timeDiv);
+  row.appendChild(avi);
+  row.appendChild(bubble);
+  msgs.appendChild(row);
   msgs.scrollTop = msgs.scrollHeight;
-  return node;
+  return row;
 }
 
+/* ── Send message ───────────────────────────────────────── */
 async function sendChat() {
   var input = document.getElementById('chatInput');
-  var msg   = input.value.trim();
-  if (!msg) return;
+  var msg = input.value.trim();
+  if (!msg || document.getElementById('chatSendBtn').disabled) return;
 
-  document.getElementById('chatSuggestions').style.display = 'none';
+  // Hide suggestions after first message
+  var sug = document.getElementById('chatSuggestions');
+  if (sug) sug.style.display = 'none';
+
   input.value = '';
+  input.style.height = 'auto';
   appendMsg('user', msg);
-  chatHistory.push({ role:'user', parts:[{ text:msg }] });
-
-  // Log to Christopher
-  if (window.CM_LOG) window.CM_LOG('💬 Chat Message — "' + msg.substring(0,60) + '"', {
-    '_subject': '💬 Chatbot Query — ' + msg.substring(0,60),
-    '💬 Message': msg,
-  });
+  chatHistory.push({ role:'user', parts:[{ text: msg }] });
 
   var btn = document.getElementById('chatSendBtn');
-  btn.disabled=true; btn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i>';
-  appendMsg('assistant','',true);
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
+  appendMsg('bot', '', true);
+
+  // Check API key
+  if (!GEMINI_KEY) {
+    var ti0 = document.getElementById('typingBubble');
+    if (ti0) ti0.remove();
+    appendMsg('bot', '⚠️ The AI assistant isn\'t configured yet — the API key is missing.\n\nIn the meantime, feel free to:\n• Browse the portfolio pages\n• Email Christopher directly at **christophermusamali27@gmail.com**\n• Use the Contact page form');
+    btn.disabled = false;
+    btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i>';
+    return;
+  }
 
   try {
     var res = await fetch(GEMINI_URL, {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         system_instruction: { parts:[{ text: SYS }] },
         contents: chatHistory,
-        generationConfig: { temperature:0.7, maxOutputTokens:900 }
+        generationConfig: { temperature: 0.7, maxOutputTokens: 1000, topP: 0.9 }
       })
     });
-    var data  = await res.json();
-    var reply = data.candidates?.[0]?.content?.parts?.[0]?.text || 'Sorry, I couldn\'t get a response. Please try again.';
+
+    if (!res.ok) {
+      var errData = await res.json().catch(function(){ return {}; });
+      throw new Error('API error ' + res.status + ': ' + (errData.error && errData.error.message ? errData.error.message : 'Unknown'));
+    }
+
+    var data = await res.json();
+    var reply = (data.candidates &&
+                 data.candidates[0] &&
+                 data.candidates[0].content &&
+                 data.candidates[0].content.parts &&
+                 data.candidates[0].content.parts[0] &&
+                 data.candidates[0].content.parts[0].text)
+                ? data.candidates[0].content.parts[0].text
+                : 'Sorry, I couldn\'t generate a response. Please try again.';
 
     var ti = document.getElementById('typingBubble');
     if (ti) ti.remove();
-    appendMsg('assistant', reply);
-    chatHistory.push({ role:'model', parts:[{ text:reply }] });
+    appendMsg('bot', reply);
+    chatHistory.push({ role:'model', parts:[{ text: reply }] });
+
+    // Log to Christopher via activity logger
+    if (window.CM_LOG) {
+      window.CM_LOG('💬 Chat — "' + msg.substring(0,60) + '"', {
+        '_subject': '💬 Chatbot Query — ' + msg.substring(0,60),
+        '💬 Question': msg,
+        '🤖 Answer': reply.substring(0,200) + (reply.length > 200 ? '…' : '')
+      });
+    }
 
   } catch(e) {
     var ti2 = document.getElementById('typingBubble');
     if (ti2) ti2.remove();
-    appendMsg('assistant', 'I\'m having trouble connecting right now. Please try again or email Christopher directly at christophermusamali27@gmail.com');
+    var errMsg = e.message && e.message.includes('API_KEY_INVALID')
+      ? '🔑 The Gemini API key needs to be configured.\n\nPlease contact Christopher at **christophermusamali27@gmail.com** or use the Contact page.'
+      : '⚠️ Couldn\'t connect to the AI right now.\n\n**Try:**\n• Refreshing the page\n• Checking your internet connection\n• Emailing Christopher directly at **christophermusamali27@gmail.com**';
+    appendMsg('bot', errMsg);
+    console.error('[CM Chat]', e.message);
   }
 
-  btn.disabled=false; btn.innerHTML='<i class="fa-solid fa-paper-plane"></i>';
+  btn.disabled = false;
+  btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i>';
   input.focus();
 }
 
 function suggest(btn) {
-  var txt = btn.textContent.replace(/^\S+\s/,'').trim();
-  document.getElementById('chatInput').value = txt;
+  var raw = btn.textContent.trim().replace(/^[\S\u00A0]+\s/, '');
+  document.getElementById('chatInput').value = raw;
   sendChat();
 }
 
 function clearChat() {
   chatHistory = [];
-  document.getElementById('chatMessages').innerHTML = '';
-  appendMsg('assistant','👋 Chat cleared! What would you like to know about Christopher?');
-  document.getElementById('chatSuggestions').style.display = 'flex';
+  chatStartTime = Date.now();
+  var msgs = document.getElementById('chatMessages');
+  msgs.innerHTML = '';
+  appendMsg('bot', '👋 Chat cleared! Ask me anything about Christopher — his projects, skills, experience, or availability.');
+  var sug = document.getElementById('chatSuggestions');
+  if (sug) sug.style.display = 'flex';
 }
 
+function exportChat() {
+  if (chatHistory.length === 0) return;
+  var lines = ['Christopher Musamali — Portfolio AI Chat Export', '=' .repeat(50), ''];
+  chatHistory.forEach(function(m) {
+    var who = m.role === 'user' ? 'You' : 'CM Assistant';
+    lines.push('[' + who + ']');
+    lines.push(m.parts[0].text);
+    lines.push('');
+  });
+  var blob = new Blob([lines.join('\n')], { type: 'text/plain' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'cm-chat-' + new Date().toISOString().slice(0,10) + '.txt';
+  a.click();
+}
 
-/* ══════════════════════════════════════════════
-   SESSION PANEL — accurate browser detection
-══════════════════════════════════════════════ */
+function autoResize(el) {
+  el.style.height = 'auto';
+  el.style.height = Math.min(el.scrollHeight, 120) + 'px';
+}
+
+/* ────────────────────────────────────────────────────────────
+   SESSION PANEL
+──────────────────────────────────────────────────────────── */
 function detectBrowser() {
   var ua = navigator.userAgent, uad = navigator.userAgentData, m;
   if (uad && uad.brands) {
-    var b = uad.brands.filter(function(x){ return !/Not/.test(x.brand); });
-    var names = ['Brave','Microsoft Edge','Opera','OPR','Google Chrome','Chromium'];
-    for (var i=0;i<names.length;i++) {
-      var found = b.find(function(x){ return x.brand.includes(names[i]); });
-      if (found) return names[i].replace('OPR','Opera') + ' ' + found.version;
+    var brands = uad.brands.filter(function(x){ return !/Not/.test(x.brand); });
+    var order = ['Brave','Microsoft Edge','Opera','OPR','Google Chrome','Chromium'];
+    for (var i=0;i<order.length;i++) {
+      var found = brands.find(function(x){ return x.brand.includes(order[i]); });
+      if (found) return order[i].replace('OPR','Opera') + ' ' + found.version;
     }
   }
-  if (/Edg\//.test(ua))     { m=ua.match(/Edg\/([\d]+)/);    return 'Microsoft Edge '+(m?m[1]:''); }
-  if (/OPR\//.test(ua))     { m=ua.match(/OPR\/([\d]+)/);    return 'Opera '+(m?m[1]:''); }
-  if (/SamsungBrowser/.test(ua)){ m=ua.match(/SamsungBrowser\/([\d]+)/); return 'Samsung Internet '+(m?m[1]:''); }
-  if (/Firefox\//.test(ua)) { m=ua.match(/Firefox\/([\d]+)/); return 'Mozilla Firefox '+(m?m[1]:''); }
-  if (/Chrome\//.test(ua))  { m=ua.match(/Chrome\/([\d]+)/);  return 'Google Chrome '+(m?m[1]:''); }
-  if (/Safari\//.test(ua))  { m=ua.match(/Version\/([\d]+)/); return 'Apple Safari '+(m?m[1]:''); }
+  if (/Edg\//.test(ua))       { m=ua.match(/Edg\/([\d]+)/);           return 'Edge '+(m?m[1]:''); }
+  if (/OPR\//.test(ua))       { m=ua.match(/OPR\/([\d]+)/);           return 'Opera '+(m?m[1]:''); }
+  if (/SamsungBrowser/.test(ua)){m=ua.match(/SamsungBrowser\/([\d]+)/);return 'Samsung Internet '+(m?m[1]:''); }
+  if (/Firefox\//.test(ua))   { m=ua.match(/Firefox\/([\d]+)/);       return 'Firefox '+(m?m[1]:''); }
+  if (/Chrome\//.test(ua))    { m=ua.match(/Chrome\/([\d]+)/);        return 'Chrome '+(m?m[1]:''); }
+  if (/Safari\//.test(ua))    { m=ua.match(/Version\/([\d]+)/);       return 'Safari '+(m?m[1]:''); }
   return 'Unknown Browser';
 }
-
 function detectOS() {
-  var ua = navigator.userAgent, uad = navigator.userAgentData;
-  if (uad && uad.platform && uad.platform.length > 0) {
+  var ua = navigator.userAgent, uad = navigator.userAgentData, m;
+  if (uad && uad.platform) {
     var p = uad.platform;
-    if (/win/i.test(p))  return 'Windows';
-    if (/mac/i.test(p))  return 'macOS';
+    if (/win/i.test(p)) return 'Windows';
+    if (/mac/i.test(p)) return 'macOS';
     if (/android/i.test(p)) return 'Android';
-    if (/linux/i.test(p))   return 'Linux';
-    return p;
+    if (/linux/i.test(p)) return 'Linux';
   }
-  if (/Windows NT 10/.test(ua)) return 'Windows 10 / 11';
-  if (/Windows NT 6\.1/.test(ua)) return 'Windows 7';
-  if (/Mac OS X/.test(ua))    return 'macOS';
-  if (/Android/.test(ua))     { var m=ua.match(/Android ([\d.]+)/); return 'Android'+(m?' '+m[1]:''); }
-  if (/iPhone/.test(ua))      { var m=ua.match(/OS ([\d_]+)/);      return 'iOS'+(m?' '+m[1].replace(/_/g,'.'):''); }
-  if (/iPad/.test(ua))        return 'iPadOS';
-  if (/Linux/.test(ua))       return 'Linux';
+  if (/Windows NT 10/.test(ua)) return 'Windows 10/11';
+  if (/Mac OS X/.test(ua))      return 'macOS';
+  if (/Android/.test(ua))       { m=ua.match(/Android ([\d.]+)/); return 'Android'+(m?' '+m[1]:''); }
+  if (/iPhone/.test(ua))        { m=ua.match(/OS ([\d_]+)/);      return 'iOS '+(m?m[1].replace(/_/g,'.'):''); }
+  if (/iPad/.test(ua))          return 'iPadOS';
+  if (/Linux/.test(ua))         return 'Linux';
   return 'Unknown OS';
 }
-
 function detectDevice() {
   var uad = navigator.userAgentData;
-  if (uad) return uad.mobile ? '📱 Mobile / Tablet' : '🖥️ Desktop / Laptop';
-  return /Mobi|Android|iPhone|iPad/.test(navigator.userAgent) ? '📱 Mobile / Tablet' : '🖥️ Desktop / Laptop';
+  if (uad) return uad.mobile ? '📱 Mobile' : '🖥️ Desktop';
+  return /Mobi|Android|iPhone|iPad/.test(navigator.userAgent) ? '📱 Mobile' : '🖥️ Desktop';
 }
-
 function getConnection() {
   var c = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-  if (!c) return 'Not available';
-  var parts = [];
-  if (c.effectiveType) parts.push(c.effectiveType.toUpperCase());
-  if (c.downlink)      parts.push(c.downlink + ' Mbps');
-  if (c.rtt)           parts.push('RTT ' + c.rtt + 'ms');
-  return parts.join(' · ') || 'Unknown';
+  if (!c) return '—';
+  var p = [];
+  if (c.effectiveType) p.push(c.effectiveType.toUpperCase());
+  if (c.downlink) p.push(c.downlink + ' Mbps');
+  if (c.rtt) p.push('RTT ' + c.rtt + 'ms');
+  return p.join(' · ') || '—';
 }
-
 function elapsed(ms) {
   var s=Math.round(ms/1000), m=Math.floor(s/60), h=Math.floor(m/60);
   s=s%60; m=m%60;
   return h>0 ? h+'h '+m+'m '+s+'s' : m>0 ? m+'m '+s+'s' : s+'s';
 }
-
-function localTime() {
-  return new Date().toLocaleTimeString(undefined,{hour:'2-digit',minute:'2-digit',second:'2-digit'});
-}
-
 function sessionDuration() {
   var raw = sessionStorage.getItem('cm_entry_ts');
-  var start = raw ? new Date(raw).getTime() : Date.now();
+  var start = raw ? new Date(raw).getTime() : chatStartTime;
   return elapsed(Date.now() - start);
 }
-
 function getVisitorName() {
   try { var v=JSON.parse(sessionStorage.getItem('cm_visitor_v1')||'{}'); return v.name||null; } catch(e){ return null; }
 }
 
 function sRow(icon, label, value, hi) {
-  return '<div class="srow">' +
-    '<div class="srow-icon"><i class="fa-solid '+icon+'"></i></div>' +
-    '<div style="flex:1;min-width:0;"><div class="srow-lbl">'+label+'</div>' +
-    '<div class="srow-val'+(hi?' hi':'')+'">'+value+'</div></div></div>';
+  return '<div class="sp-srow">' +
+    '<div class="sp-srow-icon"><i class="fa-solid ' + icon + '"></i></div>' +
+    '<div style="flex:1;min-width:0;">' +
+    '<div class="sp-srow-lbl">' + label + '</div>' +
+    '<div class="sp-srow-val' + (hi?' sp-srow-val--hi':'') + '">' + value + '</div>' +
+    '</div></div>';
 }
 
 var PAGE_ICONS = {
@@ -540,37 +976,25 @@ var PAGE_ICONS = {
 
 function renderSession() {
   var name    = getVisitorName();
-  var dur     = sessionDuration();
-  var browser = detectBrowser();
-  var os      = detectOS();
-  var device  = detectDevice();
-  var tz      = Intl && Intl.DateTimeFormat ? Intl.DateTimeFormat().resolvedOptions().timeZone : 'Unknown';
-  var lang    = (navigator.languages && navigator.languages.join(', ')) || navigator.language || 'Unknown';
-  var screen  = window.screen.width + '×' + window.screen.height + 'px';
-  var vp      = window.innerWidth + '×' + window.innerHeight + 'px';
+  var tz      = (typeof Intl !== 'undefined' && Intl.DateTimeFormat) ? Intl.DateTimeFormat().resolvedOptions().timeZone : '—';
+  var lang    = (navigator.languages && navigator.languages.slice(0,2).join(', ')) || navigator.language || '—';
   var conn    = getConnection();
-  var color   = window.screen.colorDepth + '-bit';
-  var cookies = navigator.cookieEnabled ? '✓ Enabled' : '✗ Disabled';
-  var dnt     = navigator.doNotTrack === '1' ? 'Enabled' : 'Disabled';
-  var refer   = document.referrer || 'Direct / Bookmark';
-  var time    = localTime();
+  var refer   = document.referrer ? document.referrer.replace(/^https?:\/\//,'').split('/')[0] : 'Direct / Bookmark';
 
   var html = '';
-  if (name) html += sRow('fa-id-badge',       'Signed In As',     name, true);
-  html += sRow('fa-stopwatch',       'Time on Site',      dur, true);
-  html += sRow('fa-clock',           'Your Local Time',   time);
-  html += sRow('fa-earth-africa',    'Timezone',          tz);
-  html += sRow('fa-globe',           'Browser',           browser);
-  html += sRow('fa-display',         'Operating System',  os);
-  html += sRow('fa-mobile-screen',   'Device Type',       device);
-  html += sRow('fa-language',        'Language(s)',        lang);
-  html += sRow('fa-expand',          'Screen Resolution', screen);
-  html += sRow('fa-crop',            'Viewport',          vp);
-  html += sRow('fa-wifi',            'Connection',        conn);
-  html += sRow('fa-palette',         'Color Depth',       color);
-  html += sRow('fa-cookie-bite',     'Cookies',           cookies);
-  html += sRow('fa-eye-slash',       'Do Not Track',      dnt);
-  html += sRow('fa-link',            'Referred From',     refer);
+  if (name) html += sRow('fa-id-badge',      'Signed in as',      name, true);
+  html += sRow('fa-stopwatch',         'Time on site',      sessionDuration(), true);
+  html += sRow('fa-clock',             'Local time',         new Date().toLocaleTimeString(undefined,{hour:'2-digit',minute:'2-digit',second:'2-digit'}));
+  html += sRow('fa-earth-africa',      'Timezone',          tz);
+  html += sRow('fa-globe',             'Browser',           detectBrowser());
+  html += sRow('fa-display',           'OS',                detectOS());
+  html += sRow('fa-mobile-screen',     'Device',            detectDevice());
+  html += sRow('fa-language',          'Language',          lang);
+  html += sRow('fa-expand',            'Screen',            window.screen.width+'×'+window.screen.height+'px');
+  html += sRow('fa-crop',              'Viewport',          window.innerWidth+'×'+window.innerHeight+'px');
+  html += sRow('fa-wifi',              'Connection',        conn);
+  html += sRow('fa-cookie-bite',       'Cookies',           navigator.cookieEnabled ? '✓ Enabled' : '✗ Disabled');
+  html += sRow('fa-link',              'Referred from',     refer);
 
   var p = document.getElementById('sessionInfo');
   if (p) p.innerHTML = html;
@@ -585,36 +1009,33 @@ function renderPages() {
 
   var el = document.getElementById('pagesVisited');
   if (!el) return;
-
   if (!pages.length) {
     el.innerHTML = '<div style="color:var(--text-faint);font-size:.77rem;padding:4px 2px;">No pages logged yet.</div>';
     return;
   }
-
   el.innerHTML = pages.map(function(p, i) {
     var raw  = (p.page||'index').replace('.html','').replace(/-/g,' ');
-    var key  = raw.split(' ')[0].toLowerCase();
+    var key  = raw.split('/').pop().split(' ')[0].toLowerCase();
     var icon = PAGE_ICONS[key] || 'fa-file';
-    var disp = raw.split(' ').map(function(w){ return w.charAt(0).toUpperCase()+w.slice(1); }).join(' ') || 'Home';
-    var time = new Date(p.time).toLocaleTimeString(undefined,{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+    var disp = raw.split('/').pop().split(' ')
+                  .map(function(w){ return w.charAt(0).toUpperCase()+w.slice(1); }).join(' ') || 'Home';
+    var time = new Date(p.time).toLocaleTimeString(undefined,{hour:'2-digit',minute:'2-digit'});
     var isNow = i === pages.length - 1;
-    return '<div class="trail-item">' +
-      '<i class="fa-solid '+icon+' trail-icon"></i>' +
-      '<span class="trail-name"' + (isNow?' style="color:var(--accent);font-weight:600;"':'') + '>' + disp +
-      (isNow ? ' <span style="font-size:.63rem;background:rgba(20,184,166,0.15);color:var(--accent);padding:1px 5px;border-radius:4px;vertical-align:middle;">now</span>' : '') +
-      '</span>' +
-      '<span class="trail-time">' + time + '</span>' +
+    return '<div class="sp-trail-item">' +
+      '<i class="fa-solid ' + icon + ' sp-trail-icon"></i>' +
+      '<span class="sp-trail-name' + (isNow?' sp-trail-name--now':'') + '">' + disp +
+      (isNow ? '<span class="sp-trail-now-badge">now</span>' : '') + '</span>' +
+      '<span class="sp-trail-time">' + time + '</span>' +
     '</div>';
   }).join('');
-
   el.scrollTop = el.scrollHeight;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
   renderSession();
   renderPages();
-  setInterval(renderSession, 1000);   // time + local clock tick every second
-  setInterval(renderPages,   3000);   // page trail refresh
+  setInterval(renderSession, 1000);
+  setInterval(renderPages, 3000);
 });
 </script>
 </body>
