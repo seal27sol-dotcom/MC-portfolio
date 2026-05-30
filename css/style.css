@@ -2198,67 +2198,6 @@ nav { gap: 12px; }
    © 2026 Christopher Musamali. All rights reserved.
    ============================================================ */
 
-<<<<<<< HEAD
-=======
-/* ── LIGHT MODE VARIABLES ──────────────────────────────────── */
-body.light-mode {
-  --bg:           #f0f4f8;
-  --bg-card:      #ffffff;
-  --bg-surface:   #e8edf4;
-  --bg-hover:     #dde4ef;
-  --accent:       #0d9488;
-  --accent-hover: #0f766e;
-  --accent-dim:   rgba(13,148,136,0.10);
-  --accent-glow:  rgba(13,148,136,0.18);
-  --blue:         #2563eb;
-  --blue-dim:     rgba(37,99,235,0.10);
-  --text:         #0f172a;
-  --text-muted:   #475569;
-  --text-faint:   #94a3b8;
-  --border:       rgba(0,0,0,0.09);
-  --border-hover: rgba(13,148,136,0.30);
-  --shadow:       0 8px 32px rgba(0,0,0,0.12);
-}
-
-body.light-mode nav {
-  background: rgba(240,244,248,0.92);
-  border-bottom-color: rgba(0,0,0,0.08);
-}
-
-body.light-mode .nav-brand { color: var(--text); }
-body.light-mode .marquee-section { background: var(--bg-surface); }
-body.light-mode .marquee-item { color: var(--text-muted); border-color: var(--border); background: var(--bg-card); }
-body.light-mode .tag { background: var(--bg-surface); color: var(--text-muted); }
-body.light-mode .badge-muted { background: var(--bg-surface); color: var(--text-muted); }
-body.light-mode .badge-accent { background: rgba(13,148,136,0.12); color: var(--accent); }
-body.light-mode .badge-blue { background: rgba(37,99,235,0.10); color: var(--blue); }
-body.light-mode input, body.light-mode textarea, body.light-mode select {
-  background: var(--bg-surface);
-  color: var(--text);
-  border-color: var(--border);
-}
-body.light-mode input:focus, body.light-mode textarea:focus {
-  border-color: var(--accent);
-  background: #fff;
-}
-body.light-mode footer {
-  background: var(--bg-surface);
-  border-top: 1px solid var(--border);
-}
-body.light-mode .hero { background: var(--bg); }
-body.light-mode .hero::before {
-  background:
-    radial-gradient(ellipse 60% 80% at 70% 40%, rgba(13,148,136,0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 60% at 20% 60%, rgba(37,99,235,0.06) 0%, transparent 50%);
-}
-body.light-mode .stat-value { color: var(--accent); }
-body.light-mode .blog-summary-box { background: var(--bg-surface); border-color: var(--accent); }
-body.light-mode .blog-article-copyright { background: rgba(13,148,136,0.05); }
-body.light-mode #reading-progress { box-shadow: 0 0 8px rgba(13,148,136,0.4); }
-body.light-mode .soc-btn { background: var(--bg-surface); color: var(--text-muted); border-color: var(--border); }
-body.light-mode .soc-btn:hover { background: var(--accent-dim); color: var(--accent); }
-
->>>>>>> 4dc3d07249ba89d604e5ccbc387ba206abe10793
 /* ── LIGHT MODE TOGGLE BUTTON ──────────────────────────────── */
 .theme-toggle {
   display: flex;
@@ -2698,7 +2637,6 @@ body.light-mode .clock-face-digital .clock-tz { background: rgba(0,0,0,0.05); }
   animation: shimmer 1.2s linear infinite;
   pointer-events: none;
 }
-<<<<<<< HEAD
 
 /* ============================================================
    LAPTOP LAYOUT FIX  (1024px – 1280px)
@@ -2734,5 +2672,3 @@ body.light-mode .clock-face-digital .clock-tz { background: rgba(0,0,0,0.05); }
   .nav-links a { padding: 7px 10px; font-size: 0.82rem; }
   .clock-widget .clock-face-digital { font-size: 0.72rem; padding: 5px 9px; }
 }
-=======
->>>>>>> 4dc3d07249ba89d604e5ccbc387ba206abe10793
