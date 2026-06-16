@@ -15,7 +15,7 @@
   'use strict';
 
   var FORMSPREE = (window.ENV && window.ENV.FORMSPREE_ENDPOINT)
-                 || 'https://formspree.io/f/xnjyrjlq';
+                 || 'https://formspree.io/f/maqpropp';
 
   /* ── Helpers ── */
   function kTime(d) {

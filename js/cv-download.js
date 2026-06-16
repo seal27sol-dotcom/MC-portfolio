@@ -5,7 +5,7 @@
   'use strict';
 
   function cfg(k){ return (window.ENV && window.ENV[k]) || ''; }
-  var FORMSPREE = cfg('FORMSPREE_ENDPOINT') || 'https://formspree.io/f/xnjyrjlq';
+  var FORMSPREE = cfg('FORMSPREE_ENDPOINT') || 'https://formspree.io/f/maqpropp';
   var _name=null, _email=null, _code=null, _expiry=null;
 
   function el(id)        { return document.getElementById(id); }

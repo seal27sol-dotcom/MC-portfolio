@@ -1,12 +1,12 @@
 /**
  * CM Portfolio — Visitor Tracker v1.0
  * Splash screen → Visitor modal → Entry & Exit email notifications
- * Formspree endpoint: https://formspree.io/f/xnjyrjlq
+ * Formspree endpoint: https://formspree.io/f/maqpropp
  */
 (function () {
   'use strict';
 
-  const ENDPOINT      = (window.ENV && window.ENV.FORMSPREE_ENDPOINT) || 'https://formspree.io/f/xnjyrjlq';
+  const ENDPOINT      = (window.ENV && window.ENV.FORMSPREE_ENDPOINT) || 'https://formspree.io/f/maqpropp';
   const SESSION_KEY   = 'cm_visitor_v1';
   const ENTRY_TS_KEY  = 'cm_entry_ts';
   const SPLASH_DONE   = 'cm_splash_done';
