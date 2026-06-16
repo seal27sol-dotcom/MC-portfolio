@@ -7,7 +7,7 @@ window.ENV = Object.freeze({
   SITE_URL:           'https://lakers-tech.wuaze.com',
   CONTACT_EMAIL:      'christophermusamali27@gmail.com',
   GITHUB_URL:         'https://github.com/seal27sol-dotcom',
-  FORMSPREE_ENDPOINT: 'https://formspree.io/f/maqpropp',
+  FORMSPREE_ENDPOINT: 'https://formspree.io/f/xnjyrjlq',
   CV_PATH:            'assets/docs/Musamali_Christopher_CV.pdf',
   // 🔐 Replace these with fresh keys — old ones were exposed in git history
   GEMINI_API_KEY:     'AIzaSyBNVj6b4PGB1elMPhUx1HEn471jS0wiUwo',

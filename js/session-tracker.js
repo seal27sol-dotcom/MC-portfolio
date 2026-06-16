@@ -10,7 +10,7 @@
 (function () {
   'use strict';
 
-  var FORMSPREE    = (window.ENV && window.ENV.FORMSPREE_ENDPOINT) || 'https://formspree.io/f/maqpropp';
+  var FORMSPREE    = (window.ENV && window.ENV.FORMSPREE_ENDPOINT) || 'https://formspree.io/f/xnjyrjlq';
   var SESSION_KEY  = 'cm_visitor_v1';
   var NAV_KEY      = 'cm_nav_log';
   var ENTRY_KEY    = 'cm_entry_ts';
